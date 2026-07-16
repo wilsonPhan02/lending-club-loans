@@ -1,3 +1,5 @@
 *.csv
 *.py
+*.pdf
+*.pkl
 data-mining-patched.ipynb
