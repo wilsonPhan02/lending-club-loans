@@ -1,0 +1,405 @@
+================================================================================
+IMPLEMENTATION PLAN — PERBAIKAN PHASE 2: SEGMENTATION VIA CLUSTERING
+Lending Club Loan Dataset — Data Mining Project
+Versi: 3 (Berbasis notebook phase-2.ipynb — pendekatan PCA + UMAP)
+Tanggal: 18 Juli 2026
+================================================================================
+
+
+--------------------------------------------------------------------------------
+1. STATUS RINGKAS
+--------------------------------------------------------------------------------
+
+SUDAH SELESAI DENGAN BAIK (terverifikasi dari output eksekusi aktual):
+  [x] Fix double-scaling — centroid ditampilkan dalam unit asli (dolar,
+      tahun, %) memakai cleaned_lending_club.csv + expm1() pada annual_inc.
+  [x] purpose_small_business dikeluarkan dari input clustering, dipakai
+      sebagai cross-reference pasca-clustering.
+  [x] K optimal (K=2) dipilih otomatis dari argmax(silhouette_scores),
+      bukan hardcode lagi.
+  [x] Justifikasi metodologis PCA (cumulative explained variance),
+      pemilihan linkage Ward, dan pendekatan UMAP untuk DBSCAN — semua
+      didukung narasi yang koheren dan menunjukkan pemahaman konsep.
+  [x] Narasi Cluster Business Profiles arahnya benar (Cluster 0 = high
+      risk, Cluster 1 = low risk) dan konsisten dengan default rate aktual.
+
+MASIH PERLU DIPERBAIKI (ditemukan dari review kode + output aktual):
+  [ ] DBSCAN masih jatuh ke 1 cluster raksasa — ada gap eps yang belum
+      dijelajahi (0.25 - 0.50) sebelum menyimpulkan "data kontinu, tidak
+      ada struktur cluster".
+  [ ] Comparison table menampilkan Silhouette Score DBSCAN = -1, padahal
+      itu nilai placeholder yang gagal terisi, bukan hasil pengukuran.
+  [ ] Dendrogram (justifikasi metode linkage) dan model final Hierarchical
+      dihitung di ruang fitur yang BERBEDA (raw scaled vs PCA).
+  [ ] Metrik validitas (silhouette/Davies-Bouldin) untuk Hierarchical
+      tidak dihitung sama sekali, cuma ditulis "N/A (Visual)".
+  [ ] Komentar & print message masih menyebut "10.000 baris" padahal
+      kode sudah pakai sample 100.000 baris — sisa dari revisi lama.
+  [ ] Angka di narasi Cluster Business Profiles sedikit meleset dari
+      angka centroid aktual (income, dti, default rate).
+
+
+--------------------------------------------------------------------------------
+2. BUKTI / EVIDENCE DARI OUTPUT EKSEKUSI AKTUAL
+--------------------------------------------------------------------------------
+
+2.1 DBSCAN — loop tuning eps di ruang UMAP (cell 23):
+
+    eps=0.10 | clusters=2   | noise=19963 (99.8%) | sil=0.9851
+    eps=0.25 | clusters=180 | noise=8575  (42.9%) | sil=0.1437
+    eps=0.50 | clusters=1   | noise=164   (0.8%)  | sil=nan
+    eps=0.75 | clusters=1   | noise=3     (0.0%)  | sil=nan
+    eps=1.00 | clusters=1   | noise=0     (0.0%)  | sil=nan
+    eps=1.25 | clusters=1   | noise=0     (0.0%)  | sil=nan
+    eps=1.50 | clusters=1   | noise=0     (0.0%)  | sil=nan
+    eps=2.00 | clusters=1   | noise=0     (0.0%)  | sil=nan
+
+    -> Tidak ada eps yang memenuhi syarat (>=2 cluster, noise<20%).
+       Fallback ke eps=0.5. Hasil akhir: 1 cluster + 164 noise (0.8%).
+
+    Analisis: ada GAP BESAR antara eps=0.25 (180 cluster, noise 42.9%)
+    dan eps=0.50 (1 cluster, noise 0.8%). Transisi dari "terlalu
+    terfragmentasi" ke "satu blob raksasa" terjadi somewhere di rentang
+    ini, tapi belum pernah dicoba nilai di antaranya.
+
+    Konfirmasi di comparison table (cell 28):
+      DBSCAN | N Clusters=1 | Silhouette Score=-1 | Noise Points=164
+    Nilai -1 adalah placeholder awal variabel best_sil yang tidak
+    pernah terupdate karena tidak ada eps yang lolos syarat kondisi.
+
+
+2.2 Hierarchical — inkonsistensi ruang fitur:
+
+    Cell 16 (dendrogram, untuk MEMILIH metode linkage):
+        X_hier = X_scaled_final[idx_hier]   # ruang 7 fitur RAW SCALED
+
+    Cell 18 (fit MODEL FINAL yang dipakai untuk profiling):
+        hier_labels = hier_final.fit_predict(X_pca[subset_20k_indices])
+                                              # ruang 5 KOMPONEN PCA
+
+    Dendrogram yang dipakai untuk menjustifikasi "ward adalah metode
+    terbaik" (cell 17) digambar di ruang 7-fitur, tapi model final
+    yang benar-benar menghasilkan hier_labels berjalan di ruang PCA
+    5D. Struktur dendrogram di kedua ruang berpotensi berbeda.
+
+
+2.3 Metrik Hierarchical tidak dihitung (cell 28):
+
+    'Silhouette Score': [sil_score, best_sil, 'N/A (Visual)'],
+    'Davies-Bouldin':   [db_score, np.nan, 'N/A'],
+
+    hier_labels sudah tersedia sejak cell 18, tapi tidak pernah dipakai
+    untuk menghitung silhouette_score() atau davies_bouldin_score().
+
+
+2.4 Komentar tidak sinkron dengan kode (cell 3 & 36):
+
+    Cell 3:
+        # Lakukan random sampling 10.000 baris        <- SALAH, sisa lama
+        X_sample_scaled = df_scaled.sample(n=100000, random_state=42)
+        # Menggunakan sampel 100.000 data agar tidak memberatkan laptop
+
+    Cell 36:
+        print(f"  phase2_clustered_sample.csv — dataset 10.000 baris...")
+                                                          <- SALAH, harusnya 100.000
+
+
+2.5 Narasi vs angka centroid aktual (cell 31 vs cell 32):
+
+    Data aktual (cell 31):
+                    loan_amnt  grade  annual_inc    dti   fico   revol_util  emp_length
+    Cluster 0        14520.18   3.22    69729.96  20.33  681.72    61.56        5.87
+    Cluster 1        15959.02   1.76    87307.97  15.33  726.34    31.70        6.05
+    Default Rate: Cluster 0 = 17.07%, Cluster 1 = 7.21%
+
+    Klaim narasi (cell 32):
+      Cluster 0: income "~$72k" (aktual $69.73k), DTI "20.04%" (aktual
+      20.33%), default rate "16.9%" (aktual 17.07%)
+      Cluster 1: income "~$82.8k" (aktual $87.31k), grade "1.74"
+      (aktual 1.76)
+
+    Arah kesimpulan bisnis tetap benar (Cluster 0 = high-risk, Cluster 1
+    = low-risk), tapi angka presisinya tidak persis sama dengan output
+    run terakhir — kemungkinan sisa dari run sebelum sample size /
+    parameter berubah.
+
+
+--------------------------------------------------------------------------------
+3. RENCANA PERBAIKAN — PRIORITAS
+--------------------------------------------------------------------------------
+
+PRIORITAS 1 — Eksplorasi gap eps DBSCAN (cell 23)
+------------------------------------------------------
+Masalah: rentang eps 0.25 - 0.50 belum dijelajahi, padahal transisi
+dari over-fragmented ke 1-blob-raksasa kemungkinan terjadi di situ.
+
+Implementasi:
+
+    min_samples_val = max(5, 2 * len(clustering_input_features))
+    # Perluas kandidat eps dengan grid lebih rapat di rentang 0.25-0.50
+    eps_candidates = [0.10, 0.15, 0.20, 0.25, 0.28, 0.30, 0.32, 0.35,
+                       0.38, 0.40, 0.42, 0.45, 0.48, 0.50, 0.75, 1.00]
+    best_eps = 0.5
+    best_sil = -1
+
+    print("Mencari parameter eps DBSCAN optimal di atas ruang UMAP...")
+    for eps_try in eps_candidates:
+        db_try = DBSCAN(eps=eps_try, min_samples=min_samples_val,
+                        metric='euclidean', algorithm='ball_tree', n_jobs=-1)
+        labels_try = db_try.fit_predict(X_umap)
+        n_clust = len(set(labels_try)) - (1 if -1 in labels_try else 0)
+        n_noise = list(labels_try).count(-1)
+        noise_pct = n_noise / len(labels_try) * 100
+
+        sil = np.nan
+        if n_clust > 1:
+            mask = labels_try != -1
+            sil = silhouette_score(X_umap[mask], labels_try[mask])
+
+        print(f"eps={eps_try:.2f} | clusters={n_clust} | noise={n_noise} "
+              f"({noise_pct:.1f}%) | sil={sil}")
+
+        if n_clust >= 2 and noise_pct < 20 and not np.isnan(sil) and sil > best_sil:
+            best_sil = sil
+            best_eps = eps_try
+
+    if best_sil == -1:
+        print('\nTidak ada eps yang memenuhi syarat meski sudah diperluas. '
+              'Fallback ke eps=0.5 — kemungkinan data memang kontinu tanpa '
+              'jurang kepadatan yang jelas.')
+        best_eps = 0.5
+    else:
+        print(f"\nTerpilih eps={best_eps} (silhouette={best_sil:.4f})")
+
+Catatan: jika setelah grid lebih rapat tetap tidak ada kandidat yang
+lolos syarat noise<20%, boleh dinaikkan sedikit ke noise<30% sebagai
+kompromi, ATAU terima kesimpulan "data kontinu" sebagai insight yang
+sudah teruji (bukan asumsi) dan lanjutkan dengan narasi yang ada di
+cell 26 (yang sudah cukup baik framingnya).
+
+Expected outcome: minimal ditemukan 1 titik eps yang memberi >=2
+cluster dengan noise proporsional, ATAU insight "data kontinu" benar-
+benar teruji karena sudah menjelajahi seluruh rentang yang masuk akal.
+
+
+PRIORITAS 2 — Fix placeholder -1 di comparison table (cell 28)
+--------------------------------------------------------------------
+Masalah: Silhouette Score DBSCAN tampil sebagai -1 (nilai default yang
+gagal terisi), bisa disalahartikan sebagai hasil pengukuran nyata.
+
+Implementasi:
+
+    dbscan_sil_display = best_sil if best_sil != -1 else np.nan
+
+    comparison_data = {
+        'Algorithm': ['K-Means', 'DBSCAN', 'Hierarchical (Ward)'],
+        'N Clusters': [optimal_k, n_clusters_dbscan, optimal_k],
+        'Silhouette Score': [sil_score, dbscan_sil_display, hier_sil_score],
+        'Davies-Bouldin': [db_score, np.nan, hier_db_score],
+        'Noise Points': [0, n_noise, 0]
+    }
+    print("=== PERBANDINGAN METRIK CLUSTERING ===")
+    df_comparison = pd.DataFrame(comparison_data)
+    print(df_comparison.to_string(index=False))
+
+    if pd.isna(dbscan_sil_display):
+        print("\nCatatan: DBSCAN tidak memiliki Silhouette Score yang valid "
+              "karena tidak ditemukan konfigurasi eps dengan >=2 cluster "
+              "dan noise<20%. Hasil akhir adalah 1 cluster dominan + noise "
+              "points (lihat interpretasi di STEP 2.4).")
+
+(hier_sil_score dan hier_db_score dihitung di Prioritas 4 di bawah)
+
+Expected outcome: tabel perbandingan tidak lagi menampilkan angka yang
+menyesatkan; ada catatan eksplisit kalau DBSCAN memang tidak
+menghasilkan silhouette yang valid.
+
+
+PRIORITAS 3 — Samakan ruang fitur dendrogram vs model final Hierarchical
+--------------------------------------------------------------------------
+Masalah: dendrogram (cell 16) dipakai untuk justifikasi metode linkage
+di ruang 7-fitur (X_scaled_final), tapi model final (cell 18) di-fit
+di ruang PCA 5D (X_pca). Keduanya harus konsisten.
+
+Implementasi (opsi A — REKOMENDASI: samakan ke ruang PCA):
+
+    # Cell 16 — ganti sumber data dendrogram jadi X_pca
+    n_hier = 2000
+    idx_hier = np.random.RandomState(42).choice(len(X_pca), size=n_hier, replace=False)
+    X_hier = X_pca[idx_hier]   # <- diubah dari X_scaled_final ke X_pca
+
+    linkage_methods = ['ward', 'complete', 'average', 'single']
+    fig, axes = plt.subplots(2, 2, figsize=(16,10))
+
+    for ax, method in zip(axes.flatten(), linkage_methods):
+        Z = linkage(X_hier, method=method)
+        dendrogram(Z, ax=ax, truncate_mode='lastp', p=30,
+                   show_leaf_counts=True, color_threshold=0.7 * max(Z[:, 2]))
+        ax.set_title(f'Dendrogram ({method.capitalize()}) — Ruang PCA')
+    plt.tight_layout()
+    plt.show()
+
+Implementasi (opsi B — alternatif: jelaskan perbedaan ruang secara
+eksplisit jika sengaja dipertahankan berbeda):
+
+    Tambahkan 1-2 kalimat di cell 17 yang menjelaskan bahwa dendrogram
+    dijalankan di ruang fitur asli (interpretasi lebih mudah dibaca per
+    variabel), sedangkan model final di ruang PCA (lebih efisien
+    komputasi untuk 20k baris), dan bahwa kedua ruang menghasilkan
+    kesimpulan metode linkage yang sama (perlu diverifikasi ulang
+    dengan menjalankan dendrogram singkat di ruang PCA sebagai
+    pembanding cepat).
+
+Expected outcome: justifikasi pemilihan "ward" benar-benar mencerminkan
+ruang fitur yang dipakai model final, bukan ruang yang berbeda.
+
+
+PRIORITAS 4 — Hitung metrik validitas untuk Hierarchical (cell 18)
+------------------------------------------------------------------------
+Masalah: silhouette/Davies-Bouldin untuk Hierarchical tidak dihitung,
+cuma ditulis "N/A (Visual)" di comparison table — padahal labelnya
+sudah tersedia dan tinggal satu baris kode.
+
+Implementasi:
+
+    from sklearn.cluster import AgglomerativeClustering
+    from sklearn.metrics import davies_bouldin_score
+
+    print("Membangun final Hierarchical model (Ward)...")
+    hier_final = AgglomerativeClustering(n_clusters=optimal_k, linkage='ward',
+                                          metric='euclidean')
+    hier_labels = hier_final.fit_predict(X_pca[subset_20k_indices])
+
+    # Tambahan: hitung metrik validitas
+    hier_sil_score = silhouette_score(X_pca[subset_20k_indices], hier_labels)
+    hier_db_score  = davies_bouldin_score(X_pca[subset_20k_indices], hier_labels)
+
+    print(f"Model Hierarchical berhasil dilatih.")
+    print(f"Silhouette: {hier_sil_score:.4f}, Davies-Bouldin: {hier_db_score:.4f}")
+
+Lalu update comparison table di cell 28 untuk memakai hier_sil_score
+dan hier_db_score (bukan lagi string 'N/A (Visual)').
+
+Expected outcome: ketiga algoritma punya metrik validitas kuantitatif
+yang bisa dibandingkan (dengan catatan limitasi ruang tetap
+dipertahankan untuk DBSCAN vs 2 lainnya).
+
+
+PRIORITAS 5 — Sinkronkan komentar & print message (cell 3 & 36)
+------------------------------------------------------------------
+Masalah: komentar dan print message masih menyebut "10.000 baris",
+padahal kode sudah pakai 100.000.
+
+Implementasi:
+
+    # Cell 3 — perbaiki komentar
+    # Lakukan random sampling 100.000 baris
+    X_sample_scaled = df_scaled.sample(n=100000, random_state=42)
+    # Menggunakan sampel 100.000 data agar tidak memberatkan laptop
+
+    # Cell 36 — perbaiki print message
+    print("=== FILE TERSIMPAN ===")
+    print(f"  kmeans_final.pkl            — model K-Means")
+    print(f"  phase2_clustered_sample.csv — dataset {len(df_cluster_result):,} "
+          f"baris dengan label cluster")
+
+Catatan: pakai f-string dengan len(df_cluster_result) supaya angka
+selalu otomatis sinkron dengan kode, tidak perlu hardcode lagi di masa
+depan kalau sample size berubah lagi.
+
+Expected outcome: tidak ada lagi jejak dokumentasi yang bertentangan
+dengan kode aktual — penting untuk kriteria rubric "clear justification
+/ documentation" di Preprocessing dan konsistensi laporan secara umum.
+
+
+PRIORITAS 6 — Update angka narasi Cluster Business Profiles (cell 32)
+------------------------------------------------------------------------
+Masalah: angka di narasi (income, dti, default rate) sedikit meleset
+dari angka aktual di cell 31.
+
+Implementasi: copy ulang angka PERSIS dari output cell 31 setelah
+seluruh perbaikan di atas selesai dan notebook di-run ulang (karena
+angka bisa sedikit berubah lagi jika Prioritas 1/3/4 mengubah hasil
+clustering). Draft berdasarkan angka SAAT INI (cek ulang setelah re-run):
+
+    ### Cluster Business Profiles
+
+    Berdasarkan hasil kalkulasi algoritma, mesin menetapkan K=2 sebagai
+    jumlah klaster yang paling natural (Silhouette Score tertinggi:
+    0.1889). Setelah dipetakan kembali ke data aslinya, kita mendapatkan
+    profil peminjam yang sangat kontras:
+
+    **Cluster 0 — "High-Risk Subprime Borrowers" (62.2%)**
+    Pendapatan tahunan lebih rendah (~$69.7k), rasio beban utang tinggi
+    (DTI: 20.33%), utilitas kartu kredit hampir penuh (Revol Util:
+    61.56%). Skor FICO rata-rata di zona bawah (681.72). Grade rata-rata
+    C/D (3.22). Tingkat gagal bayar tinggi (17.07%).
+
+    **Cluster 1 — "Low-Risk Prime Borrowers" (37.8%)**
+    Pendapatan jauh lebih tinggi (~$87.3k), keuangan sehat (DTI rendah:
+    15.33%), jarang memakai limit kredit (Revol Util: 31.70%). Skor
+    FICO prima (726.34). Grade rata-rata A/B (1.76). Tingkat gagal bayar
+    rendah (7.21%).
+
+PENTING: angka di atas adalah snapshot SAAT INI (sebelum Prioritas 1/3/4
+dijalankan). Setelah eps DBSCAN diperluas dan ruang fitur Hierarchical
+disamakan, WAJIB re-run seluruh notebook dan cek ulang apakah K-Means
+(cell 11-14) masih menghasilkan K=2 dengan angka centroid yang sama,
+karena perubahan di step lain seharusnya tidak mempengaruhi K-Means
+tapi tetap perlu diverifikasi.
+
+Expected outcome: setiap angka di narasi bisa langsung dicocokkan 1:1
+ke output cell 31, tidak ada lagi selisih presisi.
+
+
+--------------------------------------------------------------------------------
+4. URUTAN EKSEKUSI
+--------------------------------------------------------------------------------
+
+  1. Perluas eps_candidates DBSCAN (Prioritas 1)          -> cell 23
+  2. Samakan ruang fitur dendrogram ke PCA (Prioritas 3)  -> cell 16, 17
+  3. Tambahkan metrik validitas Hierarchical (Prioritas 4) -> cell 18
+  4. Re-run cell 16 - 28 (Hierarchical, DBSCAN, comparison table) karena
+     langkah 1-3 di atas saling mempengaruhi hasil di step ini
+  5. Fix placeholder -1 di comparison table (Prioritas 2)  -> cell 28
+  6. Sinkronkan komentar/print sample size (Prioritas 5)   -> cell 3, 36
+  7. Update angka narasi Cluster Business Profiles memakai output
+     TERBARU setelah langkah 1-6 (Prioritas 6)             -> cell 32
+  8. Restart & Run All dari awal notebook untuk memastikan seluruh
+     alur konsisten tanpa error dan semua angka benar-benar final
+
+
+--------------------------------------------------------------------------------
+5. CHECKLIST VERIFIKASI AKHIR
+--------------------------------------------------------------------------------
+
+  [ ] Kandidat eps DBSCAN mencakup rentang 0.25-0.50 dengan grid rapat
+  [ ] Comparison table tidak lagi menampilkan Silhouette Score = -1
+      untuk DBSCAN (harus NaN + catatan penjelasan, atau angka valid
+      jika tuning yang diperluas berhasil menemukan konfigurasi baru)
+  [ ] Dendrogram (justifikasi linkage) dan model final Hierarchical
+      memakai ruang fitur yang SAMA (idealnya X_pca)
+  [ ] Hierarchical punya Silhouette Score & Davies-Bouldin yang
+      dihitung, bukan lagi string "N/A (Visual)"
+  [ ] Tidak ada lagi komentar/print yang menyebut "10.000 baris" saat
+      kode sebenarnya memproses 100.000 baris
+  [ ] Setiap angka (income, dti, fico, default rate) di narasi Cluster
+      Business Profiles cocok PERSIS dengan output centroid_df &
+      cluster_summary yang terbaru
+  [ ] Notebook di-restart & run all dari cell paling awal, dipastikan
+      tidak ada error di sepanjang alur
+
+
+================================================================================
+CATATAN AKHIR
+================================================================================
+Notebook versi ini jauh lebih matang secara metodologi dibanding
+revisi-revisi sebelumnya — pendekatan PCA untuk K-Means/Hierarchical
+dan UMAP untuk DBSCAN menunjukkan pemahaman konsep yang baik, dan
+sebagian besar masalah struktural dari revisi sebelumnya (double-
+scaling, fitur biner mendominasi jarak, K hardcode) sudah benar-benar
+tuntas. Perbaikan yang tersisa di dokumen ini levelnya "polish &
+konsistensi" — eksplorasi eps yang lebih menyeluruh, penyamaan ruang
+fitur antar step, dan sinkronisasi angka/dokumentasi — bukan lagi
+masalah konseptual.
+================================================================================
