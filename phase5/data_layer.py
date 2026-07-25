@@ -42,7 +42,6 @@ def _path(key):
 def file_available(key):
     return os.path.exists(_path(key))
 
-
 # ---------------------------------------------------------------------------
 # PHASE 1 -- Preprocessing summary (angka aktual dari notebook Phase 1)
 # ---------------------------------------------------------------------------
@@ -145,7 +144,6 @@ def _synthetic_cluster_sample(n_per_cluster=900, seed=42):
         }))
     return pd.concat(rows, ignore_index=True)
 
-
 # ---------------------------------------------------------------------------
 # PHASE 3 -- Association rules (angka aktual dari notebook Phase 3)
 # ---------------------------------------------------------------------------
@@ -223,7 +221,6 @@ def load_rules():
         return df, True
     return TOP_RULES_RAW.copy(), False
 
-
 # ---------------------------------------------------------------------------
 # PHASE 4 -- Anomaly detection (angka aktual dari notebook Phase 4)
 # ---------------------------------------------------------------------------
@@ -298,7 +295,6 @@ def _synthetic_anomaly_sample(seed=7):
             "Anomaly_Typology": t["typology"],
         }))
     return pd.concat(rows, ignore_index=True)
-
 
 # ---------------------------------------------------------------------------
 # KDD Pipeline funnel (dipakai di tab Overview)

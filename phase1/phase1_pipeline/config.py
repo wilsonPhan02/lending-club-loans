@@ -6,7 +6,6 @@ di dalam modul, agar setiap keputusan dapat ditinjau & dijustifikasi di satu tem
 import os
 
 # Anchor path ke root proyek via __file__ (robust, tak bergantung working directory).
-# config.py ada di <root>/phase1/phase1_pipeline/ -> naik dua level = root.
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 def _raw(f):  return os.path.join(_ROOT, "data", "raw", f)
 def _proc(f): return os.path.join(_ROOT, "data", "processed", f)
@@ -86,7 +85,7 @@ MI_NEIGHBORS    = 5
 MINING_CORE     = ["grade", "annual_inc", "dti", "fico_range_low", "revol_util",
                    "emp_length", "loan_amnt", "term"]
 TARGET_K        = 12         # ukuran subset final (selaras mining angle + interpretabilitas)
-CORR_GUARD      = 0.70       # tolak fitur MI-driven yang redundan (|r| > ini) dgn subset
+CORR_GUARD      = 0.70       # tolak fitur MI-driven yang redundan (|r| > ini) dengan subset
 
 # ---------------------------------------------------------------- Dimensionality reduction
 PCA_VARIANCE   = 0.90
@@ -99,7 +98,7 @@ UMAP_DENSMAP   = True
 
 # ---------------------------------------------------------------- Output (di data/processed/)
 OUTPUTS = {
-    "cleaned":        _proc("cleaned_lending_club.csv"),                 # subset final, TER-TRANSFORM (winsor+log); utk profiling bisnis pakai no_winsor
+    "cleaned":        _proc("cleaned_lending_club.csv"),                 # subset final, TER-TRANSFORM (winsor+log); untuk profiling bisnis pakai no_winsor
     "no_winsor":      _proc("cleaned_lending_club_no_winsorization.csv"),# nilai asli -> Phase 4 anomaly
     "scaled":         _proc("scaled_lending_club.csv"),                  # subset final, scaled
     "pca":            _proc("lending_club_pca.csv"),                     # -> K-Means / Hierarchical

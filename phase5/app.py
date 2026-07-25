@@ -35,7 +35,6 @@ umap_sample,    umap_is_real     = dl.load_umap_sample()
 rules_raw,      rules_is_real    = dl.load_rules()
 anomaly_sample, anomaly_is_real  = dl.load_anomaly_report()
 
-# Pastikan tipe kolom cluster konsisten
 if "kmeans_cluster" in cluster_sample.columns:
     cluster_sample["kmeans_cluster"] = cluster_sample["kmeans_cluster"].astype(int)
 
@@ -164,7 +163,7 @@ FIG_PROFILE.update_layout(
     barmode="group"
 )
 
-# --- Tab 2: Cluster map UMAP (statis; sesuai deliverable "cluster maps") ---
+# --- Tab 2: Cluster map UMAP ---
 FIG_UMAP = None
 if umap_sample is not None:
     FIG_UMAP = go.Figure()
@@ -186,7 +185,7 @@ if umap_sample is not None:
         title_font_size=13, xaxis_title="UMAP-1", yaxis_title="UMAP-2",
         legend=dict(orientation="h", yanchor="bottom", y=-0.15, itemsizing="constant"))
 
-# --- Tab 3: Rule network (sesuai deliverable "rule networks") ---
+# --- Tab 3: Rule network ---
 _top_net = rules_raw.nlargest(12, "lift")
 _items = sorted(set(_top_net["antecedents"].str.split(", ").sum() +
                     _top_net["consequents"].str.split(", ").sum()))
@@ -316,7 +315,6 @@ app = dash.Dash(
 )
 server = app.server
 
-
 # ---------------------------------------------------------------------------
 # Helper components
 # ---------------------------------------------------------------------------
@@ -346,7 +344,6 @@ def section_header(title, subtitle=""):
     if subtitle:
         elems.append(html.Div(subtitle, className="tab-content-sub"))
     return html.Div(elems, className="section-header")
-
 
 # ---------------------------------------------------------------------------
 # HEADER & KPI ROW (built once at module level)
@@ -389,12 +386,12 @@ kpi_row = html.Div([
     kpi_card(f"{dl.ANOMALY_STRONG_TOTAL:,}",          "Anomali Terdeteksi", "🔍"),
 ], className="kpi-row")
 
-
 # ===========================================================================
 # TAB CONTENT FUNCTIONS
 # Setiap fungsi hanya merakit HTML. Semua figure sudah ada sebagai FIG_*
 # → tidak ada komputasi figure di dalam fungsi ini.
 # ===========================================================================
+
 
 def tab_overview():
     pipeline_cards = html.Div([
@@ -812,7 +809,6 @@ def tab_expo():
         ], className="card"),
     ])
 
-
 # ===========================================================================
 # LAYOUT
 # ===========================================================================
@@ -846,7 +842,6 @@ app.layout = html.Div([
     ], className="app-footer"),
 ])
 
-
 # ===========================================================================
 # CALLBACKS — hanya filter DataFrame kecil (pre-sampled), tidak ada komputasi berat
 # ===========================================================================
@@ -862,7 +857,6 @@ def render_tab(tab):
         "tab-expo":         tab_expo,
     }.get(tab, tab_overview)()
 
-
 @app.callback(
     Output("cluster-scatter", "figure"),
     [Input("cluster-filter", "value"),
@@ -877,7 +871,6 @@ def update_cluster_scatter(selected, x_col, y_col):
     df = SCATTER_CLUSTER if selected == "all" else \
          SCATTER_CLUSTER[SCATTER_CLUSTER["kmeans_cluster"] == int(selected)]
 
-    # Pemetaan label Indonesia yang manusiawi
     col_labels = {
         "annual_inc": "Pendapatan Tahunan ($, clip $1jt)",
         "dti": "Rasio Utang/Penghasilan (%)",
@@ -907,7 +900,6 @@ def update_cluster_scatter(selected, x_col, y_col):
     )
     return fig
 
-
 @app.callback(Output("rule-list-output", "children"), Input("rule-cat-filter", "value"))
 def update_rule_list(selected_cat):
     """Filter list aturan (15 baris max) — selalu <10ms."""
@@ -929,7 +921,6 @@ def update_rule_list(selected_cat):
     return html.Ul(items,
                    style={"paddingLeft": "18px", "maxHeight": "280px",
                           "overflowY": "auto", "marginTop": "4px"})
-
 
 @app.callback(Output("anomaly-scatter", "figure"), Input("typology-filter", "value"))
 def update_anomaly_scatter(selected):
@@ -959,7 +950,6 @@ def update_anomaly_scatter(selected):
         legend=dict(orientation="h", yanchor="bottom", y=-0.18),
     )
     return fig
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=8050)
