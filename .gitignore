@@ -1,0 +1,13 @@
+# Data (terlalu besar untuk git; regenerate via pipeline)
+data/raw/
+data/processed/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
