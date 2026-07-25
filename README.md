@@ -54,7 +54,7 @@ Perbedaan versi umumnya menggeser angka pada desimal terakhir (mis. proporsi clu
 
 Dua file dependensi dengan peran berbeda:
 
-- `requirements.txt` — 12 dependensi langsung dengan rentang versi. Dipakai untuk pemasangan biasa; toleran terhadap versi baru.
-- `requirements-lock.txt` — snapshot `pip freeze` dari environment yang menghasilkan angka pada laporan: 135 paket (termasuk dependensi transitif seperti `numba` dan `llvmlite`) terkunci ke versi persis, plus catatan versi interpreter. Pakai file ini bila ingin angka yang identik: `pip install -r requirements-lock.txt`.
+- `requirements.txt` — dependensi langsung. Library yang mempengaruhi angka hasil analisis (pandas, numpy, scikit-learn, scipy, mlxtend, umap-learn, plus `numba`/`llvmlite`) dikunci pada minor version dengan `~=`; library visualisasi dibiarkan longgar. Portabel lintas sistem operasi dan cukup untuk memperoleh angka yang sama.
+- `requirements-lock.txt` — snapshot `pip freeze` lengkap (135 paket) dari environment yang menghasilkan angka pada laporan, plus catatan versi interpreter. Berguna sebagai rujukan persis, tetapi memuat paket khusus Windows (mis. `pywinpty`) sehingga pemasangannya bisa gagal di macOS/Linux; pakai `requirements.txt` untuk pemasangan lintas platform.
 
 Untuk menjalankan dari nol, satu-satunya berkas yang perlu diunduh manual adalah dataset mentah dari Kaggle ke `data/raw/` (tidak di-commit karena ukurannya). Sisanya diregenerasi oleh Phase 1. Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) dan data dashboard (`phase5/csv/`) ikut di-commit, sehingga laporan dapat diperiksa dan dashboard dapat dijalankan tanpa mengunduh data mentah maupun menjalankan ulang pipeline.
