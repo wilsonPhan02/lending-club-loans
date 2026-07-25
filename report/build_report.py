@@ -97,14 +97,14 @@ h("Executive Summary", 1)
 p("Analisis KDD atas 2.260.668 pinjaman Lending Club menemukan bahwa risiko gagal bayar "
   "terkonsentrasi pada segmen mayoritas: 62,1 persen peminjam berada dalam satu segmen "
   "dengan tingkat charged-off 14,4 persen, hampir dua kali lipat segmen prime (7,8 persen), "
-  "dan pembeda utamanya adalah penghasilan serta utilisasi kredit revolving, bukan skor FICO. "
-  "Praktik penilaian yang bertumpu pada grade dan status outlier tidak menangkap hal ini: "
-  "grade internal terbukti hampir sepenuhnya cerminan suku bunga (hanya 1 dari 1.023 aturan "
-  "asosiasi yang memprediksi Grade A tanpa suku bunga), dan outlier statistik justru "
-  "didominasi nasabah affluent yang membayar lancar (bad-rate 8,7 persen vs populasi "
-  "13,1 persen). Bank sebaiknya mengkalibrasi harga dan limit pada penghasilan dan utilisasi "
-  "revolving, dan mengganti flag berbasis outlier dengan aturan kombinasi atribut tekanan "
-  "kredit yang terbukti menaikkan risiko gagal bayar 1,47 kali (19,2 persen).")
+  "dan segmen ini terpisah paling tajam pada kombinasi FICO, utilisasi revolving, dan ukuran "
+  "pinjaman. Dua hal yang belum tercermin dalam praktik saat ini: grade internal hampir "
+  "sepenuhnya cerminan suku bunga (hanya 1 dari 1.023 aturan asosiasi yang memprediksi "
+  "Grade A tanpa suku bunga), dan outlier statistik justru didominasi nasabah affluent yang "
+  "membayar lancar (bad-rate 8,7 persen vs populasi 13,1 persen). Bank sebaiknya "
+  "mengkalibrasi harga dan limit pada kombinasi atribut tersebut, dan mengganti flag "
+  "berbasis outlier dengan aturan kombinasi atribut tekanan kredit yang tervalidasi "
+  "menaikkan risiko gagal bayar 1,47 kali (19,2 persen).")
 
 # ================================================================= 2. METHODOLOGY
 h("Dataset and Methodology", 1)
@@ -178,9 +178,12 @@ h("Evidence", 3)
 p("Segmentasi K-Means membelah populasi menjadi dua. Cluster 0 (dinamai Higher-risk) "
   "mencakup 62,1 persen peminjam dengan tingkat charged-off 14,4 persen; Cluster 1 (Prime) "
   "mencakup 37,9 persen dengan charged-off 7,8 persen. Tingkat di sini dihitung dari status "
-  "Charged Off saja (rata-rata populasi 11,9 persen). Pembeda utama bukan FICO (684 "
-  "berbanding 722), melainkan penghasilan tahunan (63 ribu berbanding 102 ribu dolar) dan "
-  "utilisasi revolving (58 berbanding 37 persen).")
+  "Charged Off saja (rata-rata populasi 11,9 persen). Dalam satuan simpangan baku (selisih "
+  "z-score antar cluster, konsisten dengan radar profil Phase 2), pembeda paling tajam "
+  "adalah FICO (1,15 SD; 684 berbanding 722), disusul ukuran pinjaman (0,87 SD; 12 ribu "
+  "berbanding 20 ribu dolar) dan utilisasi revolving (0,85 SD; 58 berbanding 37 persen); "
+  "gap penghasilan besar secara nominal (63 ribu berbanding 102 ribu dolar) tetapi hanya "
+  "0,35 SD karena varians penghasilan sangat lebar.")
 h("Corroboration", 3)
 p("Hierarchical clustering linkage Ward menghasilkan pembagian dua kelompok serupa "
   "(Adjusted Rand Index 0,357, moderat); tabel silang menempatkan mayoritas anggota pada "
@@ -190,12 +193,13 @@ p("Hierarchical clustering linkage Ward menghasilkan pembagian dua kelompok seru
 h("Business Implication", 3)
 p("Intuisi umum menduga peminjam bermasalah adalah minoritas kecil. Data menunjukkan "
   "sebaliknya: hampir dua pertiga buku pinjaman berada di segmen yang lebih berisiko, dan "
-  "pembedanya adalah kapasitas bayar serta tekanan kredit, bukan semata skor FICO.")
+  "risiko itu terbaca dari beberapa atribut sekaligus, bukan satu skor tunggal: utilisasi "
+  "revolving dan ukuran pinjaman menambah pemisahan hampir sebesar FICO.")
 h("Recommended Action", 3)
-p("Tim kebijakan kredit sebaiknya mengkalibrasi harga dan limit terhadap penghasilan dan "
-  "utilisasi revolving, tidak bersandar pada FICO saja. Karena segmen Higher-risk berukuran "
-  "besar, perbaikan kecil pada penetapan harga segmen ini berdampak jauh lebih besar pada "
-  "kerugian portofolio dibanding menyaring minoritas ekor.")
+p("Tim kebijakan kredit sebaiknya mengkalibrasi harga dan limit pada kombinasi FICO, "
+  "utilisasi revolving, dan ukuran pinjaman, bukan FICO tunggal. Karena segmen Higher-risk "
+  "berukuran besar, perbaikan kecil pada penetapan harga segmen ini berdampak jauh lebih "
+  "besar pada kerugian portofolio dibanding menyaring minoritas ekor.")
 
 h("Finding 2 — Grade internal hampir sepenuhnya cerminan suku bunga (ARM)", 2)
 p("Hanya 1 dari 1.023 rule yang memprediksi Grade A tanpa suku bunga, dan satu-satunya "
