@@ -31,6 +31,7 @@ DATA_FILES = {
     "dbscan_outliers": "csv/phase2_dbscan_outliers.csv",
     "anomaly_report": "csv/phase4_anomaly_report.csv",
     "rules": "csv/phase3_association_rules.csv",
+    "umap_sample": "csv/phase2_umap_sample.csv",
 }
 
 
@@ -57,7 +58,7 @@ PHASE1_SUMMARY = {
     "final_features": [
         "grade", "annual_inc", "dti", "fico_range_low", "revol_util",
         "emp_length", "loan_amnt", "term",
-        "bc_open_to_buy", "total_bc_limit", "all_util", "total_rev_hi_lim",
+        "bc_open_to_buy", "total_bc_limit", "all_util", "inq_last_6mths",
     ],
     "dropped_high_corr_n": 16,
     "dropped_high_corr_example": "int_rate (redundan dengan grade, |r|>0.85)",
@@ -106,6 +107,14 @@ PCA_VARIANCE = pd.DataFrame({
     "n_components": list(range(1, 10)),
     "cumulative_variance_pct": [24.8, 41.5, 52.1, 61.6, 69.9, 78.0, 83.1, 87.9, 91.5],
 })
+
+
+def load_umap_sample():
+    """Embedding UMAP 2D (sample render 40k dari 100k) + label K-Means & noise DBSCAN.
+    Kembalikan (df, is_real); None bila file tidak tersedia (chart dilewati)."""
+    if file_available("umap_sample"):
+        return pd.read_csv(_path("umap_sample")), True
+    return None, False
 
 
 def load_clustered_sample():

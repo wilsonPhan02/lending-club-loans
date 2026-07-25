@@ -31,6 +31,7 @@ import data_layer as dl
 # 1. LOAD DATA — sekali saat startup
 # ===========================================================================
 cluster_sample, cluster_is_real  = dl.load_clustered_sample()
+umap_sample,    umap_is_real     = dl.load_umap_sample()
 rules_raw,      rules_is_real    = dl.load_rules()
 anomaly_sample, anomaly_is_real  = dl.load_anomaly_report()
 
@@ -61,6 +62,9 @@ for _, _c in dl.KMEANS_CLUSTER_PROFILE.iterrows():
     _cluster_parts.append(_sub.sample(_n, random_state=42))
 SCATTER_CLUSTER = pd.concat(_cluster_parts, ignore_index=True).copy()
 SCATTER_CLUSTER["Segmen"] = SCATTER_CLUSTER["kmeans_cluster"].map(_label_map)
+# Clip tampilan (bukan data analisis): income ekstrem (maks $7,2jt; p99,9 = $636k)
+# menggencet seluruh sumbu bila tidak di-clip. Analisis Phase 2-4 memakai nilai asli.
+SCATTER_CLUSTER["annual_inc"] = SCATTER_CLUSTER["annual_inc"].clip(upper=1_000_000)
 
 # Anomaly: ambil 1.000 baris per tipologi
 _anomaly_parts = []
@@ -71,6 +75,8 @@ for _, _t in dl.ANOMALY_TYPOLOGY.iterrows():
     if _n > 0:
         _anomaly_parts.append(_sub.sample(_n, random_state=42))
 SCATTER_ANOMALY = pd.concat(_anomaly_parts, ignore_index=True).copy() if _anomaly_parts else anomaly_sample.copy()
+# Clip tampilan: data_error memuat income sampai $110jt yang merusak skala sumbu.
+SCATTER_ANOMALY["annual_inc"] = SCATTER_ANOMALY["annual_inc"].clip(upper=5_000_000)
 _anomaly_color_map = {r["typology"]: r["color"] for _, r in dl.ANOMALY_TYPOLOGY.iterrows()}
 
 # ===========================================================================
@@ -125,7 +131,7 @@ FIG_PIE.update_traces(textinfo="label+percent", textfont_size=12)
 FIG_PIE.update_layout(
     margin=dict(l=10, r=10, t=40, b=10), height=300,
     paper_bgcolor="white", font_family="Inter",
-    title="Proporsi Segmen Peminjam (sampel 100.000 baris)",
+    title="Proporsi Segmen Peminjam (populasi penuh 2.260.668 pinjaman)",
     title_font_size=14,
     legend=dict(orientation="h", yanchor="bottom", y=-0.15),
 )
@@ -157,6 +163,57 @@ FIG_PROFILE.update_layout(
     legend=dict(orientation="h", yanchor="bottom", y=-0.22, xanchor="center", x=0.5),
     barmode="group"
 )
+
+# --- Tab 2: Cluster map UMAP (statis; sesuai deliverable "cluster maps") ---
+FIG_UMAP = None
+if umap_sample is not None:
+    FIG_UMAP = go.Figure()
+    for _c in sorted(umap_sample["kmeans_cluster"].unique()):
+        _m = (umap_sample["kmeans_cluster"] == _c) & (umap_sample["is_noise"] == 0)
+        FIG_UMAP.add_scattergl(
+            x=umap_sample.loc[_m, "UMAP1"], y=umap_sample.loc[_m, "UMAP2"],
+            mode="markers", name=_label_map.get(int(_c), _c),
+            marker=dict(size=2.6, color=_color_map[_label_map[int(_c)]], opacity=0.45))
+    _mn = umap_sample["is_noise"] == 1
+    FIG_UMAP.add_scattergl(
+        x=umap_sample.loc[_mn, "UMAP1"], y=umap_sample.loc[_mn, "UMAP2"],
+        mode="markers", name=f"noise DBSCAN ({int(_mn.sum())} dari render)",
+        marker=dict(size=5, color="#0B2545", opacity=0.85))
+    FIG_UMAP.update_layout(
+        margin=dict(l=10, r=10, t=40, b=10), height=420,
+        paper_bgcolor="white", plot_bgcolor="#FAFBFC", font_family="Inter",
+        title="Cluster Map — UMAP 2D (render 40k dari sampel 100k) diwarnai K-Means; titik gelap = noise DBSCAN",
+        title_font_size=13, xaxis_title="UMAP-1", yaxis_title="UMAP-2",
+        legend=dict(orientation="h", yanchor="bottom", y=-0.15, itemsizing="constant"))
+
+# --- Tab 3: Rule network (sesuai deliverable "rule networks") ---
+_top_net = rules_raw.nlargest(12, "lift")
+_items = sorted(set(_top_net["antecedents"].str.split(", ").sum() +
+                    _top_net["consequents"].str.split(", ").sum()))
+_ang = np.linspace(0, 2*np.pi, len(_items), endpoint=False)
+_pos = {it: (np.cos(g), np.sin(g)) for it, g in zip(_items, _ang)}
+FIG_RULENET = go.Figure()
+_lmin, _lmax = _top_net["lift"].min(), _top_net["lift"].max()
+for _, _rr in _top_net.iterrows():
+    for _a in _rr["antecedents"].split(", "):
+        for _cq in _rr["consequents"].split(", "):
+            _w = 1 + 4*(_rr["lift"]-_lmin)/max(_lmax-_lmin, 1e-9)
+            FIG_RULENET.add_scatter(
+                x=[_pos[_a][0], _pos[_cq][0]], y=[_pos[_a][1], _pos[_cq][1]], mode="lines",
+                line=dict(width=_w, color="rgba(27,153,139,0.45)"), hoverinfo="text",
+                showlegend=False,
+                text=f"{_rr['antecedents']} \u2192 {_rr['consequents']}<br>lift={_rr['lift']:.2f} conf={_rr['confidence']:.2f}")
+_short = [i.split("_", 1)[-1].replace("_", " ") for i in _items]
+FIG_RULENET.add_scatter(
+    x=[_pos[i][0] for i in _items], y=[_pos[i][1] for i in _items],
+    mode="markers+text", text=_short, textposition="top center",
+    textfont=dict(size=9), marker=dict(size=11, color="#0B2545"), showlegend=False)
+FIG_RULENET.update_layout(
+    margin=dict(l=10, r=10, t=40, b=10), height=420,
+    paper_bgcolor="white", plot_bgcolor="white", font_family="Inter",
+    title="Jaringan Aturan Asosiasi (12 rule lift-tertinggi; tebal garis = lift)",
+    title_font_size=13,
+    xaxis=dict(visible=False), yaxis=dict(visible=False, scaleanchor="x"))
 
 # --- Tab 3: Bubble chart rules ---
 _r = rules_raw.copy()
@@ -412,6 +469,9 @@ def tab_segmentation():
             html.Div(dcc.Graph(figure=FIG_PIE,     config={"displayModeBar": False}), className="card"),
         ], className="row-2col"),
 
+        *([html.Div([dcc.Graph(figure=FIG_UMAP, config={"displayModeBar": False})], className="card")]
+          if FIG_UMAP is not None else []),
+
         html.Div([dcc.Graph(figure=FIG_PROFILE, config={"displayModeBar": False})], className="card"),
 
         html.Div([
@@ -519,6 +579,8 @@ def tab_rules():
             "rule kuat selalu memuat pasangan grade dan int_rate.",
         ),
 
+        html.Div([dcc.Graph(figure=FIG_RULENET, config={"displayModeBar": False})], className="card"),
+
         html.Div([dcc.Graph(figure=FIG_BUBBLE, config={"displayModeBar": False})], className="card"),
 
         html.Div([
@@ -617,8 +679,9 @@ def tab_anomaly():
             ], style={"marginTop": 0}),
             html.P(
                 "Filter berdasarkan tipe anomali untuk melihat pola sebaran tiap kelompok. "
-                "Perhatikan bahwa 'Rare Legitimate Case' cenderung ada di pojok kiri atas "
-                "(gaji sangat tinggi, pinjaman kecil).",
+                "Perhatikan bahwa 'Rare Legitimate Case' banyak berada di kanan-bawah "
+                "(gaji tinggi, pinjaman kecil), sementara 'Risk Signal' menumpuk di kiri-atas "
+                "(gaji rendah, pinjaman besar). Sumbu pendapatan di-clip $5jt agar terbaca.",
                 style={"fontSize": "13px", "color": "#5A6B85", "marginBottom": "12px"},
             ),
             dcc.Dropdown(
@@ -816,7 +879,7 @@ def update_cluster_scatter(selected, x_col, y_col):
 
     # Pemetaan label Indonesia yang manusiawi
     col_labels = {
-        "annual_inc": "Pendapatan Tahunan ($)",
+        "annual_inc": "Pendapatan Tahunan ($, clip $1jt)",
         "dti": "Rasio Utang/Penghasilan (%)",
         "fico_range_low": "Skor FICO",
         "revol_util": "Pemakaian Kartu Kredit (%)",
@@ -882,7 +945,7 @@ def update_anomaly_scatter(selected):
         color=TYPOLOGY_COL, color_discrete_map=_anomaly_color_map,
         opacity=0.55,
         labels={
-            "annual_inc": "Pendapatan Tahunan ($)",
+            "annual_inc": "Pendapatan Tahunan ($, clip $5jt)",
             "loan_amnt":  "Nilai Pinjaman ($)",
             TYPOLOGY_COL: "Tipe Anomali",
         },
