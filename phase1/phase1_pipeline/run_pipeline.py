@@ -10,6 +10,7 @@ Pemakaian:
     from phase1_pipeline import run
     art = run()            # dict berisi seluruh artefak (df_final, df_scaled, df_pca, ...)
 """
+import os
 import pandas as pd
 
 from . import config as cfg
@@ -34,7 +35,8 @@ def save_outputs(art: dict, verbose: bool = True) -> None:
     for name, obj in to_write.items():
         obj.to_csv(name, index=False)
         if verbose:
-            print(f"  tersimpan: {name:42s} {obj.shape}")
+            rel = os.path.relpath(name, cfg._ROOT).replace(os.sep, "/")
+            print(f"  tersimpan: {rel:42s} {obj.shape}")
 
 
 def run(nrows: int | None = None, save: bool = True, verbose: bool = True) -> dict:
