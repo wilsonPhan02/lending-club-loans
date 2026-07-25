@@ -1,10 +1,8 @@
 """
-Generator dashboard Phase 5 (phase5/dashboard.html).
-Membaca seluruh output fase dari data/processed/ dan merakit dashboard Plotly
-mandiri (self-contained, tanpa server): cluster map (dropdown pewarnaan), radar
-profil, risiko per segmen, rule network, rule scatter (slider min-lift), outlier
-plot, validasi bad-rate, dan distribusi populasi. Tidak ada angka yang ditulis
-manual — dashboard otomatis konsisten dengan output fase.
+Dashboard Phase 5 (phase5/dashboard.html).
+Membaca output fase dari data/processed/ lalu merakit dashboard Plotly
+satu file (tanpa server): cluster map, radar profil, rule network,
+rule scatter, outlier plot, validasi bad-rate, dan distribusi populasi.
 
 Jalankan:  python phase5/build_dashboard.py
 """
@@ -243,7 +241,7 @@ for title, sub, chart_ids in sections:
     for cid in chart_ids:
         html.append(f'<div class="card">{frag(cid)}</div>')
     html.append("</div></section>")
-html.append("<footer>Kelompok 2 · Data Mining · dihasilkan otomatis oleh phase5/build_dashboard.py</footer></body></html>")
+html.append("<footer>Kelompok 2 · Data Mining · Lending Club Loans</footer></body></html>")
 
 out = os.path.join(ROOT, "phase5", "dashboard.html")
 with open(out, "w", encoding="utf-8") as f:

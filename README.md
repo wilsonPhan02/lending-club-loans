@@ -18,8 +18,7 @@ Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,2
 ├── phase5/    Visualization & Knowledge Presentation
 │   ├── Knowledge_Discovery_Report.docx / .pdf
 │   ├── dashboard.html                Dashboard interaktif (buka langsung di browser)
-│   ├── build_dashboard.py            Generator dashboard dari output fase
-│   └── build_report.py               Generator report dari output fase
+│   └── build_dashboard.py            Kode pembuat dashboard (dari output fase)
 ├── data/
 │   ├── raw/         Data mentah (accepted_2007_to_2018Q4.csv — unduh dari Kaggle)
 │   └── processed/   Output antar-fase; hasil mining utama ikut di-commit
@@ -36,7 +35,7 @@ Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urut
 
 - **Pipeline Phase 1**: `python -m phase1_pipeline` (dari dalam `phase1/`). Path ditambatkan ke lokasi file, jadi bisa dijalankan dari direktori mana pun.
 - **Notebook**: tiap notebook memuat sel bootstrap yang otomatis berpindah ke root proyek, jalankan sel berurutan (Run All).
-- **Phase 5**: `python phase5/build_dashboard.py` dan `python phase5/build_report.py` meregenerasi dashboard dan report dari `data/processed/`.
+- **Phase 5**: `python phase5/build_dashboard.py` meregenerasi dashboard dari `data/processed/`.
 
 Dashboard (`phase5/dashboard.html`) bersifat mandiri: buka langsung di browser, tanpa server.
 
