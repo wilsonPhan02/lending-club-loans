@@ -1,6 +1,11 @@
 # Data (terlalu besar untuk git; regenerate via pipeline)
 data/raw/
-data/processed/
+data/processed/*
+# ...kecuali deliverable hasil mining (dibutuhkan grader tanpa re-run)
+!data/processed/phase2_cluster_profiles.csv
+!data/processed/phase3_association_rules.csv
+!data/processed/phase4_anomalies.csv
+!data/processed/phase4_anomaly_summary.png
 
 # Python
 __pycache__/
