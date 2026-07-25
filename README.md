@@ -32,7 +32,7 @@ Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,2
 pip install -r requirements.txt
 ```
 
-Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urutan.
+Urutan menjalankan mengikuti ketergantungan data: **Phase 1** (menghasilkan seluruh `data/processed/`) → **Phase 2** → **Phase 4** (membaca label noise DBSCAN dari Phase 2 untuk cross-reference). **Phase 3** hanya bergantung pada Phase 1 sehingga dapat dijalankan kapan saja setelahnya.
 
 - **Pipeline Phase 1**: `python -m phase1_pipeline` (dari dalam `phase1/`). Path ditambatkan ke lokasi file, jadi bisa dijalankan dari direktori mana pun.
 - **Notebook**: tiap notebook memuat sel bootstrap yang otomatis berpindah ke root proyek, jalankan sel berurutan (Run All).

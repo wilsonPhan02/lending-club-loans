@@ -11,7 +11,6 @@ Pemakaian:
     art = run()            # dict berisi seluruh artefak (df_final, df_scaled, df_pca, ...)
 """
 import os
-import pandas as pd
 
 from . import config as cfg
 from .data_loader import load_data
