@@ -40,4 +40,4 @@ Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urut
 
 Data mentah tidak di-commit (unduh dari kaggle.com/datasets/wordsforthewise/lending-club, letakkan di `data/raw/`). Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) ikut di-commit di `data/processed/` maupun `phase5/csv/` agar dapat diperiksa tanpa menjalankan ulang pipeline.
 
-Catatan environment: `umap-learn` bergantung pada `numba` yang belum mendukung NumPy >2.4 (karena itu `requirements.txt` membatasi versinya). Bila UMAP tidak dapat dihitung, sel Phase 1 terkait memakai kembali embedding tersimpan di `data/processed/lending_club_umap.csv` dengan seed dan parameter identik.
+Catatan versi: `umap-learn` bergantung pada `numba` yang mensyaratkan NumPy ≤2.4, karena itu `requirements.txt` mengunci `numpy<2.5`. Pasang dependensi lewat `pip install -r requirements.txt` sebelum menjalankan Phase 1 agar sel UMAP dapat dihitung.
