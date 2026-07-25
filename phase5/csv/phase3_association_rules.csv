@@ -1,0 +1,1024 @@
+antecedents,consequents,support,confidence,lift
+"grade_Grade A, loan_amnt_Loan Small(<10k)","int_rate_IntRate Low, revol_util_Util Excellent(<30)",0.042216,0.5148795004390672,5.353513355089286
+"grade_Grade A, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.058296,0.7735258213470623,4.825368183869786
+"grade_Grade A, revol_util_Util Excellent(<30)","int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",0.042216,0.5241098475443214,4.80975926459439
+"int_rate_IntRate Low, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), grade_Grade A",0.058296,0.5727647867950482,4.755128904418758
+"emp_length_Emp Long(8+), grade_Grade A","home_Home MORTGAGE, int_rate_IntRate Low",0.051484,0.6499520274705852,4.724312579741999
+"fico_range_low_FICO VeryGood(740-799), int_rate_IntRate Low",grade_Grade A,0.053792,0.8901833587078837,4.702699314856854
+"int_rate_IntRate Low, revol_util_Util Excellent(<30)","dti_DTI Healthy(<20), grade_Grade A",0.060452,0.6285559807020462,4.698289636294671
+"annual_inc_Inc Low(<50k), int_rate_IntRate High","grade_Grade C, loan_amnt_Loan Small(<10k)",0.046684,0.5295372050816697,4.687995370601559
+"annual_inc_Inc Low(<50k), grade_Grade B","int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",0.046896,0.5156126308382443,4.594003981238143
+"int_rate_IntRate Low, purpose_credit_card","fico_range_low_FICO Good(670-739), grade_Grade A",0.043136,0.5493912068877681,4.561079989437851
+"home_Home MORTGAGE, int_rate_IntRate Low, revol_util_Util Excellent(<30)",grade_Grade A,0.0429,0.8486311125178034,4.483185303751894
+"dti_DTI Healthy(<20), int_rate_IntRate Low, revol_util_Util Excellent(<30)",grade_Grade A,0.060452,0.8442545109211775,4.460064402727942
+"int_rate_IntRate Low, loan_amnt_Loan Small(<10k), revol_util_Util Excellent(<30)",grade_Grade A,0.042216,0.8429712460063897,4.453285115094086
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)","annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",0.046512,0.5498912323843752,4.4472311107690805
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium","grade_Grade B, loan_amnt_Loan Small(<10k)",0.046896,0.5851175325647552,4.424262261173783
+"int_rate_IntRate Low, revol_util_Util Excellent(<30)",grade_Grade A,0.080512,0.837131924804525,4.422436895402474
+"grade_Grade A, purpose_credit_card","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.043136,0.7060826294768546,4.404647603783153
+"grade_Grade A, revol_util_Util Excellent(<30)","dti_DTI Healthy(<20), int_rate_IntRate Low",0.060452,0.7505090132591747,4.324902688029728
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)","home_Home MORTGAGE, int_rate_IntRate Low",0.050032,0.5915066679277404,4.299490230328985
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)","int_rate_IntRate Low, purpose_debt_consolidation",0.044264,0.523314101957817,4.279217789862109
+"emp_length_Emp Long(8+), grade_Grade A","annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",0.04098,0.5173458566883805,4.184021227099351
+"emp_length_Emp Short(0-3), grade_Grade A","dti_DTI Healthy(<20), int_rate_IntRate Low",0.04318,0.725226738327175,4.179210395357485
+"dti_DTI Healthy(<20), int_rate_IntRate Low, purpose_credit_card",grade_Grade A,0.042364,0.7906681597611048,4.176976099154243
+"annual_inc_Inc Mid(50-100k), grade_Grade A","home_Home MORTGAGE, int_rate_IntRate Low",0.053652,0.5744079482677401,4.175204601585597
+"grade_Grade A, home_Home RENT","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.04134,0.6678945327646375,4.166424622995294
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, purpose_credit_card",grade_Grade A,0.043136,0.7883617223481248,4.164791551402726
+"dti_DTI Healthy(<20), home_Home MORTGAGE, int_rate_IntRate Low",grade_Grade A,0.074492,0.7858137474155027,4.151330998750622
+"grade_Grade A, home_Home RENT","dti_DTI Healthy(<20), int_rate_IntRate Low",0.044536,0.7195295334108828,4.146379534673045
+"grade_Grade A, revol_util_Util Moderate(30-60)","home_Home MORTGAGE, int_rate_IntRate Low",0.042936,0.5697149832811422,4.141092801659753
+"int_rate_IntRate Very High, loan_amnt_Loan Small(<10k)",grade_Grade D,0.044564,0.5961579623287672,4.138491394279615
+"grade_Grade A, loan_amnt_Loan Small(<10k)","dti_DTI Healthy(<20), int_rate_IntRate Low",0.058632,0.7150941555273685,4.12082011114589
+"emp_length_Emp Short(0-3), int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.04318,0.5498955733278998,4.1103239051598095
+"int_rate_IntRate Low, purpose_credit_card",grade_Grade A,0.061072,0.77782872280809,4.109147363903863
+"grade_Grade A, home_Home MORTGAGE","annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",0.053652,0.506628895184136,4.097348078287849
+"dti_DTI Healthy(<20), int_rate_IntRate Low",grade_Grade A,0.133708,0.7705091856257059,4.0704793949332565
+grade_Grade A,"dti_DTI Healthy(<20), int_rate_IntRate Low",0.133708,0.7063584303615578,4.0704793949332565
+"grade_Grade A, purpose_debt_consolidation","home_Home MORTGAGE, int_rate_IntRate Low",0.050716,0.559853402216629,4.069411832126454
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), int_rate_IntRate Low",grade_Grade A,0.083508,0.770056434657519,4.06808758245208
+"home_Home MORTGAGE, int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",grade_Grade A,0.04044,0.7698751142247944,4.067129694993948
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.055136,0.65184904946562,4.066330531150938
+"home_Home MORTGAGE, int_rate_IntRate Low",grade_Grade A,0.105872,0.7695528289817991,4.065427112512938
+grade_Grade A,"home_Home MORTGAGE, int_rate_IntRate Low",0.105872,0.55930520043108,4.065427112512938
+"dti_DTI Healthy(<20), int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",grade_Grade A,0.059104,0.7695031767524215,4.065164807558807
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), int_rate_IntRate Low",grade_Grade A,0.04318,0.7689841857814504,4.062423059513611
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), int_rate_IntRate Low",grade_Grade A,0.054996,0.7686588024822497,4.060704110486707
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), int_rate_IntRate Low",grade_Grade A,0.064836,0.7685633001422475,4.060199586576546
+grade_Grade E,int_rate_IntRate Very High,0.06014,0.9956294285146678,4.059684191164323
+"grade_Grade A, home_Home MORTGAGE","dti_DTI Healthy(<20), int_rate_IntRate Low",0.074492,0.7034183191690274,4.053536633986973
+"dti_DTI Healthy(<20), grade_Grade A","home_Home MORTGAGE, int_rate_IntRate Low",0.074492,0.5568079889971895,4.047275607643699
+"home_Home MORTGAGE, int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.074492,0.5414607198930046,4.047275607643699
+"emp_length_Emp Long(8+), home_Home MORTGAGE, int_rate_IntRate Low",grade_Grade A,0.051484,0.7660397571717652,4.046868104155301
+"grade_Grade A, purpose_debt_consolidation","annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",0.045312,0.5001987018148099,4.0453440558262965
+"dti_DTI Healthy(<20), int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",grade_Grade A,0.058632,0.764751917357959,4.040064648046188
+"home_Home MORTGAGE, int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",grade_Grade A,0.050032,0.7643607919824004,4.037998393922619
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, int_rate_IntRate Low",grade_Grade A,0.053652,0.7637512811752647,4.0347784437549645
+"int_rate_IntRate Low, purpose_credit_card","dti_DTI Healthy(<20), grade_Grade A",0.042364,0.5395588160374956,4.033059379578242
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)","dti_DTI Healthy(<20), int_rate_IntRate Low",0.059104,0.6987609949872315,4.0266982169699626
+"emp_length_Emp Mid(4-7), int_rate_IntRate Low",grade_Grade A,0.05052,0.7614855902568431,4.022809153354833
+"int_rate_IntRate Low, loan_amnt_Loan Small(<10k)","dti_DTI Healthy(<20), grade_Grade A",0.058632,0.5380662212759709,4.021902628684828
+"grade_Grade A, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.058308,0.6436614121075639,4.015254841473475
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), grade_Grade A",int_rate_IntRate Low,0.050552,1.0,4.002049049113146
+"emp_length_Emp Short(0-3), int_rate_IntRate Low",grade_Grade A,0.059484,0.7575263613672254,4.001893166997155
+"fico_range_low_FICO Good(670-739), grade_Grade A, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Low,0.055136,0.9999274573812114,4.001758729994602
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), grade_Grade A",int_rate_IntRate Low,0.054996,0.9999272727272728,4.001757991000483
+"emp_length_Emp Long(8+), grade_Grade A",int_rate_IntRate Low,0.0792,0.9998485078018482,4.001442769905585
+"emp_length_Emp Long(8+), grade_Grade A, home_Home MORTGAGE",int_rate_IntRate Low,0.051484,0.9998446360599704,4.001427275004684
+"grade_Grade A, home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Low,0.050032,0.9998401278976818,4.001409233118084
+"grade_Grade A, home_Home MORTGAGE, revol_util_Util Excellent(<30)",int_rate_IntRate Low,0.0429,0.999813554581896,4.001302885404912
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), grade_Grade A",int_rate_IntRate Low,0.04098,0.9998048209231972,4.001267932874421
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), grade_Grade A",int_rate_IntRate Low,0.059728,0.9997991295614328,4.001245155765483
+"annual_inc_Inc Mid(50-100k), grade_Grade A, home_Home MORTGAGE",int_rate_IntRate Low,0.053652,0.9997763864042932,4.001154136535079
+"dti_DTI Manageable(20-35), grade_Grade A",int_rate_IntRate Low,0.052364,0.999770887429357,4.001132129367664
+"grade_Grade A, home_Home MORTGAGE, purpose_debt_consolidation",int_rate_IntRate Low,0.050716,0.9997634442516952,4.00110234140558
+"fico_range_low_FICO Good(670-739), grade_Grade A, home_Home MORTGAGE",int_rate_IntRate Low,0.066264,0.9997585998793,4.001082953989642
+"grade_Grade A, home_Home MORTGAGE",int_rate_IntRate Low,0.105872,0.9997355996222852,4.000990905832927
+"dti_DTI Healthy(<20), grade_Grade A, home_Home MORTGAGE",int_rate_IntRate Low,0.074492,0.9997315868584928,4.000974846555407
+"grade_Grade A, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",int_rate_IntRate Low,0.044264,0.9997289728069382,4.000964384992868
+"fico_range_low_FICO Good(670-739), grade_Grade A, purpose_credit_card",int_rate_IntRate Low,0.043136,0.9997218874571244,4.000936029075383
+"emp_length_Emp Long(8+), grade_Grade A","dti_DTI Healthy(<20), int_rate_IntRate Low",0.054996,0.6942887441296773,4.000926308287102
+"grade_Grade A, loan_amnt_Loan Small(<10k), revol_util_Util Excellent(<30)",int_rate_IntRate Low,0.042216,0.9997158283603296,4.000911780272818
+"grade_Grade A, purpose_credit_card",int_rate_IntRate Low,0.061072,0.9996726248936032,4.000738877879886
+"fico_range_low_FICO Good(670-739), grade_Grade A, purpose_debt_consolidation",int_rate_IntRate Low,0.058308,0.9996571115073378,4.000676792547135
+"fico_range_low_FICO Good(670-739), grade_Grade A, revol_util_Util Moderate(30-60)",int_rate_IntRate Low,0.058296,0.9996570409493106,4.000676510170449
+"annual_inc_Inc Mid(50-100k), grade_Grade A, purpose_debt_consolidation",int_rate_IntRate Low,0.045312,0.9996470172961524,4.00063639501886
+"grade_Grade A, purpose_debt_consolidation",int_rate_IntRate Low,0.090556,0.9996467523292268,4.000635334608226
+"fico_range_low_FICO Good(670-739), grade_Grade A",int_rate_IntRate Low,0.120408,0.9996347092617806,4.000587137661605
+"grade_Grade A, home_Home MORTGAGE, revol_util_Util Moderate(30-60)",int_rate_IntRate Low,0.042936,0.999627491152915,4.000558250435883
+"dti_DTI Healthy(<20), grade_Grade A, purpose_credit_card",int_rate_IntRate Low,0.042364,0.9996224634261444,4.000538129226741
+"emp_length_Emp Mid(4-7), grade_Grade A",int_rate_IntRate Low,0.05052,0.9996042738425012,4.000465333620818
+"annual_inc_Inc Mid(50-100k), grade_Grade A",int_rate_IntRate Low,0.093364,0.9995717528157252,4.000335182876534
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), grade_Grade A",int_rate_IntRate Low,0.064836,0.999568327577701,4.000321474905956
+"dti_DTI Healthy(<20), grade_Grade A, purpose_debt_consolidation",int_rate_IntRate Low,0.06276,0.999554054914952,4.0002643550095724
+"grade_Grade A, revol_util_Util Excellent(<30)",int_rate_IntRate Low,0.080512,0.9995530615285296,4.0002603794283855
+int_rate_IntRate Low,grade_Grade A,0.189204,0.7572036882884037,4.000188535640195
+grade_Grade A,int_rate_IntRate Low,0.189204,0.9995351097774868,4.000188535640194
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Low,0.084544,0.9995270973233708,4.000156469405819
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), grade_Grade A",int_rate_IntRate Low,0.083508,0.9995212333030116,4.000133001308716
+"annual_inc_Inc Mid(50-100k), grade_Grade A","dti_DTI Healthy(<20), int_rate_IntRate Low",0.064836,0.694145860990964,4.000102926209368
+"grade_Grade A, home_Home MORTGAGE, loan_amnt_Loan Small(<10k)",int_rate_IntRate Low,0.04044,0.9995056846267918,4.000070774743836
+"annual_inc_Inc Mid(50-100k), grade_Grade A, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Low,0.046512,0.999484270242393,3.999985073327115
+"grade_Grade A, revol_util_Util Moderate(30-60)",int_rate_IntRate Low,0.075324,0.9994692426092032,3.9999249320019983
+"home_Home MORTGAGE, int_rate_IntRate Low, revol_util_Util Moderate(30-60)",grade_Grade A,0.042936,0.7571418494745009,3.999861850867976
+int_rate_IntRate Low,"dti_DTI Healthy(<20), grade_Grade A",0.133708,0.5351059742588204,3.999775565529664
+"dti_DTI Healthy(<20), grade_Grade A",int_rate_IntRate Low,0.133708,0.999431920110028,3.999775565529664
+"fico_range_low_FICO Good(670-739), grade_Grade A, home_Home RENT",int_rate_IntRate Low,0.04134,0.9994197853205689,3.9997270015070474
+"grade_Grade A, loan_amnt_Loan Small(<10k)",int_rate_IntRate Low,0.081944,0.9994145770319056,3.9997061576803543
+"dti_DTI Healthy(<20), grade_Grade A, revol_util_Util Excellent(<30)",int_rate_IntRate Low,0.060452,0.9994048406295464,3.999667192120551
+"dti_DTI Healthy(<20), grade_Grade A, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Low,0.059104,0.9993912749408184,3.999612901568877
+"dti_DTI Healthy(<20), grade_Grade A, revol_util_Util Moderate(30-60)",int_rate_IntRate Low,0.051728,0.9993817619783616,3.9995748302265226
+"annual_inc_Inc Low(<50k), grade_Grade A",int_rate_IntRate Low,0.043296,0.9993537069522668,3.999462552636016
+"fico_range_low_FICO VeryGood(740-799), grade_Grade A",int_rate_IntRate Low,0.053792,0.999331203091328,3.999372491080745
+"dti_DTI Healthy(<20), grade_Grade A, loan_amnt_Loan Small(<10k)",int_rate_IntRate Low,0.058632,0.9993182437960184,3.9993206273452735
+"fico_range_low_FICO Good(670-739), grade_Grade A, loan_amnt_Loan Small(<10k)",int_rate_IntRate Low,0.051012,0.9992164851523936,3.998913384262317
+"fico_range_low_FICO Good(670-739), grade_Grade A","home_Home MORTGAGE, int_rate_IntRate Low",0.066264,0.5501278517583768,3.9987196295747567
+"grade_Grade A, home_Home RENT",int_rate_IntRate Low,0.061844,0.9991598810908622,3.998686852031689
+"emp_length_Emp Short(0-3), grade_Grade A",int_rate_IntRate Low,0.059484,0.9990594558280148,3.998284945204004
+"dti_DTI Healthy(<20), grade_Grade A, home_Home RENT",int_rate_IntRate Low,0.044536,0.9989233805849632,3.997740365406941
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), grade_Grade A",int_rate_IntRate Low,0.04318,0.9987047830511612,3.9968655273546494
+"grade_Grade A, purpose_credit_card","dti_DTI Healthy(<20), int_rate_IntRate Low",0.042364,0.6934459503699338,3.996069603127572
+"fico_range_low_FICO Good(670-739), grade_Grade A","dti_DTI Healthy(<20), int_rate_IntRate Low",0.083508,0.6932886128914422,3.995162926096871
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, int_rate_IntRate Low",grade_Grade A,0.066264,0.7559550971981382,3.9935924243926753
+"grade_Grade A, purpose_debt_consolidation","dti_DTI Healthy(<20), int_rate_IntRate Low",0.06276,0.6928069943038813,3.992387538343829
+"int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",grade_Grade A,0.084544,0.7553427203202058,3.99035733322172
+"annual_inc_Inc Mid(50-100k), grade_Grade A","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.059728,0.6394586955590768,3.989037675660475
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",grade_Grade A,0.093364,0.7550789337474121,3.988963790056696
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, revol_util_Util Moderate(30-60)",grade_Grade A,0.058296,0.7550512900217594,3.98881775258204
+"dti_DTI Healthy(<20), int_rate_IntRate Low, purpose_debt_consolidation",grade_Grade A,0.06276,0.7544357359234505,3.985565876653269
+"emp_length_Emp Long(8+), int_rate_IntRate Low",grade_Grade A,0.0792,0.7542569806864501,3.984621540722536
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",grade_Grade A,0.051012,0.7539462015962164,3.982979743445135
+"emp_length_Emp Long(8+), grade_Grade A","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.050552,0.6381861334141291,3.9810992452722895
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), int_rate_IntRate Low",grade_Grade A,0.059728,0.7525451063400868,3.975577976565765
+"int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",grade_Grade A,0.081944,0.75200058732839,3.9727013678781455
+"home_Home MORTGAGE, int_rate_IntRate Low, purpose_debt_consolidation",grade_Grade A,0.050716,0.7514817449027974,3.969960404574929
+"dti_DTI Healthy(<20), int_rate_IntRate Low, revol_util_Util Moderate(30-60)",grade_Grade A,0.051728,0.7513362770160353,3.969191920503959
+grade_Grade A,"fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.120408,0.6360966126407879,3.968064506442683
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low",grade_Grade A,0.120408,0.7511228665535482,3.9680645064426825
+"home_Home RENT, int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.044536,0.5304683405593406,3.965110480770052
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",grade_Grade A,0.046512,0.7500483777333419,3.962388150230025
+"grade_Grade A, revol_util_Util Moderate(30-60)","dti_DTI Healthy(<20), int_rate_IntRate Low",0.051728,0.6863754577782496,3.9553249992983983
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), int_rate_IntRate Low",grade_Grade A,0.04098,0.7474828542244273,3.9488348911968143
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate Low",grade_Grade A,0.050552,0.7474568251715165,3.948697383785456
+"int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)","dti_DTI Healthy(<20), grade_Grade A",0.059104,0.5280537488385391,3.9470620465716313
+"dti_DTI Healthy(<20), home_Home RENT, int_rate_IntRate Low",grade_Grade A,0.044536,0.7470978997517278,3.946801236986919
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",grade_Grade A,0.055136,0.7462912831618841,3.942540007828562
+"fico_range_low_FICO Good(670-739), home_Home RENT, int_rate_IntRate Low",grade_Grade A,0.04134,0.7450796626054359,3.9361392061230056
+"grade_Grade D, loan_amnt_Loan Medium(10-25k)","int_rate_IntRate Very High, purpose_debt_consolidation",0.043212,0.6028123430612131,3.930803770711372
+"int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",grade_Grade A,0.044264,0.743432986227746,3.92744007262719
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.064836,0.5243594720496895,3.9194483051014286
+"emp_length_Emp Long(8+), int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.054996,0.5237514761342426,3.914903696512607
+"int_rate_IntRate Low, purpose_debt_consolidation",grade_Grade A,0.090556,0.7404899748143787,3.911892604095148
+"int_rate_IntRate Low, revol_util_Util Moderate(30-60)",grade_Grade A,0.075324,0.7400668107683239,3.909657094691397
+"grade_Grade A, home_Home MORTGAGE","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.066264,0.6257223796033995,3.9033485103515786
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low, purpose_debt_consolidation",grade_Grade A,0.045312,0.7378362535009444,3.897873409869115
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low","dti_DTI Healthy(<20), grade_Grade A",0.083508,0.5209352230761553,3.893852950099828
+"dti_DTI Healthy(<20), grade_Grade A","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.083508,0.6242002033128028,3.893852950099828
+"home_Home RENT, int_rate_IntRate Low",grade_Grade A,0.061844,0.7366239458764114,3.891468978490436
+"grade_Grade A, loan_amnt_Loan Small(<10k)","fico_range_low_FICO Good(670-739), int_rate_IntRate Low",0.051012,0.6221582593423749,3.881115002385311
+"grade_Grade A, revol_util_Util Excellent(<30)","home_Home MORTGAGE, int_rate_IntRate Low",0.0429,0.5326016785022596,3.871326964748645
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, purpose_debt_consolidation",grade_Grade A,0.058308,0.7310431293881645,3.8619863987287606
+"annual_inc_Inc Low(<50k), int_rate_IntRate Low",grade_Grade A,0.043296,0.7263454569856396,3.8371693309048434
+"int_rate_IntRate Low, purpose_debt_consolidation","dti_DTI Healthy(<20), grade_Grade A",0.06276,0.5131979197330978,3.8360186549445214
+"dti_DTI Manageable(20-35), int_rate_IntRate Low",grade_Grade A,0.052364,0.7250623096095264,3.830390664209404
+"int_rate_IntRate Low, revol_util_Util Moderate(30-60)","dti_DTI Healthy(<20), grade_Grade A",0.051728,0.508233444684614,3.798910517585168
+"annual_inc_Inc Low(<50k), int_rate_IntRate Very High",grade_Grade D,0.048856,0.5465366028279935,3.794023011329197
+"int_rate_IntRate Very High, revol_util_Util Moderate(30-60)",grade_Grade D,0.049432,0.5402640552592463,3.7504793773029617
+"dti_DTI Healthy(<20), int_rate_IntRate Very High",grade_Grade D,0.063848,0.5380751727625147,3.7352842915233015
+"emp_length_Emp Long(8+), int_rate_IntRate High","grade_Grade C, home_Home MORTGAGE",0.051736,0.5073549601851489,3.7187387136826326
+"home_Home RENT, int_rate_IntRate Very High",grade_Grade D,0.056636,0.5337379372738239,3.7051754732584334
+grade_Grade D,"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High",0.078916,0.5478299502957265,3.69775602283956
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High",grade_Grade D,0.078916,0.5326691506020843,3.69775602283956
+"dti_DTI Manageable(20-35), grade_Grade D",int_rate_IntRate Very High,0.058232,0.9053482587064676,3.691562250075302
+"emp_length_Emp Long(8+), int_rate_IntRate Very High",grade_Grade D,0.051716,0.5304640380749189,3.682448269200836
+"fico_range_low_FICO Good(670-739), grade_Grade D",int_rate_IntRate Very High,0.078916,0.9026811859443632,3.6806872469678167
+"grade_Grade D, revol_util_Util Moderate(30-60)",int_rate_IntRate Very High,0.049432,0.90224136672264,3.678893881795733
+int_rate_IntRate Very High,grade_Grade D,0.129916,0.5297331680584552,3.677374615128253
+grade_Grade D,int_rate_IntRate Very High,0.129916,0.9018687696109736,3.6773746151282527
+"emp_length_Emp Long(8+), grade_Grade D",int_rate_IntRate Very High,0.051716,0.90085005574136,3.6732208040080248
+"grade_Grade D, purpose_debt_consolidation",int_rate_IntRate Very High,0.08028,0.9008078994614004,3.673048911556467
+"grade_Grade D, home_Home MORTGAGE",int_rate_IntRate Very High,0.058104,0.9005021387390739,3.671802170615353
+"fico_range_low_FICO Fair(<670), grade_Grade D",int_rate_IntRate Very High,0.0485,0.9003490012623451,3.671177751754734
+"fico_range_low_FICO Good(670-739), grade_Grade D, purpose_debt_consolidation",int_rate_IntRate Very High,0.048352,0.9003426187993445,3.6711517272285374
+"emp_length_Emp Short(0-3), grade_Grade D",int_rate_IntRate Very High,0.041492,0.9000433839479393,3.669931595560165
+"grade_Grade D, home_Home RENT",int_rate_IntRate Very High,0.056636,0.8991553946783514,3.6663108146788206
+"annual_inc_Inc Low(<50k), grade_Grade D",int_rate_IntRate Very High,0.048856,0.8991460541813898,3.66627272875371
+"annual_inc_Inc Mid(50-100k), grade_Grade D",int_rate_IntRate Very High,0.060852,0.8990603392234503,3.665923225565348
+"grade_Grade D, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Very High,0.064448,0.8990569722671727,3.6659094967835526
+"grade_Grade D, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",int_rate_IntRate Very High,0.043212,0.8987520798668885,3.664666296430097
+"emp_length_Emp Short(0-3), int_rate_IntRate Very High",grade_Grade D,0.041492,0.5275926962006001,3.6625155929844784
+"grade_Grade D, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), int_rate_IntRate Very High",0.048352,0.5425493716337522,3.6621130435886937
+"dti_DTI Healthy(<20), grade_Grade D",int_rate_IntRate Very High,0.063848,0.8978512768590393,3.6609932674641152
+"grade_Grade D, revol_util_Util High(60-90)",int_rate_IntRate Very High,0.050784,0.8968635207685788,3.656965686849959
+"int_rate_IntRate Very High, revol_util_Util High(60-90)",grade_Grade D,0.050784,0.5255401937246461,3.6482672488035295
+"fico_range_low_FICO Fair(<670), int_rate_IntRate Very High",grade_Grade D,0.0485,0.5253238594514968,3.64676546977131
+"dti_DTI Manageable(20-35), int_rate_IntRate Very High",grade_Grade D,0.058232,0.5251235436280345,3.645374889817805
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High, purpose_debt_consolidation",grade_Grade D,0.048352,0.5250401772140902,3.644796165371464
+"grade_Grade D, loan_amnt_Loan Small(<10k)",int_rate_IntRate Very High,0.044564,0.8936392075078206,3.64381853270086
+"int_rate_IntRate Very High, purpose_debt_consolidation",grade_Grade D,0.08028,0.5234878322334959,3.634019883330297
+grade_Grade D,"int_rate_IntRate Very High, purpose_debt_consolidation",0.08028,0.5572987532280009,3.634019883330296
+"home_Home MORTGAGE, int_rate_IntRate Very High",grade_Grade D,0.058104,0.523289743866854,3.63264476624312
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Very High",grade_Grade D,0.060852,0.5217257107582565,3.6217873459463
+"fico_range_low_FICO Good(670-739), grade_Grade D","int_rate_IntRate Very High, purpose_debt_consolidation",0.048352,0.5530746705710102,3.606475589941119
+"int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",grade_Grade D,0.064448,0.5114920634920636,3.550746004859797
+"int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",grade_Grade D,0.043212,0.5084003953127206,3.5292838371749133
+"emp_length_Emp Long(8+), int_rate_IntRate Medium","grade_Grade B, home_Home MORTGAGE",0.0513,0.5060369318181819,3.467336319534766
+"fico_range_low_FICO Fair(<670), int_rate_IntRate High","dti_DTI Healthy(<20), grade_Grade C",0.041304,0.5381768906030124,3.366635538253256
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)","grade_Grade C, purpose_debt_consolidation",0.067724,0.5581709689117463,3.262097440866273
+"int_rate_IntRate High, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), grade_Grade C",0.062764,0.6079897706137631,3.2125936350144944
+"dti_DTI Manageable(20-35), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.061892,0.6046266265483959,3.1948229162618937
+"grade_Grade C, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.062764,0.5347624565469293,3.1943661984309557
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)","grade_Grade B, purpose_debt_consolidation",0.05588,0.5132632816518481,3.1939221011316
+"dti_DTI Healthy(<20), fico_range_low_FICO VeryGood(740-799)",revol_util_Util Excellent(<30),0.046164,0.7325758537514281,3.18367283381179
+"emp_length_Emp Short(0-3), int_rate_IntRate High","dti_DTI Healthy(<20), grade_Grade C",0.042056,0.5070898041863606,3.172166225767945
+"dti_DTI Manageable(20-35), grade_Grade C","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.061892,0.5304604203092325,3.168668285322281
+"int_rate_IntRate Medium, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), grade_Grade B",0.069256,0.6510246286896033,3.1676947678552128
+"dti_DTI Manageable(20-35), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.05546,0.5417920362627486,3.1663746654905007
+"grade_Grade B, revol_util_Util Moderate(30-60)","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.069256,0.5524216706017484,3.1613198198607586
+"int_rate_IntRate High, revol_util_Util Moderate(30-60)","grade_Grade C, purpose_debt_consolidation",0.055768,0.5402200867947923,3.157187780786358
+"home_Home RENT, int_rate_IntRate High","dti_DTI Healthy(<20), grade_Grade C",0.053252,0.5027188278830904,3.1448230149828
+"grade_Grade C, home_Home MORTGAGE","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.071624,0.5249794769555529,3.135928252864576
+"emp_length_Emp Long(8+), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.05468,0.5362256305652532,3.1338431316201065
+"grade_Grade C, loan_amnt_Loan Medium(10-25k)","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.071324,0.5237325970745462,3.1284801029493585
+"home_Home MORTGAGE, int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.071624,0.5919338842975206,3.1277549737784573
+"dti_DTI Manageable(20-35), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.055344,0.5443600739662431,3.115186066281206
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)","fico_range_low_FICO Good(670-739), grade_Grade C",0.071324,0.5878416246332377,3.1061316373577967
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.064632,0.5291632552808252,3.092568759384863
+"fico_range_low_FICO VeryGood(740-799), int_rate_IntRate Low",revol_util_Util Excellent(<30),0.042988,0.7113920699013702,3.091611053703413
+"home_Home RENT, int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.055956,0.5282456007854391,3.0872057459934026
+"emp_length_Emp Long(8+), grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.045168,0.7835681076955103,3.082292647573364
+"emp_length_Emp Long(8+), grade_Grade C","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.059356,0.5157265491954263,3.080656534905299
+"fico_range_low_FICO Fair(<670), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.040432,0.5268150310105801,3.078845121271829
+"emp_length_Emp Long(8+), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.059356,0.5820813556662614,3.075694606483743
+"fico_range_low_FICO Fair(<670), int_rate_IntRate High",grade_Grade C,0.067856,0.88414030333038,3.069931608786042
+"fico_range_low_FICO Fair(<670), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.040432,0.8839527765631832,3.06928047417772
+"fico_range_low_FICO Fair(<670), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.040432,0.7800586510263929,3.068487628734592
+"emp_length_Emp Long(8+), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.05468,0.7798950251026929,3.067843979539812
+fico_range_low_FICO VeryGood(740-799),revol_util_Util Excellent(<30),0.06708,0.7057783763309625,3.067214721738703
+"int_rate_IntRate Medium, purpose_credit_card","fico_range_low_FICO Good(670-739), grade_Grade B",0.040016,0.6295387326159462,3.0631507036587493
+"dti_DTI Healthy(<20), grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.05728,0.7786417269316512,3.062913927257337
+"dti_DTI Healthy(<20), grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.057296,0.7778019113814075,3.0596103761423654
+"emp_length_Emp Long(8+), grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.051736,0.7777978230801611,3.0595942941441967
+"grade_Grade C, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.055768,0.7776228456690277,3.058905992026575
+"grade_Grade C, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",int_rate_IntRate High,0.067724,0.7776144766453865,3.0588730711103413
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), grade_Grade C",int_rate_IntRate High,0.04834,0.7773703846648655,3.0579128955882617
+"annual_inc_Inc Mid(50-100k), grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.059064,0.7772397094430992,3.057398863341014
+"dti_DTI Healthy(<20), grade_Grade C, revol_util_Util High(60-90)",int_rate_IntRate High,0.041308,0.777225859863024,3.057344383764294
+"dti_DTI Healthy(<20), fico_range_low_FICO Fair(<670), int_rate_IntRate High",grade_Grade C,0.041304,0.8802318642911943,3.0563606398999803
+"dti_DTI Healthy(<20), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.071776,0.7769647109764019,3.0563171121267025
+"grade_Grade C, home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.054008,0.7768699654775605,3.0559444152907784
+"grade_Grade C, home_Home MORTGAGE, purpose_debt_consolidation",int_rate_IntRate High,0.063244,0.7767243073295342,3.055371445265185
+"grade_Grade C, purpose_debt_consolidation, revol_util_Util High(60-90)",int_rate_IntRate High,0.048432,0.7765520779887122,3.0546939531292767
+"home_Home MORTGAGE, int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.063244,0.5226776859504132,3.05466539232773
+"grade_Grade C, home_Home MORTGAGE, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.04234,0.7762540334408917,3.053521546404993
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), int_rate_IntRate High",grade_Grade C,0.043828,0.879373996789727,3.0533819332976635
+"fico_range_low_FICO Fair(<670), grade_Grade C",int_rate_IntRate High,0.067856,0.7759937788756233,3.0524977927259624
+"int_rate_IntRate High, revol_util_Util High(60-90)","grade_Grade C, purpose_debt_consolidation",0.048432,0.5223017858683461,3.0524685337234145
+"fico_range_low_FICO Good(670-739), grade_Grade C, revol_util_Util High(60-90)",int_rate_IntRate High,0.049332,0.7759043724441649,3.0521460979803194
+"grade_Grade C, revol_util_Util High(60-90)",int_rate_IntRate High,0.079764,0.7755522713130056,3.050761050889817
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High, revol_util_Util Moderate(30-60)",grade_Grade C,0.043412,0.8784297855119385,3.0501034219164533
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.043588,0.8783653071094631,3.049879538574525
+"dti_DTI Manageable(20-35), int_rate_IntRate High",grade_Grade C,0.089904,0.8782775194404283,3.0495747202792653
+"grade_Grade C, home_Home MORTGAGE, revol_util_Util High(60-90)",int_rate_IntRate High,0.04048,0.774885145482389,3.048136802885692
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.087292,0.5214326674949823,3.0473891781505382
+"grade_Grade C, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.087292,0.5101573275358252,3.047389178150538
+"annual_inc_Inc Mid(50-100k), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.064632,0.7746296562634833,3.0471317944719583
+"grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.105472,0.7744815837396464,3.0465493271062654
+"grade_Grade C, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.043708,0.7744701963285845,3.046504532871985
+"emp_length_Emp Long(8+), grade_Grade C",int_rate_IntRate High,0.089132,0.7744413165120078,3.046390929414387
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), grade_Grade C",int_rate_IntRate High,0.048784,0.7743983744999683,3.046222010022848
+"int_rate_IntRate High, revol_util_Util Moderate(30-60)",grade_Grade C,0.090536,0.8770148791072536,3.045190552455742
+"dti_DTI Manageable(20-35), grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.044272,0.7739318928746242,3.044387028647387
+int_rate_IntRate High,"grade_Grade C, purpose_debt_consolidation",0.132424,0.5209113509771218,3.044342467781295
+"grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.132424,0.7739205647894896,3.0443424677812945
+"dti_DTI Healthy(<20), fico_range_low_FICO Fair(<670), grade_Grade C",int_rate_IntRate High,0.041304,0.7737729486699139,3.043761795756026
+"int_rate_IntRate High, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",grade_Grade C,0.055768,0.8764143827005281,3.043105495487945
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",grade_Grade C,0.043708,0.8764035931985883,3.043068031939543
+"dti_DTI Healthy(<20), grade_Grade C, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.049792,0.7735040079537688,3.042703873689181
+"dti_DTI Manageable(20-35), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.05546,0.8760899785163655,3.0419790920707137
+"dti_DTI Manageable(20-35), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.05546,0.7731556348631016,3.0413334914525505
+"annual_inc_Inc Low(<50k), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.04518,0.7731006160164271,3.0411170658669286
+"fico_range_low_FICO Good(670-739), grade_Grade C, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.071324,0.7729085392284352,3.0403615005681592
+"grade_Grade C, loan_amnt_Loan Small(<10k), purpose_debt_consolidation",int_rate_IntRate High,0.045744,0.7727027027027027,3.0395518091021128
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), grade_Grade C",int_rate_IntRate High,0.059428,0.7723539197338324,3.0381798145428784
+"int_rate_IntRate High, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), grade_Grade C",0.087292,0.5748643380222327,3.037560173854082
+"emp_length_Emp Long(8+), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.05468,0.874600127959053,3.036805999857823
+"grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.1053,0.7718130643837223,3.0360522720195515
+"home_Home MORTGAGE, int_rate_IntRate High, revol_util_Util Moderate(30-60)",grade_Grade C,0.04234,0.8743598215760781,3.035971602694716
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), int_rate_IntRate High",grade_Grade C,0.048784,0.8743279088106675,3.0358607944814846
+"dti_DTI Manageable(20-35), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.044272,0.8742496050552923,3.0355889064419874
+"dti_DTI Healthy(<20), grade_Grade C",int_rate_IntRate High,0.12334,0.7715694124712241,3.035093827576644
+"emp_length_Emp Long(8+), int_rate_IntRate High",grade_Grade C,0.089132,0.8740830816302515,3.0350107001050404
+"fico_range_low_FICO Good(670-739), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.087292,0.7714851345140877,3.034762306519211
+"grade_Grade C, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.090536,0.771385726944312,3.034371270668691
+"emp_length_Emp Short(0-3), grade_Grade C, purpose_debt_consolidation",int_rate_IntRate High,0.042196,0.7713512723018425,3.034235737726353
+"emp_length_Emp Short(0-3), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.042196,0.8737679118694607,3.03391636065785
+"emp_length_Emp Long(8+), home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.051736,0.8737418090927515,3.0338257260164982
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.061892,0.8737365181546107,3.0338073547035096
+"emp_length_Emp Short(0-3), int_rate_IntRate High",grade_Grade C,0.072464,0.8737339635381499,3.0337984845074653
+"annual_inc_Inc Mid(50-100k), grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.055736,0.7711976975868939,3.03363162659665
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), grade_Grade C",int_rate_IntRate High,0.042056,0.7711037770443712,3.033262174860635
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), grade_Grade C",int_rate_IntRate High,0.043828,0.7710224473999014,3.032942251470802
+"annual_inc_Inc Mid(50-100k), grade_Grade C, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.043412,0.7708644079835215,3.0323205777115585
+"annual_inc_Inc Low(<50k), grade_Grade C, loan_amnt_Loan Small(<10k)",int_rate_IntRate High,0.046684,0.770770043587373,3.031949380005086
+"grade_Grade C, home_Home RENT, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate High,0.04036,0.7706408004277094,3.0314409810071337
+"annual_inc_Inc Mid(50-100k), grade_Grade C",int_rate_IntRate High,0.10638,0.7706238590594303,3.031374339378443
+"dti_DTI Manageable(20-35), grade_Grade C",int_rate_IntRate High,0.089904,0.7705440707600535,3.031060479120329
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High, revol_util_Util Moderate(30-60)",grade_Grade C,0.062764,0.8724007561436674,3.029169292165512
+"int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.132424,0.872082608924714,3.028064614321924
+grade_Grade C,int_rate_IntRate High,0.221676,0.7697083333333334,3.027772969967797
+int_rate_IntRate High,grade_Grade C,0.221676,0.8719986153507254,3.027772969967797
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.059356,0.7696975984231547,3.0277307424519098
+"dti_DTI Manageable(20-35), grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.043588,0.7696164983402783,3.027411722079957
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.076972,0.7692276942756635,3.025882298028698
+"emp_length_Emp Long(8+), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.045168,0.8713635311366618,3.0255678164467423
+"dti_DTI Healthy(<20), int_rate_IntRate High, revol_util_Util Moderate(30-60)",grade_Grade C,0.049792,0.8711596332843446,3.024859837792864
+"grade_Grade C, home_Home RENT, purpose_debt_consolidation",int_rate_IntRate High,0.055956,0.7689221129005661,3.0246802439679885
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High",grade_Grade C,0.10638,0.8709677419354839,3.024193548387097
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.047052,0.8709462461128387,3.024118910114024
+"annual_inc_Inc Mid(50-100k), grade_Grade C","fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.069864,0.5060995045058098,3.023150055587605
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.069864,0.5719993450139185,3.0224216653663816
+"home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.1053,0.8702479338842976,3.021694214876033
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.069864,0.7680401037773185,3.0212107175682035
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.047372,0.7572734829592684,3.0210699699967623
+"fico_range_low_FICO Good(670-739), grade_Grade C, home_Home MORTGAGE",int_rate_IntRate High,0.071624,0.7679375562894025,3.020807330338777
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.064632,0.8699257025950252,3.020575356232727
+"annual_inc_Inc Low(<50k), grade_Grade C",int_rate_IntRate High,0.076276,0.7678585809776919,3.0204966680999306
+"home_Home MORTGAGE, int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.063244,0.8698833626760563,3.020428342625196
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.059064,0.8697649761441951,3.020017278278456
+"home_Home RENT, int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.055956,0.869746331758269,3.019952540827323
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), int_rate_IntRate High",grade_Grade C,0.042056,0.8696443341604633,3.019598382501609
+"home_Home RENT, int_rate_IntRate High, loan_amnt_Loan Small(<10k)",grade_Grade C,0.044144,0.8695926246946656,3.019418835745366
+"int_rate_IntRate Medium, revol_util_Util Excellent(<30)",grade_Grade B,0.051108,0.8888966188952275,3.0193089050937743
+"emp_length_Emp Short(0-3), grade_Grade C",int_rate_IntRate High,0.072464,0.7674320088113192,3.0188186770750827
+"annual_inc_Inc Mid(50-100k), home_Home RENT, int_rate_IntRate High",grade_Grade C,0.040312,0.8693926846100759,3.0187245993405414
+"annual_inc_Inc Mid(50-100k), grade_Grade C, home_Home RENT",int_rate_IntRate High,0.040312,0.7673798827381405,3.018613630684696
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.105472,0.8692842778492071,3.018348186976414
+"home_Home RENT, int_rate_IntRate High",grade_Grade C,0.092076,0.8692319311230271,3.018166427510511
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.061892,0.7672054740182468,3.0179275656065974
+"dti_DTI Healthy(<20), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.071776,0.8691271917078369,3.017802748985545
+"home_Home MORTGAGE, int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.075344,0.6200131665569453,3.0168020949637278
+"home_Home MORTGAGE, int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.054008,0.8686868686868687,3.0162738496071837
+int_rate_IntRate High,"fico_range_low_FICO Good(670-739), grade_Grade C",0.145096,0.5707587248638953,3.01586627810483
+"fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.145096,0.7666814617546974,3.0158662781048298
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), int_rate_IntRate High",grade_Grade C,0.04834,0.868549662210723,3.0157974382316777
+"grade_Grade C, loan_amnt_Loan Small(<10k)",int_rate_IntRate High,0.086592,0.7665993838308722,3.0155434112363984
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.059356,0.8684379937964534,3.01540970068213
+"int_rate_IntRate High, loan_amnt_Loan Small(<10k), purpose_debt_consolidation",grade_Grade C,0.045744,0.8682712018829246,3.0148305620934885
+"dti_DTI Manageable(20-35), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.055344,0.6194761584956346,3.014189171348942
+"grade_Grade C, home_Home RENT",int_rate_IntRate High,0.092076,0.7662272818054724,3.0140796873740143
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, purpose_credit_card",grade_Grade B,0.040016,0.8873514280645735,3.014060366246972
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",grade_Grade C,0.067724,0.8680338374775699,3.0140063801304517
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)","fico_range_low_FICO Good(670-739), grade_Grade B",0.067412,0.6191858329046954,3.012776532233824
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.055736,0.8675133856306811,3.012199255662088
+"dti_DTI Healthy(<20), int_rate_IntRate High",grade_Grade C,0.12334,0.8674919116612745,3.0121246932683143
+"int_rate_IntRate High, loan_amnt_Loan Small(<10k)",grade_Grade C,0.086592,0.867342441604231,3.0116057000146914
+"fico_range_low_FICO Good(670-739), grade_Grade C, revol_util_Util Moderate(30-60)",int_rate_IntRate High,0.062764,0.765564012490242,3.0114706096006625
+"emp_length_Emp Mid(4-7), grade_Grade C",int_rate_IntRate High,0.06008,0.7655063452423424,3.011243766097895
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.047052,0.7653718524302165,3.0107147167378
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.087292,0.867058683300886,3.0106204281280764
+"grade_Grade C, home_Home RENT, loan_amnt_Loan Small(<10k)",int_rate_IntRate High,0.044144,0.7653259361997227,3.0105340977740296
+"dti_DTI Healthy(<20), home_Home RENT, int_rate_IntRate High",grade_Grade C,0.053252,0.866957541026309,3.010269239674684
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), grade_Grade C",int_rate_IntRate High,0.048308,0.7651903947285054,3.010000923342769
+"emp_length_Emp Mid(4-7), int_rate_IntRate High",grade_Grade C,0.06008,0.8668551970912449,3.009913878789045
+"annual_inc_Inc Low(<50k), grade_Grade C, home_Home RENT",int_rate_IntRate High,0.041576,0.7650522596790814,3.0094575466496263
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.145096,0.8667208257669885,3.0094473116909324
+grade_Grade C,"fico_range_low_FICO Good(670-739), int_rate_IntRate High",0.145096,0.5038055555555556,3.0094473116909324
+"dti_DTI Healthy(<20), grade_Grade C, loan_amnt_Loan Small(<10k)",int_rate_IntRate High,0.049472,0.7649205269342569,3.0089393544633576
+"annual_inc_Inc Low(<50k), int_rate_IntRate High, loan_amnt_Loan Small(<10k)",grade_Grade C,0.046684,0.8665726165726165,3.008932696432697
+"fico_range_low_FICO Good(670-739), grade_Grade C, home_Home RENT",int_rate_IntRate High,0.057752,0.7648866285229922,3.0088060095469684
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.069864,0.8663690476190475,3.0082258597883595
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), int_rate_IntRate High",grade_Grade C,0.059428,0.8659944042900443,3.0069250148959874
+"dti_DTI Healthy(<20), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.05728,0.8657799274486094,3.0061803036410053
+"grade_Grade B, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.084416,0.5253018046048538,3.006122124964827
+"dti_DTI Healthy(<20), grade_Grade C, home_Home RENT",int_rate_IntRate High,0.053252,0.7640172166427547,3.0053860364522875
+"fico_range_low_FICO Good(670-739), grade_Grade B, home_Home RENT",int_rate_IntRate Medium,0.059812,0.7531100478468898,3.004460344712004
+"annual_inc_Inc Low(<50k), int_rate_IntRate High",grade_Grade C,0.076276,0.8651996370235934,3.004165406331922
+"emp_length_Emp Short(0-3), int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.045048,0.5568906690402017,3.004049352897841
+"grade_Grade C, purpose_credit_card",int_rate_IntRate High,0.04472,0.7634004779788324,3.0029599945669525
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.071624,0.8647734956051386,3.002685748628953
+"annual_inc_Inc Low(<50k), int_rate_IntRate High, purpose_debt_consolidation",grade_Grade C,0.04518,0.8643912145098339,3.001358383714701
+"dti_DTI Healthy(<20), home_Home MORTGAGE, int_rate_IntRate High",grade_Grade C,0.057296,0.8635678543437632,2.998499494249178
+"annual_inc_Inc Low(<50k), grade_Grade B, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.046896,0.7515866401692416,2.99838285581193
+"annual_inc_Inc Low(<50k), grade_Grade B",int_rate_IntRate Medium,0.068356,0.7515612630838244,2.9982816163622394
+"emp_length_Emp Short(0-3), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.047052,0.5673290247901996,2.9977438800657303
+"int_rate_IntRate High, purpose_credit_card",grade_Grade C,0.04472,0.8633204633204634,2.9976404976404982
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.071324,0.8631522896698616,2.9970565613536864
+"annual_inc_Inc Low(<50k), home_Home RENT, int_rate_IntRate High",grade_Grade C,0.041576,0.8629306766293068,2.9962870716295376
+"fico_range_low_FICO Good(670-739), grade_Grade C, loan_amnt_Loan Small(<10k)",int_rate_IntRate High,0.051356,0.7615968679558666,2.9958652010725784
+"home_Home RENT, int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",grade_Grade C,0.04036,0.8627618640444634,2.995700916821054
+"home_Home MORTGAGE, int_rate_IntRate High, revol_util_Util High(60-90)",grade_Grade C,0.04048,0.8627450980392156,2.995642701525054
+"grade_Grade B, home_Home RENT, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.046472,0.7508563303819557,2.995469354921152
+"annual_inc_Inc Low(<50k), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.04518,0.5124773139745916,2.995051744948171
+"int_rate_IntRate High, purpose_debt_consolidation, revol_util_Util High(60-90)",grade_Grade C,0.048432,0.8624545907828194,2.9946339957736785
+"fico_range_low_FICO Good(670-739), home_Home RENT, int_rate_IntRate High",grade_Grade C,0.057752,0.8624335463831313,2.994560924941428
+"grade_Grade B, loan_amnt_Loan Medium(10-25k)","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.067412,0.5230926811099386,2.9934800686143075
+"int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)","dti_DTI Healthy(<20), grade_Grade B",0.062264,0.5547596136711929,2.9925537472823005
+fico_range_low_FICO VeryGood(740-799),grade_Grade A,0.053828,0.5663482176676066,2.991928965131155
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.092228,0.8807104660045837,2.991503057039252
+fico_range_low_FICO VeryGood(740-799),"grade_Grade A, int_rate_IntRate Low",0.053792,0.5659694457303985,2.991318607061153
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.066088,0.8805628097852156,2.991001514195512
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.076972,0.8609843400447428,2.9895289584886906
+"grade_Grade B, home_Home RENT, purpose_debt_consolidation",int_rate_IntRate Medium,0.047988,0.7493441599000625,2.9894366957363743
+"dti_DTI Healthy(<20), int_rate_IntRate High, loan_amnt_Loan Small(<10k)",grade_Grade C,0.049472,0.8605023307590621,2.9878553151356324
+"int_rate_IntRate High, revol_util_Util High(60-90)",grade_Grade C,0.079764,0.860193253386248,2.986782129813361
+"home_Home RENT, int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.055868,0.5535431198478122,2.985991584031785
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High, loan_amnt_Loan Small(<10k)",grade_Grade C,0.051356,0.8598888219141384,2.9857250760907585
+"fico_range_low_FICO Good(670-739), grade_Grade B, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.066088,0.7478725330436357,2.983565781458988
+"dti_DTI Manageable(20-35), grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.04298,0.7474782608695651,2.98199287041444
+"annual_inc_Inc Low(<50k), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.047372,0.520846160612191,2.980624002038359
+"dti_DTI Healthy(<20), int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.062264,0.8775015502564969,2.980603355445228
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), int_rate_IntRate High",grade_Grade C,0.048308,0.8573761181314781,2.977000410178744
+"int_rate_IntRate Medium, purpose_credit_card",grade_Grade B,0.055704,0.8763451010005664,2.976675252376212
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.04892,0.7455044193843341,2.974118419016429
+"emp_length_Emp Short(0-3), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.042196,0.5087778528021607,2.9734311242148856
+"grade_Grade B, home_Home RENT",int_rate_IntRate Medium,0.086068,0.7452549182599059,2.973123058197052
+"emp_length_Emp Short(0-3), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.04892,0.5193867583980974,2.972272343531666
+"dti_DTI Healthy(<20), home_Home MORTGAGE, int_rate_IntRate Medium",grade_Grade B,0.063548,0.8747866306921425,2.9713816072204944
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.042068,0.8743764549384768,2.969988366117569
+"dti_DTI Healthy(<20), int_rate_IntRate High, revol_util_Util High(60-90)",grade_Grade C,0.041308,0.8546011254551473,2.967365018941484
+"int_rate_IntRate Medium, purpose_debt_consolidation","fico_range_low_FICO Good(670-739), grade_Grade B",0.084416,0.6097835823051807,2.967027940371646
+"emp_length_Emp Mid(4-7), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.041464,0.8734411863835524,2.966811545982909
+"dti_DTI Manageable(20-35), grade_Grade B",int_rate_IntRate Medium,0.07558,0.7434000865562419,2.9657233849146345
+"grade_Grade B, home_Home RENT","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.059812,0.5179066223330563,2.9638020323047214
+"home_Home MORTGAGE, int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",grade_Grade B,0.044608,0.8722039730955733,2.9626091122932205
+"emp_length_Emp Mid(4-7), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.041464,0.7426033383480193,2.962544834312144
+"grade_Grade B, revol_util_Util High(60-90)","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.044828,0.5175009235315847,2.961480357160101
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.055344,0.7421154258742758,2.960598354268167
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, int_rate_IntRate Medium",grade_Grade B,0.075344,0.8714721939483667,2.960123483201202
+"fico_range_low_FICO Good(670-739), grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.084416,0.7417404751862786,2.959102524440201
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), int_rate_IntRate Medium",grade_Grade B,0.045048,0.8709303224808599,2.958282912191614
+"emp_length_Emp Mid(4-7), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.041464,0.5167755122388953,2.957329077043534
+"dti_DTI Healthy(<20), int_rate_IntRate Medium",grade_Grade B,0.134176,0.8705943420711133,2.957141689892506
+"dti_DTI Healthy(<20), int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",grade_Grade B,0.05606,0.8705509658985031,2.956994354351514
+"emp_length_Emp Long(8+), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.061592,0.6075599747474748,2.956208518623369
+"int_rate_IntRate Medium, loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",grade_Grade B,0.041548,0.870297444490993,2.956133219966417
+"fico_range_low_FICO Good(670-739), int_rate_IntRate High, revol_util_Util High(60-90)",grade_Grade C,0.049332,0.8513149720439015,2.955954764041325
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.073816,0.8697742376396287,2.954356046927449
+"grade_Grade B, home_Home MORTGAGE","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.075344,0.5162528092967166,2.9543378273171985
+grade_Grade B,"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.151976,0.5162158122851592,2.954126106104697
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.151976,0.8697065421416471,2.9541261061046966
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",grade_Grade B,0.069256,0.8697006228651799,2.954106000139876
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), int_rate_IntRate Medium",grade_Grade B,0.06524,0.8691713296029844,2.9523081534319657
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.04892,0.8690400056846443,2.9518620864004714
+"dti_DTI Healthy(<20), int_rate_IntRate High","grade_Grade C, purpose_debt_consolidation",0.071776,0.5048248698832466,2.9503288559462244
+"fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.151976,0.7394706111327365,2.950047119381868
+int_rate_IntRate Medium,"fico_range_low_FICO Good(670-739), grade_Grade B",0.151976,0.6062936839753614,2.950047119381868
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), int_rate_IntRate Medium",grade_Grade B,0.052584,0.8684679923366585,2.9499191326770644
+"emp_length_Emp Mid(4-7), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.041464,0.6062342827065911,2.9497580902422684
+"int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.097468,0.868420114758188,2.949756507242388
+"grade_Grade B, loan_amnt_Loan Small(<10k), purpose_debt_consolidation",int_rate_IntRate Medium,0.047984,0.7393528505392912,2.9495773247825423
+"dti_DTI Healthy(<20), grade_Grade B, home_Home RENT",int_rate_IntRate Medium,0.055868,0.7388383410918324,2.947524738661445
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.061592,0.8677373908143139,2.947437503615148
+"dti_DTI Healthy(<20), int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.072384,0.8673728610458707,2.9461993079097795
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.084416,0.8671213739830719,2.945345083569081
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.073816,0.6052277721294809,2.944860705184317
+"grade_Grade B, loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.041548,0.73797513321492,2.944081053581368
+"fico_range_low_FICO Good(670-739), grade_Grade B, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.069256,0.7379592532605915,2.9440177020257856
+"grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.118584,0.7379215930304915,2.9438674601478136
+"fico_range_low_FICO Good(670-739), home_Home RENT, int_rate_IntRate Medium",grade_Grade B,0.059812,0.8663885509009791,2.942855908550764
+"int_rate_IntRate Medium, loan_amnt_Loan Small(<10k), purpose_debt_consolidation",grade_Grade B,0.047984,0.8663248357044847,2.9426394875901303
+"emp_length_Emp Short(0-3), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.04892,0.6047569598971467,2.942569871044894
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.073816,0.7375699440447643,2.9424645902274134
+"dti_DTI Healthy(<20), int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",grade_Grade B,0.05636,0.866170775189033,2.942116191318844
+"emp_length_Emp Short(0-3), grade_Grade B",int_rate_IntRate Medium,0.069456,0.737418779462352,2.941861533616124
+"grade_Grade B, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.097468,0.7369869642803133,2.940138848340062
+"grade_Grade B, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.052384,0.7365579302587176,2.938427258236993
+"emp_length_Emp Mid(4-7), grade_Grade B",int_rate_IntRate Medium,0.059088,0.736427538760656,2.9379070738544666
+"emp_length_Emp Long(8+), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.061592,0.5133522253708951,2.9377387799918457
+"grade_Grade B, purpose_credit_card","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.040016,0.5133415435139573,2.937677651386928
+"home_Home MORTGAGE, int_rate_IntRate Medium",grade_Grade B,0.105084,0.8647465437788018,2.937278514486222
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",grade_Grade B,0.067412,0.864744214685207,2.93727060327036
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.047372,0.8640741281190719,2.9349945249353677
+"emp_length_Emp Mid(4-7), int_rate_IntRate Medium",grade_Grade B,0.059088,0.863910170185391,2.934437610173065
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",grade_Grade B,0.045084,0.8637443482259177,2.93387436388744
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.092228,0.7350250247059199,2.9323118784744517
+"annual_inc_Inc Mid(50-100k), grade_Grade B","fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",0.073816,0.5123122622914412,2.9317874278455407
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, revol_util_Util High(60-90)",grade_Grade B,0.044828,0.8629398629398629,2.931141774364013
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, int_rate_IntRate Medium",grade_Grade B,0.055236,0.862900706117603,2.9310087706607346
+"emp_length_Emp Long(8+), home_Home MORTGAGE, int_rate_IntRate Medium",grade_Grade B,0.0513,0.8625327863339834,2.929759060114616
+"dti_DTI Healthy(<20), home_Home RENT, int_rate_IntRate Medium",grade_Grade B,0.055868,0.8622137168961046,2.9286752791949318
+"annual_inc_Inc Mid(50-100k), grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.058688,0.7340771501475959,2.928530423784811
+"int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",grade_Grade B,0.091668,0.8617033276931754,2.92694164377242
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium",grade_Grade B,0.105032,0.8611721491587682,2.9251373933736238
+"home_Home MORTGAGE, int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.05802,0.8607797756809684,2.9238046211361546
+"emp_length_Emp Long(8+), grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.049024,0.7328390337239895,2.923591076995458
+"fico_range_low_FICO Good(670-739), grade_Grade B, revol_util_Util High(60-90)",int_rate_IntRate Medium,0.044828,0.7327231121281464,2.923128618900785
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), grade_Grade B",int_rate_IntRate Medium,0.061592,0.7326798629615531,2.9229560804964136
+int_rate_IntRate Medium,grade_Grade B,0.215684,0.8604506430919477,2.9226866587816325
+grade_Grade B,int_rate_IntRate Medium,0.215684,0.7326123286368391,2.9226866587816325
+"grade_Grade B, revol_util_Util Excellent(<30)",int_rate_IntRate Medium,0.051108,0.7324581518000458,2.922071585070237
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.046896,0.8597829275447345,2.920418634069967
+"home_Home MORTGAGE, int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",grade_Grade B,0.049512,0.859762450510523,2.9203490798716154
+"emp_length_Emp Long(8+), int_rate_IntRate Medium",grade_Grade B,0.08714,0.8595722853535354,2.9197031472178887
+"int_rate_IntRate Medium, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",grade_Grade B,0.052384,0.8595431871882384,2.919604309684102
+"home_Home RENT, int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)",grade_Grade B,0.046472,0.8591924271557462,2.9184128855441718
+"grade_Grade B, revol_util_Util High(60-90)",int_rate_IntRate Medium,0.063348,0.731298485408201,2.9174452071625803
+"grade_Grade B, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.091668,0.7311913725990683,2.917017890878101
+"emp_length_Emp Short(0-3), int_rate_IntRate Medium",grade_Grade B,0.069456,0.8586263165702418,2.916489981692646
+"grade_Grade B, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",int_rate_IntRate Medium,0.05588,0.7305339120430894,2.9143950150124844
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.058688,0.8579113553970296,2.9140614780948275
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), grade_Grade B",int_rate_IntRate Medium,0.045048,0.730444934492152,2.9140400476021764
+"dti_DTI Healthy(<20), grade_Grade B, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.062264,0.7303181007788309,2.9135340566608323
+"dti_DTI Healthy(<20), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.092228,0.5984168180638464,2.911720601711981
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), int_rate_IntRate Medium",grade_Grade B,0.047084,0.8567581337797511,2.910144338323362
+"int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.118584,0.8565979947412522,2.9096003951755147
+"dti_DTI Healthy(<20), grade_Grade B, purpose_debt_consolidation",int_rate_IntRate Medium,0.072384,0.7292657370839043,2.9093357525767733
+"annual_inc_Inc Mid(50-100k), grade_Grade B",int_rate_IntRate Medium,0.105032,0.7289636600871714,2.908130645354624
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), grade_Grade B",int_rate_IntRate Medium,0.047084,0.728583807873236,2.906615261358775
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",grade_Grade B,0.055344,0.8556586270871984,2.9064096516596187
+"int_rate_IntRate Medium, revol_util_Util High(60-90)","fico_range_low_FICO Good(670-739), grade_Grade B",0.044828,0.5970379841244473,2.905011600449821
+"emp_length_Emp Long(8+), int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.049024,0.8548510846062635,2.9036666777838054
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",grade_Grade B,0.053056,0.8544189641844886,2.9021988973807717
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",grade_Grade B,0.093008,0.8542876037916085,2.9017527064564628
+"annual_inc_Inc Mid(50-100k), grade_Grade B, loan_amnt_Loan Small(<10k)",int_rate_IntRate Medium,0.042068,0.7271658715342598,2.9009585402541243
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",grade_Grade B,0.040144,0.85332879857155,2.898495939496576
+"fico_range_low_FICO Good(670-739), grade_Grade B, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Medium,0.067412,0.7264850418139495,2.8982424353475147
+"annual_inc_Inc Mid(50-100k), grade_Grade B, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.045084,0.7264114462490332,2.897948832895961
+"emp_length_Emp Long(8+), grade_Grade B",int_rate_IntRate Medium,0.08714,0.7262877146191031,2.897455217418948
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium",grade_Grade B,0.068356,0.8528721864550581,2.8969449683260358
+"home_Home RENT, int_rate_IntRate Medium",grade_Grade B,0.086068,0.8527663284717819,2.8965854012573944
+"annual_inc_Inc Low(<50k), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.048308,0.5479582577132486,2.895389521448907
+"fico_range_low_FICO Good(670-739), grade_Grade B, home_Home MORTGAGE",int_rate_IntRate Medium,0.075344,0.7257455498189103,2.895292302919088
+"fico_range_low_FICO Good(670-739), grade_Grade B, purpose_credit_card",int_rate_IntRate Medium,0.040016,0.7256110829041851,2.894755860052441
+"annual_inc_Inc Mid(50-100k), grade_Grade B, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Medium,0.053056,0.7244920253441118,2.89029148718648
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",grade_Grade B,0.05588,0.8507917174177831,2.889878253752609
+"grade_Grade B, home_Home MORTGAGE, purpose_debt_consolidation",int_rate_IntRate Medium,0.05802,0.7239468955879417,2.8881167442789617
+int_rate_IntRate Medium,"dti_DTI Healthy(<20), grade_Grade B",0.134176,0.5352822902371301,2.8874867312392394
+"dti_DTI Healthy(<20), grade_Grade B",int_rate_IntRate Medium,0.134176,0.7237889739993527,2.8874867312392394
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.06524,0.5349119412285593,2.8854889482606505
+"home_Home RENT, int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.059812,0.5926204819277108,2.883517331294817
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), grade_Grade B",int_rate_IntRate Medium,0.06524,0.7221927027984415,2.881118560297616
+"home_Home RENT, int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.057752,0.5452005135563779,2.8808177116034592
+"grade_Grade B, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Medium,0.093008,0.7217083617853374,2.879186328253508
+"home_Home RENT, int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.047988,0.847604917337855,2.879053672293362
+"fico_range_low_FICO Fair(<670), grade_Grade B",int_rate_IntRate Medium,0.043524,0.7214560403129558,2.878179715926323
+"dti_DTI Healthy(<20), grade_Grade B, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.05606,0.7208991307031531,2.875957978421924
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium","fico_range_low_FICO Good(670-739), grade_Grade B",0.047372,0.5910565453910266,2.875907675121772
+"dti_DTI Manageable(20-35), int_rate_IntRate Medium",grade_Grade B,0.07558,0.845981643160958,2.873539908292544
+"grade_Grade B, home_Home MORTGAGE",int_rate_IntRate Medium,0.105084,0.720029600394672,2.8724890706071555
+"emp_length_Emp Long(8+), grade_Grade B, home_Home MORTGAGE",int_rate_IntRate Medium,0.0513,0.7200202110936447,2.8724516128907407
+"grade_Grade B, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.040144,0.7197360872059667,2.8713181278762274
+"annual_inc_Inc Mid(50-100k), grade_Grade B, home_Home MORTGAGE",int_rate_IntRate Medium,0.055236,0.7197060509720123,2.871198301200062
+"grade_Grade B, home_Home MORTGAGE, revol_util_Util Moderate(30-60)",int_rate_IntRate Medium,0.044608,0.7187882694166936,2.8675368996612742
+"int_rate_IntRate Medium, revol_util_Util High(60-90)",grade_Grade B,0.063348,0.8436950615310852,2.8657730925228093
+"int_rate_IntRate Medium, loan_amnt_Loan Small(<10k)","fico_range_low_FICO Good(670-739), grade_Grade B",0.066088,0.5888306782137638,2.865077258727928
+"dti_DTI Healthy(<20), int_rate_IntRate High","fico_range_low_FICO Good(670-739), grade_Grade C",0.076972,0.5413700942467294,2.8605779291459505
+"dti_DTI Manageable(20-35), int_rate_IntRate Medium, purpose_debt_consolidation",grade_Grade B,0.04298,0.8418207458476966,2.859406617599274
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), grade_Grade B",int_rate_IntRate Medium,0.052584,0.7148838979824895,2.8519607840874217
+"grade_Grade B, purpose_credit_card",int_rate_IntRate Medium,0.055704,0.7145935960591133,2.850802652391701
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.092228,0.5277892230920661,2.8470666905387105
+"int_rate_IntRate Medium, revol_util_Util Moderate(30-60)","dti_DTI Healthy(<20), grade_Grade B",0.05606,0.5269787554051513,2.842694764295778
+"grade_Grade B, home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Medium,0.049512,0.7124438816622539,2.842226572871469
+"dti_DTI Healthy(<20), grade_Grade B, loan_amnt_Loan Medium(10-25k)",int_rate_IntRate Medium,0.05636,0.7103604739097555,2.8339150173529326
+"dti_DTI Healthy(<20), grade_Grade B, home_Home MORTGAGE",int_rate_IntRate Medium,0.063548,0.7093677442400428,2.8299546174961017
+"home_Home MORTGAGE, int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.063548,0.5229427254772876,2.820923106469348
+"int_rate_IntRate Medium, purpose_debt_consolidation","dti_DTI Healthy(<20), grade_Grade B",0.072384,0.522869773758271,2.8205295811752675
+"int_rate_IntRate High, revol_util_Util High(60-90)","fico_range_low_FICO Good(670-739), grade_Grade C",0.049332,0.5320075920973169,2.8111068421856404
+"emp_length_Emp Long(8+), int_rate_IntRate Medium","dti_DTI Healthy(<20), grade_Grade B",0.052584,0.5187026515151515,2.798050768773069
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)","dti_DTI Healthy(<20), grade_Grade B",0.05636,0.5176721287383349,2.7924917938199103
+"fico_range_low_FICO Fair(<670), int_rate_IntRate Medium",grade_Grade B,0.043524,0.8054630246502331,2.735910601249416
+"int_rate_IntRate High, loan_amnt_Loan Small(<10k)","fico_range_low_FICO Good(670-739), grade_Grade C",0.051356,0.5144036219399816,2.7180881678396083
+"dti_DTI Healthy(<20), fico_range_low_FICO VeryGood(740-799)",int_rate_IntRate Low,0.042628,0.676463120477339,2.707238588066446
+"fico_range_low_FICO VeryGood(740-799), revol_util_Util Excellent(<30)",int_rate_IntRate Low,0.042988,0.6408467501490757,2.564700127061358
+fico_range_low_FICO VeryGood(740-799),int_rate_IntRate Low,0.060428,0.6357897394890788,2.5444617223581623
+"grade_Grade A, int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",revol_util_Util Excellent(<30),0.042216,0.5151810992873181,2.2389054483508244
+"grade_Grade A, loan_amnt_Loan Small(<10k)",revol_util_Util Excellent(<30),0.042228,0.5150258561810909,2.238230783389645
+"dti_DTI Manageable(20-35), home_Home RENT, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.043868,0.6823668491786958,2.15048737875722
+"emp_length_Emp Short(0-3), home_Home RENT, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.051024,0.622274257280843,1.9611048485409852
+"dti_DTI Manageable(20-35), loan_amnt_Loan Small(<10k), purpose_debt_consolidation",annual_inc_Inc Low(<50k),0.043556,0.6062242511969714,1.9105230602347607
+"home_Home RENT, loan_amnt_Loan Small(<10k), purpose_debt_consolidation",annual_inc_Inc Low(<50k),0.058456,0.6042088725348328,1.9041715700040116
+"home_Home RENT, loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",annual_inc_Inc Low(<50k),0.046408,0.6040506065496954,1.9036727928375443
+"fico_range_low_FICO Good(670-739), home_Home RENT, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.067936,0.5936178392925797,1.870793800637172
+"home_Home RENT, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.110412,0.5881237482422125,1.8534791062381424
+"int_rate_IntRate Very High, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.04366,0.5840646404109588,1.840686778810994
+"annual_inc_Inc Low(<50k), int_rate_IntRate Low",loan_amnt_Loan Small(<10k),0.042768,0.7174875855589854,1.8127895095378013
+"dti_DTI Manageable(20-35), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.079816,0.5712404454496007,1.80027117327518
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), home_Home RENT",loan_amnt_Loan Small(<10k),0.062772,0.7109268823049741,1.796213370419246
+"emp_length_Emp Mid(4-7), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.067212,0.5682064114703097,1.7907093784912758
+"emp_length_Emp Mid(4-7), fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.040852,0.5676411738550466,1.7889280253099409
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.050144,0.5597928016432973,1.7641937853545997
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), emp_length_Emp Short(0-3)",loan_amnt_Loan Small(<10k),0.04374,0.6980975485188968,1.763799037168252
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.04706,0.557292406802141,1.7563137607691612
+"annual_inc_Inc Low(<50k), revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.056272,0.6941675713016876,1.7538696368337097
+"emp_length_Emp Short(0-3), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.07572,0.5549204115733005,1.748838389114994
+"annual_inc_Inc Low(<50k), grade_Grade B, int_rate_IntRate Medium",loan_amnt_Loan Small(<10k),0.046896,0.6860553572473521,1.7333734821506048
+"annual_inc_Inc Low(<50k), grade_Grade B",loan_amnt_Loan Small(<10k),0.062396,0.686032192804996,1.7333149553426954
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium",loan_amnt_Loan Small(<10k),0.054544,0.6805409991515696,1.7194410173817805
+"loan_amnt_Loan Small(<10k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",annual_inc_Inc Low(<50k),0.043688,0.5421692727724001,1.7086530209525137
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), grade_Grade B",loan_amnt_Loan Small(<10k),0.042196,0.6745316196687767,1.704257841666271
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3), home_Home RENT",loan_amnt_Loan Small(<10k),0.051024,0.6731398416886543,1.7007414037895012
+"int_rate_IntRate High, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.053872,0.5396049521214793,1.7005715334043874
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20)",loan_amnt_Loan Small(<10k),0.10648,0.6729869801542157,1.7003551869522773
+"grade_Grade C, int_rate_IntRate High, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.046684,0.5391260162601627,1.6990621612444776
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3), loan_amnt_Loan Small(<10k)",home_Home RENT,0.051024,0.6738510301109351,1.6976827556684275
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.043052,0.6691743347426014,1.6907222347662445
+"grade_Grade C, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.060568,0.5362087892630758,1.6898684850778292
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Fair(<670)",loan_amnt_Loan Small(<10k),0.05786,0.6646296636647676,1.6792397614523984
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), emp_length_Emp Short(0-3)",home_Home RENT,0.041548,0.6631128702757916,1.6706293151227731
+"dti_DTI Healthy(<20), home_Home RENT, loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.062772,0.5285618053216571,1.6657689226923278
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Small(<10k),0.063664,0.6584205518553758,1.6635519461115331
+"annual_inc_Inc Low(<50k), home_Home RENT",loan_amnt_Loan Small(<10k),0.110412,0.6534646433559811,1.6510304487103862
+"annual_inc_Inc Low(<50k), home_Home RENT, revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.046408,0.6520541786095655,1.6474667972307817
+"loan_amnt_Loan Small(<10k), purpose_debt_consolidation",annual_inc_Inc Low(<50k),0.100924,0.5215710594315245,1.643737502462984
+"fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k), purpose_debt_consolidation",annual_inc_Inc Low(<50k),0.06152,0.5200689818415447,1.639003686769778
+"loan_amnt_Loan Small(<10k), purpose_credit_card",annual_inc_Inc Low(<50k),0.044696,0.5160247529324836,1.6262582504458871
+"loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",annual_inc_Inc Low(<50k),0.081004,0.5120353982300885,1.6136857508480358
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), home_Home RENT",loan_amnt_Loan Small(<10k),0.067936,0.6369398087380461,1.6092791383808822
+"fico_range_low_FICO Fair(<670), loan_amnt_Loan Small(<10k)",annual_inc_Inc Low(<50k),0.05786,0.5094027327792647,1.6053888738363506
+"fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",annual_inc_Inc Low(<50k),0.05404,0.5090429540316503,1.604255026761539
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739)",home_Home RENT,0.048408,0.6351088953030701,1.6000768290732486
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3)",loan_amnt_Loan Small(<10k),0.07572,0.6319479218828242,1.5966667387992286
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3)",home_Home RENT,0.0758,0.6326155900517444,1.593795260684021
+"annual_inc_Inc Low(<50k), emp_length_Emp Mid(4-7)",loan_amnt_Loan Small(<10k),0.067212,0.6307432432432432,1.5936230223027328
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3), purpose_debt_consolidation",home_Home RENT,0.04168,0.6296833454193861,1.5864078398368102
+"loan_amnt_Loan Small(<10k), revol_util_Util Excellent(<30)",annual_inc_Inc Low(<50k),0.056272,0.5032013449225596,1.5858451249970364
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), purpose_debt_consolidation",loan_amnt_Loan Small(<10k),0.052656,0.6253384637309392,1.5799674165494482
+"dti_DTI Manageable(20-35), home_Home RENT",annual_inc_Inc Low(<50k),0.07262,0.5007308933447335,1.578059466968162
+"annual_inc_Inc Low(<50k), emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Small(<10k),0.04706,0.6174232484912097,1.5599689950560136
+"emp_length_Emp Short(0-3), loan_amnt_Loan Small(<10k), purpose_debt_consolidation",home_Home RENT,0.041152,0.6186782127608395,1.5586817949049174
+annual_inc_Inc Low(<50k),loan_amnt_Loan Small(<10k),0.194844,0.6140532227362688,1.551454356672871
+"annual_inc_Inc Low(<50k), purpose_credit_card",loan_amnt_Loan Small(<10k),0.044696,0.6130465792505624,1.5489109917597184
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), loan_amnt_Loan Small(<10k)",home_Home RENT,0.053904,0.614500683994528,1.5481570376055065
+"annual_inc_Inc Low(<50k), grade_Grade C, int_rate_IntRate High",loan_amnt_Loan Small(<10k),0.046684,0.6120404845560858,1.5463690134113015
+"annual_inc_Inc Low(<50k), emp_length_Emp Mid(4-7), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Small(<10k),0.040852,0.6113738401676144,1.5446846832872176
+purpose_home_improvement,home_Home MORTGAGE,0.050108,0.7586144249984861,1.5446243067006142
+"annual_inc_Inc Low(<50k), int_rate_IntRate High",loan_amnt_Loan Small(<10k),0.053872,0.6110707803992741,1.5439189786536214
+"annual_inc_Inc Low(<50k), grade_Grade C",loan_amnt_Loan Small(<10k),0.060568,0.6097285978899896,1.540527847682595
+"annual_inc_Inc Low(<50k), revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.081004,0.6089061278489386,1.538449811640808
+"annual_inc_Inc Low(<50k), home_Home RENT, purpose_debt_consolidation",loan_amnt_Loan Small(<10k),0.058456,0.6077518090326873,1.535533333247482
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), home_Home RENT",loan_amnt_Loan Small(<10k),0.043868,0.6040760121178738,1.5262461396841618
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k)",home_Home RENT,0.051044,0.6044716024821183,1.5228900305401494
+"emp_length_Emp Short(0-3), loan_amnt_Loan Small(<10k)",home_Home RENT,0.081996,0.6009146073344473,1.5139286294969498
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Small(<10k),0.119432,0.5953857504636184,1.50428950171711
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), loan_amnt_Loan Small(<10k)",home_Home RENT,0.062772,0.5895191585274229,1.485219232214285
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.05404,0.5870339793169375,1.4831880869672391
+"annual_inc_Inc Low(<50k), loan_amnt_Loan Small(<10k), purpose_debt_consolidation",home_Home RENT,0.058456,0.5792081169989299,1.4592418624193295
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35)",loan_amnt_Loan Small(<10k),0.079816,0.5761556896601507,1.455703222046304
+"annual_inc_Inc Low(<50k), loan_amnt_Loan Small(<10k), revol_util_Util Moderate(30-60)",home_Home RENT,0.046408,0.5729099797540862,1.443374499284715
+"annual_inc_Inc Low(<50k), emp_length_Emp Long(8+)",loan_amnt_Loan Small(<10k),0.051912,0.5709132500439908,1.4424577809657368
+"annual_inc_Inc Upper(100-150k), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.047916,0.7050618010594467,1.4355851401648574
+"grade_Grade A, revol_util_Util Moderate(30-60)","dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739)",0.040024,0.5310758452311448,1.435309088536315
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k)",home_Home RENT,0.067936,0.5688257753365932,1.4330848609219728
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Fair(<670)",home_Home RENT,0.049428,0.5677724682962692,1.4304311865653605
+"annual_inc_Inc Low(<50k), loan_amnt_Loan Small(<10k)",home_Home RENT,0.110412,0.5666687195910575,1.427650430790422
+"annual_inc_Inc Low(<50k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.043688,0.5642111788407893,1.4255244644681786
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739)",home_Home RENT,0.054616,0.5648450750837711,1.4230559882591407
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20), purpose_debt_consolidation",home_Home RENT,0.047464,0.563678685098095,1.420117415671753
+"annual_inc_Inc Low(<50k), purpose_debt_consolidation",loan_amnt_Loan Small(<10k),0.100924,0.5620002227419535,1.4199383078535026
+"annual_inc_Inc Low(<50k), purpose_credit_card",home_Home RENT,0.040964,0.5618587809293905,1.4155323964521935
+"home_Home RENT, revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.051904,0.5596480634865868,1.4139953902215985
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Small(<10k),0.050144,0.5569822721819878,1.4072600562466848
+"annual_inc_Inc Low(<50k), dti_DTI Healthy(<20)",home_Home RENT,0.088296,0.558058399696625,1.405957814837664
+"emp_length_Emp Long(8+), loan_amnt_Loan Large(>25k)",home_Home MORTGAGE,0.045264,0.6896635787420771,1.4042326273630654
+"emp_length_Emp Short(0-3), fico_range_low_FICO Fair(<670)",home_Home RENT,0.044704,0.5554671968190855,1.3994296057156672
+annual_inc_Inc High(>150k),dti_DTI Healthy(<20),0.04894,0.8224104322107951,1.397487871051425
+"annual_inc_Inc Low(<50k), revol_util_Util High(60-90)",loan_amnt_Loan Small(<10k),0.048344,0.5526039047140048,1.396197762243817
+"annual_inc_Inc Low(<50k), int_rate_IntRate Very High",home_Home RENT,0.04936,0.5521746912475389,1.391134552830111
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), loan_amnt_Loan Small(<10k)",home_Home RENT,0.043868,0.5496141124586549,1.384683497240416
+"emp_length_Emp Short(0-3), purpose_credit_card",home_Home RENT,0.043264,0.5491191552012997,1.3834365148020773
+"annual_inc_Inc Low(<50k), grade_Grade C",home_Home RENT,0.054344,0.5470725618104213,1.3782803806532768
+"dti_DTI Healthy(<20), grade_Grade B, home_Home RENT",loan_amnt_Loan Small(<10k),0.041228,0.5452285230639018,1.377563273294816
+"annual_inc_Inc Low(<50k), int_rate_IntRate High",home_Home RENT,0.04818,0.5465063520871143,1.3768538866057842
+annual_inc_Inc High(>150k),home_Home MORTGAGE,0.040172,0.6750688982993883,1.3745162162094675
+"int_rate_IntRate Low, revol_util_Util Moderate(30-60)","dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739)",0.051736,0.5083120455885243,1.373786635933613
+"annual_inc_Inc Low(<50k), grade_Grade C, int_rate_IntRate High",home_Home RENT,0.041576,0.5450731553830825,1.3732431281128945
+"annual_inc_Inc Low(<50k), home_Home MORTGAGE",loan_amnt_Loan Small(<10k),0.056292,0.5428351012536162,1.3715161025326843
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), purpose_debt_consolidation",loan_amnt_Loan Small(<10k),0.06152,0.5419500334754571,1.3692799083242135
+"grade_Grade B, home_Home RENT, int_rate_IntRate Medium",loan_amnt_Loan Small(<10k),0.046472,0.5399451596412139,1.3642144349588017
+"annual_inc_Inc Low(<50k), revol_util_Util High(60-90)",home_Home RENT,0.047316,0.5408531845823236,1.3626114434559855
+"grade_Grade B, home_Home RENT",loan_amnt_Loan Small(<10k),0.061892,0.5359171515655307,1.354037351855345
+"home_Home RENT, int_rate_IntRate Medium",loan_amnt_Loan Small(<10k),0.054088,0.5359067850348763,1.3540111599902886
+"annual_inc_Inc Low(<50k), purpose_debt_consolidation",home_Home RENT,0.096184,0.5356053012584922,1.3493900627286135
+"annual_inc_Inc Low(<50k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",home_Home RENT,0.041444,0.535230912284327,1.3484468368864744
+"annual_inc_Inc Low(<50k), revol_util_Util Moderate(30-60)",home_Home RENT,0.071172,0.5349990979613927,1.3478628099117027
+"emp_length_Emp Short(0-3), int_rate_IntRate Very High",home_Home RENT,0.042048,0.5346625298814912,1.3470148690466972
+"annual_inc_Inc Low(<50k), int_rate_IntRate Medium",home_Home RENT,0.042792,0.5339122623147178,1.3451246644564647
+"emp_length_Emp Short(0-3), int_rate_IntRate High",home_Home RENT,0.044196,0.5328928330278769,1.3425563408306802
+annual_inc_Inc Low(<50k),home_Home RENT,0.168964,0.5324920897046403,1.341546718527074
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), purpose_debt_consolidation",home_Home RENT,0.055144,0.5324835843955195,1.3415252904725323
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), revol_util_Util Moderate(30-60)",home_Home RENT,0.048972,0.5319805335882507,1.3402579173550877
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739)",home_Home RENT,0.10666,0.5317154878462182,1.3395901680075235
+"emp_length_Emp Short(0-3), grade_Grade C",home_Home RENT,0.050152,0.5311361518258071,1.3381306039085747
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High, purpose_debt_consolidation",dti_DTI Manageable(20-35),0.046144,0.5010641532380663,1.336827011755278
+"annual_inc_Inc Low(<50k), fico_range_low_FICO Good(670-739), purpose_debt_consolidation",home_Home RENT,0.060176,0.5301102928221572,1.3355460814215243
+"int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",dti_DTI Manageable(20-35),0.042532,0.5004000188244152,1.3350551172426344
+"annual_inc_Inc Upper(100-150k), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.061256,0.6552565144837619,1.3341759740431531
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), revol_util_Util Moderate(30-60)",home_Home RENT,0.041216,0.5281935616157474,1.3307171186820332
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3)",home_Home RENT,0.103756,0.528095606498636,1.330470333108192
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), purpose_debt_consolidation",loan_amnt_Loan Small(<10k),0.043556,0.526165740517033,1.3293996354575963
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), purpose_debt_consolidation",home_Home RENT,0.043628,0.5270355158250785,1.3277995682424808
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739)",home_Home RENT,0.065332,0.5267520237365756,1.3270853456494835
+"fico_range_low_FICO Fair(<670), home_Home RENT",loan_amnt_Loan Small(<10k),0.058524,0.5251426725530312,1.3268147727923536
+"grade_Grade A, int_rate_IntRate Low, revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.042216,0.5243441971383147,1.3247973610843946
+"grade_Grade A, revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.042228,0.5242588270348116,1.3245816667209334
+"emp_length_Emp Long(8+), grade_Grade A",home_Home MORTGAGE,0.051492,0.6500530222693531,1.3235810785478306
+"emp_length_Emp Long(8+), grade_Grade A, int_rate_IntRate Low",home_Home MORTGAGE,0.051484,0.650050505050505,1.323575953207091
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35)",home_Home RENT,0.07262,0.5242110126180234,1.3206835883393884
+"annual_inc_Inc Upper(100-150k), home_Home MORTGAGE",emp_length_Emp Long(8+),0.047916,0.5358053406092053,1.3202248662274303
+"annual_inc_Inc Low(<50k), grade_Grade B",home_Home RENT,0.047612,0.5234849151200633,1.318854277191763
+"fico_range_low_FICO Good(670-739), loan_amnt_Loan Large(>25k)",home_Home MORTGAGE,0.06252,0.6470709997930036,1.3175093453348663
+"emp_length_Emp Short(0-3), int_rate_IntRate Medium",home_Home RENT,0.042272,0.5225733076200365,1.3165575969707968
+"annual_inc_Inc Upper(100-150k), purpose_debt_consolidation",home_Home MORTGAGE,0.049732,0.6465418616744669,1.316431960602174
+"int_rate_IntRate Low, revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.05008,0.5207120279487606,1.3156203964424764
+"loan_amnt_Loan Large(>25k), purpose_debt_consolidation",home_Home MORTGAGE,0.054304,0.644971257541926,1.3132340339092667
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.0448,0.5328765819773528,1.3130084021874238
+"dti_DTI Healthy(<20), emp_length_Emp Short(0-3), home_Home RENT",loan_amnt_Loan Small(<10k),0.053904,0.5195265815952812,1.3126252718480445
+annual_inc_Inc Upper(100-150k),home_Home MORTGAGE,0.089428,0.6443125162108417,1.311892762456614
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), home_Home MORTGAGE",emp_length_Emp Long(8+),0.05566,0.5322648510117431,1.3115010965093563
+"fico_range_low_FICO Good(670-739), grade_Grade B, home_Home RENT",loan_amnt_Loan Small(<10k),0.041148,0.518106270460841,1.3090367426851504
+"annual_inc_Inc Low(<50k), dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739)",home_Home RENT,0.046724,0.5189940907273293,1.3075402110412302
+"loan_amnt_Loan Small(<10k), purpose_credit_card",home_Home RENT,0.044948,0.518934146116191,1.3073891881473303
+"annual_inc_Inc Upper(100-150k), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.044104,0.6412329165455074,1.3056223511103071
+loan_amnt_Loan Large(>25k),home_Home MORTGAGE,0.087108,0.6401422734354332,1.303401679050506
+"emp_length_Emp Long(8+), int_rate_IntRate Low",home_Home MORTGAGE,0.067208,0.6400518075501886,1.3032174803315375
+"home_Home RENT, int_rate_IntRate Low",loan_amnt_Loan Small(<10k),0.0433,0.5157463433226928,1.3030741988789385
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), revol_util_Util High(60-90)",home_Home MORTGAGE,0.056932,0.6394842072157075,1.3020617822005236
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate Low",home_Home MORTGAGE,0.043224,0.6391057487579844,1.3012911982073747
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), int_rate_IntRate Low",home_Home MORTGAGE,0.045624,0.637669816067535,1.2983674777199103
+"fico_range_low_FICO Fair(<670), loan_amnt_Loan Small(<10k)",home_Home RENT,0.058524,0.5152486265671221,1.2981039860706889
+"emp_length_Emp Short(0-3), purpose_debt_consolidation",home_Home RENT,0.09128,0.5147174918236157,1.2967658590148636
+"dti_DTI Healthy(<20), loan_amnt_Loan Small(<10k), purpose_debt_consolidation",home_Home RENT,0.059236,0.5140585948347681,1.2951058510817388
+"annual_inc_Inc Low(<50k), revol_util_Util Excellent(<30)",home_Home RENT,0.04164,0.513668212770157,1.2941223326635751
+emp_length_Emp Short(0-3),home_Home RENT,0.16472,0.5131528118730452,1.2928238450510556
+"emp_length_Emp Short(0-3), revol_util_Util Moderate(30-60)",home_Home RENT,0.066548,0.5129335594265454,1.2922714661409878
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, purpose_debt_consolidation",emp_length_Emp Long(8+),0.078112,0.5244246314149905,1.2921827880047272
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), emp_length_Emp Short(0-3)",home_Home RENT,0.045368,0.5124474766186238,1.2910468417596914
+"dti_DTI Healthy(<20), fico_range_low_FICO Good(670-739), revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.044364,0.5097904026475455,1.288026040565614
+"emp_length_Emp Short(0-3), grade_Grade B",home_Home RENT,0.048148,0.5111903851870727,1.2878797583090786
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Very High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.045164,0.602283031951779,1.2865666776716376
+"grade_Grade C, loan_amnt_Loan Small(<10k)",home_Home RENT,0.05768,0.5106413116611778,1.286496436751564
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.068076,0.6016119339672664,1.2851331119583076
+"grade_Grade C, int_rate_IntRate High, loan_amnt_Loan Small(<10k)",home_Home RENT,0.044144,0.5097930524759793,1.28435935462703
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739)",home_Home RENT,0.1059,0.5092325447201385,1.2829472259680403
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.056932,0.5202880538090364,1.2819902568697243
+"int_rate_IntRate High, loan_amnt_Loan Small(<10k)",home_Home RENT,0.050764,0.5084738971913939,1.2810359091196146
+"loan_amnt_Loan Small(<10k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",home_Home RENT,0.040964,0.5083643584015884,1.280759939942126
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), revol_util_Util Moderate(30-60)",home_Home RENT,0.047252,0.5082171743245569,1.2803891282073063
+"home_Home MORTGAGE, loan_amnt_Loan Large(>25k)",emp_length_Emp Long(8+),0.045264,0.5196308031409285,1.2803707906016313
+"annual_inc_Inc Mid(50-100k), purpose_debt_consolidation, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.055116,0.5978392919125304,1.277074184017607
+"emp_length_Emp Short(0-3), revol_util_Util High(60-90)",home_Home RENT,0.049112,0.506706285336965,1.2765826337963062
+"grade_Grade A, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.060488,0.7509559517306451,1.276068241761392
+"grade_Grade A, int_rate_IntRate Low, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.060452,0.7508445945945946,1.2758790172077017
+"fico_range_low_FICO Good(670-739), revol_util_Util Excellent(<30)",loan_amnt_Loan Small(<10k),0.064244,0.5047295810942458,1.275239471980853
+"fico_range_low_FICO Fair(<670), revol_util_Util Moderate(30-60)",loan_amnt_Loan Small(<10k),0.045832,0.5046910099986786,1.2751420190369651
+"emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739), purpose_debt_consolidation",home_Home RENT,0.058256,0.5061337966985231,1.2751403208133625
+"home_Home MORTGAGE, purpose_debt_consolidation, revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.049416,0.5174233539956441,1.2749316338190144
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.044328,0.5966404651663616,1.2745133107037363
+"annual_inc_Inc Low(<50k), emp_length_Emp Mid(4-7)",home_Home RENT,0.0538,0.5048798798798799,1.2719812353999251
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), home_Home MORTGAGE",emp_length_Emp Long(8+),0.088092,0.5158456889888272,1.2710442657494685
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.058644,0.6150522297268952,1.2697511699854152
+"dti_DTI Healthy(<20), loan_amnt_Loan Large(>25k)",home_Home MORTGAGE,0.049,0.6230608819490362,1.268622044478951
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE",emp_length_Emp Long(8+),0.132616,0.5143504297371932,1.2673599455386633
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.05566,0.6223723052151355,1.2672200247899454
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.049492,0.6130710534139333,1.2656611093047998
+"int_rate_IntRate Low, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.071604,0.7445100648810514,1.2651150141056318
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), revol_util_Util High(60-90)",home_Home MORTGAGE,0.0448,0.6205673758865248,1.263544985638331
+"annual_inc_Inc Mid(50-100k), grade_Grade C, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.049352,0.5914952778177286,1.2635224206371891
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",emp_length_Emp Long(8+),0.071908,0.512734947662645,1.2633793961784456
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), home_Home MORTGAGE",emp_length_Emp Long(8+),0.066292,0.511401857623353,1.2600946610602917
+"annual_inc_Inc Upper(100-150k), dti_DTI Healthy(<20)",home_Home MORTGAGE,0.0599,0.6182651418190827,1.2588573780960772
+"annual_inc_Inc Mid(50-100k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.067976,0.5885571794694188,1.2572462029287013
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.087644,0.5884201197733437,1.2569534229092303
+"home_Home MORTGAGE, revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.081852,0.5099813084112149,1.2565944264574933
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k), revol_util_Util High(60-90)",home_Home MORTGAGE,0.04218,0.6167387998596328,1.2557495741666858
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, revol_util_Util Moderate(30-60)",emp_length_Emp Long(8+),0.053452,0.509435400861576,1.2552493097386583
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, purpose_debt_consolidation",emp_length_Emp Long(8+),0.057116,0.5093457943925234,1.255028519314129
+"dti_DTI Manageable(20-35), int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.042532,0.7099078648684738,1.2544048840999868
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.071908,0.6155452833418935,1.2533194402765315
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k), revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.04218,0.508584932960355,1.2531537560253572
+"emp_length_Emp Long(8+), purpose_debt_consolidation, revol_util_Util High(60-90)",home_Home MORTGAGE,0.049416,0.6144740114399403,1.2511382101755542
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.10678,0.5854680235108343,1.2506473035614618
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.088092,0.6141554421484147,1.2504895672617844
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.081452,0.6129187610992384,1.247971545529997
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, loan_amnt_Loan Small(<10k)",emp_length_Emp Long(8+),0.041096,0.5061083743842365,1.24705151335054
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",emp_length_Emp Long(8+),0.048236,0.5058941980953979,1.2465237827721931
+"emp_length_Emp Long(8+), revol_util_Util High(60-90)",home_Home MORTGAGE,0.081852,0.6115477720331132,1.245180057567239
+"dti_DTI Manageable(20-35), home_Home MORTGAGE",emp_length_Emp Long(8+),0.093636,0.5039070067807555,1.2416273414926808
+"dti_DTI Healthy(<20), home_Home MORTGAGE, revol_util_Util High(60-90)",emp_length_Emp Long(8+),0.041764,0.50383631713555,1.2414531621400096
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), revol_util_Util High(60-90)",home_Home MORTGAGE,0.041764,0.6093731761410063,1.240752335708132
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.067936,0.6093133385951065,1.240630499733486
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.075252,0.5791823163598301,1.237220092537639
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Mid(4-7), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.040188,0.5791111879647243,1.2370681516425373
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.075252,0.5991973755454343,1.2370194462815642
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.053452,0.606554400617312,1.2350129916546102
+"annual_inc_Inc Mid(50-100k), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.16136,0.5781357486814951,1.2349844673756445
+"emp_length_Emp Short(0-3), grade_Grade A",dti_DTI Healthy(<20),0.043236,0.7261672824991602,1.2339458862638069
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",emp_length_Emp Long(8+),0.074924,0.5006414711070722,1.2335810585029523
+"emp_length_Emp Short(0-3), grade_Grade A, int_rate_IntRate Low",dti_DTI Healthy(<20),0.04318,0.7259094882657522,1.233507827235973
+"emp_length_Emp Long(8+), home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.071908,0.5974013026718065,1.2333115243808817
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, purpose_debt_consolidation",emp_length_Emp Long(8+),0.09394,0.5003941789359299,1.2329717303592758
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), grade_Grade B",home_Home MORTGAGE,0.050904,0.6055386372287781,1.2329447831311706
+"dti_DTI Manageable(20-35), int_rate_IntRate Very High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.042532,0.5764705882352942,1.2314274354995902
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.132616,0.6045476924199049,1.2309271080277906
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.120368,0.6043783892347862,1.2305823876977802
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.066292,0.6042365465947207,1.2302935801265662
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Short(0-3), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.04592,0.5755828528453246,1.2295310998720972
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.043444,0.5755391871125007,1.2294378233329504
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.049192,0.6031387935262384,1.228058431391639
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), home_Home MORTGAGE",annual_inc_Inc Mid(50-100k),0.05566,0.5944294929300696,1.227176339897086
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), purpose_debt_consolidation",home_Home MORTGAGE,0.09394,0.6019942581769712,1.2257280286704413
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.160668,0.6013744160977362,1.224465960470375
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate High",home_Home MORTGAGE,0.041092,0.6012172997015274,1.2241460538134907
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), purpose_debt_consolidation",home_Home MORTGAGE,0.078112,0.6011945077273567,1.224099646790184
+"grade_Grade A, home_Home RENT",dti_DTI Healthy(<20),0.044584,0.7203050277885485,1.223984400448177
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.048352,0.5928396272682688,1.223894124685725
+"grade_Grade A, home_Home RENT, int_rate_IntRate Low",dti_DTI Healthy(<20),0.044536,0.7201345320483797,1.2236946841220946
+"annual_inc_Inc Upper(100-150k), loan_amnt_Loan Medium(10-25k)",dti_DTI Healthy(<20),0.049388,0.7180575748764176,1.2201653971106108
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), grade_Grade C",home_Home MORTGAGE,0.046196,0.599045593651123,1.2197242159971715
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), int_rate_IntRate High",loan_amnt_Loan Medium(10-25k),0.046008,0.5705357142857143,1.2187496566902376
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.069416,0.5982281360956945,1.2180597804575846
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), int_rate_IntRate Medium",home_Home MORTGAGE,0.042456,0.5981403212172443,1.217880979486664
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.088204,0.5978310966517555,1.217251363486304
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.048236,0.5975126350213061,1.2166029397825964
+"grade_Grade A, loan_amnt_Loan Small(<10k)",dti_DTI Healthy(<20),0.058672,0.7155820080007806,1.215958769194451
+"grade_Grade A, int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",dti_DTI Healthy(<20),0.058632,0.715513033291028,1.2158415633365076
+"emp_length_Emp Short(0-3), int_rate_IntRate Low",dti_DTI Healthy(<20),0.056152,0.7150934746064898,1.215128624699214
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",home_Home MORTGAGE,0.074924,0.5965856610504189,1.2147155165015084
+"grade_Grade C, home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.040884,0.5880897583429229,1.214088206856741
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), purpose_credit_card",loan_amnt_Loan Medium(10-25k),0.042272,0.5680804171370208,1.2135047745871268
+"emp_length_Emp Short(0-3), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.05472,0.7129827487361234,1.2115419559418368
+"emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.11682,0.5865635669813215,1.2109374447371146
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Fair(<670), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.040268,0.5663253825382538,1.2097557580730516
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.045164,0.6843859861801431,1.2093078076167156
+"emp_length_Emp Long(8+), grade_Grade B",home_Home MORTGAGE,0.071248,0.5938323053842307,1.2091093746370236
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.087644,0.5856363927941411,1.209023330045627
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Very High",loan_amnt_Loan Medium(10-25k),0.065992,0.5657944373949724,1.2086215798000828
+"annual_inc_Inc Mid(50-100k), grade_Grade C, home_Home MORTGAGE",loan_amnt_Loan Medium(10-25k),0.040884,0.5656962585787026,1.208411855157739
+"home_Home MORTGAGE, int_rate_IntRate Very High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.040224,0.5656429294633818,1.2082979361876176
+"home_Home RENT, int_rate_IntRate Low",dti_DTI Healthy(<20),0.059612,0.7100385916432417,1.2065390721424278
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.05574,0.5647645294642133,1.2064215423517584
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.04748,0.564754020363498,1.206399093340122
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), grade_Grade C",loan_amnt_Loan Medium(10-25k),0.051332,0.5643111560617388,1.205453068924446
+"annual_inc_Inc Mid(50-100k), home_Home RENT, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.059308,0.564193302891933,1.2052013169190166
+"emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.077568,0.5836920205881467,1.2050092499982386
+"grade_Grade A, int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.050032,0.5917865253595761,1.2049439363746937
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.059028,0.5836035751008463,1.2048266577637066
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.05004,0.5916012484630663,1.20456669177139
+"grade_Grade B, loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.043688,0.7832759609868043,1.2039138175165451
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Medium(10-25k),0.071716,0.5632736412189758,1.203236781973836
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.088608,0.5627476882430648,1.2021132677173634
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE, revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.059028,0.5625786283405131,1.201752130468571
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.093636,0.590004032664583,1.2013145807330474
+grade_Grade A,dti_DTI Healthy(<20),0.133784,0.7067599264628193,1.200967772650808
+"grade_Grade A, int_rate_IntRate Low",dti_DTI Healthy(<20),0.133708,0.7066869622206718,1.200843787546257
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35)",loan_amnt_Loan Medium(10-25k),0.104504,0.5621516944593867,1.2008401358150838
+"annual_inc_Inc Mid(50-100k), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.076472,0.7066346331546849,1.200754866939032
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), purpose_debt_consolidation",home_Home MORTGAGE,0.057116,0.5893350943084733,1.1999525469903678
+"annual_inc_Inc Mid(50-100k), revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.086252,0.5616242121164765,1.199713354601857
+emp_length_Emp Long(8+),home_Home MORTGAGE,0.23912,0.589191906249692,1.1996609999953003
+"fico_range_low_FICO VeryGood(740-799), int_rate_IntRate Low",dti_DTI Healthy(<20),0.042628,0.7054345667571325,1.1987156439800923
+"emp_length_Emp Long(8+), grade_Grade B, int_rate_IntRate Medium",home_Home MORTGAGE,0.0513,0.5887078264861143,1.1986753591419703
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), home_Home MORTGAGE",loan_amnt_Loan Medium(10-25k),0.058644,0.5608002142064797,1.1979531717688168
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.072228,0.5883483757453325,1.197943476998714
+"home_Home MORTGAGE, int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.040224,0.6779021167587974,1.1978508314758618
+"annual_inc_Inc Mid(50-100k), home_Home RENT, loan_amnt_Loan Small(<10k)",dti_DTI Healthy(<20),0.047392,0.7045251828506868,1.1971703656985766
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.07872,0.5601890068600381,1.1966475414200228
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+)",home_Home MORTGAGE,0.137036,0.5873004988599935,1.1958098817832954
+"grade_Grade A, home_Home MORTGAGE",dti_DTI Healthy(<20),0.074512,0.7036071765816808,1.1956104357946766
+"grade_Grade A, home_Home MORTGAGE, int_rate_IntRate Low",dti_DTI Healthy(<20),0.074492,0.7036043524255705,1.19560563682356
+"int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",dti_DTI Healthy(<20),0.076668,0.7035827031789149,1.195568849158383
+"loan_amnt_Loan Small(<10k), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.078636,0.7031870372357549,1.1948965104636171
+"emp_length_Emp Long(8+), int_rate_IntRate Medium",home_Home MORTGAGE,0.059476,0.5866871843434344,1.19456110443513
+"emp_length_Emp Long(8+), purpose_debt_consolidation",home_Home MORTGAGE,0.138192,0.586493735782433,1.1941672214036818
+"grade_Grade B, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.04424,0.5783611358050514,1.1940038477523214
+"grade_Grade B, home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.040188,0.5782778864970646,1.1938319828258843
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.042012,0.7021191256100007,1.1930818526165192
+"int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.084996,0.6745714285714286,1.1919655163013023
+"annual_inc_Inc Mid(50-100k), purpose_credit_card",loan_amnt_Loan Medium(10-25k),0.061,0.5578519954640231,1.1916553353840864
+"emp_length_Emp Long(8+), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.094588,0.5851914177534708,1.1915155553974712
+"int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.065456,0.5848045171896219,1.190727782326588
+"home_Home RENT, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.064964,0.7004657983265764,1.190272422270101
+"grade_Grade A, int_rate_IntRate Low, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.058296,0.7739365939142903,1.1895589877688106
+"grade_Grade A, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.058316,0.7737912000424606,1.18933551392307
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.054428,0.5838160209379156,1.188715092761041
+"dti_DTI Healthy(<20), grade_Grade A, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.040024,0.7732612055641421,1.1885208997801169
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.051236,0.5563566867914694,1.188461132311975
+"grade_Grade A, loan_amnt_Loan Medium(10-25k)",dti_DTI Healthy(<20),0.05914,0.6991866073961978,1.1880987462806594
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), purpose_debt_consolidation",home_Home MORTGAGE,0.075984,0.5834689928433209,1.1880085045228592
+"grade_Grade A, int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",dti_DTI Healthy(<20),0.059104,0.6990915972747919,1.1879372995296311
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High",loan_amnt_Loan Medium(10-25k),0.067908,0.5559849353201244,1.1876670155428906
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), grade_Grade B",home_Home MORTGAGE,0.0429,0.583229104355865,1.1875200645770687
+"emp_length_Emp Long(8+), purpose_credit_card",home_Home MORTGAGE,0.051012,0.5831275720164609,1.1873133333125532
+"annual_inc_Inc Mid(50-100k), dti_DTI Healthy(<20), revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.043928,0.5555443140428976,1.1867257825632462
+"dti_DTI Healthy(<20), int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.044748,0.5825955629621915,1.186230103031754
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.051236,0.6712960536659504,1.1861779395156138
+annual_inc_Inc Upper(100-150k),dti_DTI Healthy(<20),0.096884,0.698031643563215,1.1861361642353931
+"annual_inc_Inc Mid(50-100k), grade_Grade C, int_rate_IntRate High",loan_amnt_Loan Medium(10-25k),0.059064,0.5552171460800902,1.186026902839563
+"home_Home MORTGAGE, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.07396,0.6979202053372588,1.1859468018889956
+"grade_Grade D, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.04808,0.6707214999162993,1.185162704912073
+"grade_Grade D, int_rate_IntRate Very High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.043212,0.6704940417080436,1.1847607869992218
+"fico_range_low_FICO Fair(<670), grade_Grade B",dti_DTI Healthy(<20),0.042044,0.6969234849489457,1.1842531163532313
+"int_rate_IntRate Very High, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.084996,0.5542398080283785,1.1839391625190725
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.140244,0.5734731263698518,1.1839127442666868
+"emp_length_Emp Long(8+), int_rate_IntRate High",home_Home MORTGAGE,0.059212,0.5806692033107128,1.1823078180829447
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), emp_length_Emp Long(8+)",loan_amnt_Loan Medium(10-25k),0.049492,0.5534037033723948,1.1821531178650355
+"annual_inc_Inc Mid(50-100k), grade_Grade B, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.04424,0.5533596837944664,1.1820590854597983
+"home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k), revol_util_Util High(60-90)",annual_inc_Inc Mid(50-100k),0.04748,0.572489630558503,1.181882355794328
+"emp_length_Emp Long(8+), grade_Grade C, int_rate_IntRate High",home_Home MORTGAGE,0.051736,0.5804424897904231,1.1818462038523718
+"emp_length_Emp Long(8+), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.055628,0.5801835627868168,1.181318999346035
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.094188,0.5721818579447427,1.181246971322045
+revol_util_Util Excellent(<30),dti_DTI Healthy(<20),0.159916,0.6949727079929076,1.1809382421390733
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.044588,0.57196367181487,1.1807965346269311
+int_rate_IntRate Low,dti_DTI Healthy(<20),0.173532,0.6944835755907024,1.1801070797745803
+"annual_inc_Inc Mid(50-100k), grade_Grade A",dti_DTI Healthy(<20),0.064864,0.6944456340199564,1.1800426072401262
+"annual_inc_Inc Mid(50-100k), grade_Grade A, int_rate_IntRate Low",dti_DTI Healthy(<20),0.064836,0.694443254359282,1.1800385635816324
+"emp_length_Emp Long(8+), grade_Grade A, int_rate_IntRate Low",dti_DTI Healthy(<20),0.054996,0.6943939393939393,1.1799547647103772
+"emp_length_Emp Long(8+), grade_Grade A",dti_DTI Healthy(<20),0.055,0.6943392415290612,1.1798618189016354
+"grade_Grade B, revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.048428,0.6940495299243292,1.1793695240110813
+"emp_length_Emp Long(8+), grade_Grade C, purpose_debt_consolidation",home_Home MORTGAGE,0.040608,0.5791875855773619,1.1792910777089702
+"grade_Grade A, purpose_credit_card",dti_DTI Healthy(<20),0.04238,0.6937078504550515,1.178788922287901
+"grade_Grade A, int_rate_IntRate Low, purpose_credit_card",dti_DTI Healthy(<20),0.042364,0.6936730416557506,1.178729773141777
+"fico_range_low_FICO Good(670-739), grade_Grade A",dti_DTI Healthy(<20),0.083548,0.6936206953807326,1.1786408232919607
+"fico_range_low_FICO Good(670-739), grade_Grade A, int_rate_IntRate Low",dti_DTI Healthy(<20),0.083508,0.6935419573450269,1.1785070270199542
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), home_Home MORTGAGE",loan_amnt_Loan Medium(10-25k),0.094188,0.5515424074204202,1.1781771112003028
+"grade_Grade A, purpose_debt_consolidation",dti_DTI Healthy(<20),0.062788,0.6931160860158078,1.177783361567885
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",home_Home MORTGAGE,0.042732,0.5783974011911207,1.1776821734098384
+"grade_Grade A, int_rate_IntRate Low, purpose_debt_consolidation",dti_DTI Healthy(<20),0.06276,0.6930518132426343,1.1776741455153754
+"grade_Grade B, int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.053056,0.5704455530707037,1.1776624381089202
+"int_rate_IntRate Medium, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.062096,0.5703578514218531,1.1774813814996514
+"emp_length_Emp Long(8+), grade_Grade C",home_Home MORTGAGE,0.066516,0.577937649880096,1.1767460680226416
+"fico_range_low_FICO Fair(<670), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.040268,0.5698516925166986,1.1764364363210869
+"dti_DTI Manageable(20-35), purpose_debt_consolidation, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.044576,0.5506200899253916,1.1762069030217792
+"annual_inc_Inc Mid(50-100k), grade_Grade C",loan_amnt_Loan Medium(10-25k),0.075992,0.5504911477499927,1.1759314632411215
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.06172,0.5504030819718913,1.1757433415615497
+"dti_DTI Manageable(20-35), int_rate_IntRate Very High",purpose_debt_consolidation,0.07378,0.6653320347725715,1.1756395375638269
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.05518,0.5693590325642824,1.1754193592002329
+"dti_DTI Manageable(20-35), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.068076,0.5693496587715777,1.175400007373382
+"dti_DTI Healthy(<20), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.06344,0.5689890220276961,1.1746554869808834
+"emp_length_Emp Mid(4-7), int_rate_IntRate Low",dti_DTI Healthy(<20),0.045832,0.6908235861569998,1.173887811825819
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.042768,0.5684814972352191,1.1736077219815917
+"fico_range_low_FICO Good(670-739), loan_amnt_Loan Small(<10k), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.044364,0.6905547599775855,1.1734310066705844
+"grade_Grade B, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.073232,0.5682537711838104,1.1731375904931798
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.044328,0.568162009741092,1.1729481525989331
+"annual_inc_Inc Mid(50-100k), revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.10754,0.5487294621900194,1.1721682392787065
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.048352,0.548681403476919,1.172065578676354
+"home_Home MORTGAGE, purpose_debt_consolidation, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.052384,0.5485005863628748,1.1716793262645468
+"home_Home MORTGAGE, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.06278,0.5484118941961634,1.1714898665251754
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.053148,0.5483924223038508,1.1714482716495578
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.063624,0.5673824641506742,1.171338811346842
+"dti_DTI Manageable(20-35), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.104504,0.5673152088942933,1.171199965511725
+"home_Home MORTGAGE, int_rate_IntRate Low",dti_DTI Healthy(<20),0.094796,0.6890446008024655,1.1708648559410588
+"fico_range_low_FICO Good(670-739), grade_Grade B, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.052624,0.5671178549874989,1.1707925361228992
+"emp_length_Emp Long(8+), purpose_debt_consolidation, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.044064,0.5479234021387714,1.1704463743960496
+"annual_inc_Inc Mid(50-100k), grade_Grade A, int_rate_IntRate Low",home_Home MORTGAGE,0.053652,0.5746540422432629,1.1700602734972734
+"fico_range_low_FICO Good(670-739), grade_Grade A, home_Home MORTGAGE",dti_DTI Healthy(<20),0.045636,0.6885334942667471,1.1699963538446525
+"grade_Grade C, loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.049352,0.5666651357185505,1.1698579149742572
+"annual_inc_Inc Mid(50-100k), grade_Grade A",home_Home MORTGAGE,0.053664,0.5745364224230226,1.1698207863120762
+"fico_range_low_FICO VeryGood(740-799), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.046164,0.6881932021466904,1.1694181095863505
+"dti_DTI Manageable(20-35), home_Home RENT, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.045,0.6617257808364214,1.169267298609058
+"dti_DTI Manageable(20-35), loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.043444,0.5659423688187172,1.1683657910987002
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), revol_util_Util High(60-90)",home_Home MORTGAGE,0.056632,0.573802383075302,1.168326199627192
+"fico_range_low_FICO Good(670-739), grade_Grade A, purpose_debt_consolidation",dti_DTI Healthy(<20),0.040092,0.6873542723906186,1.167992551114745
+"grade_Grade B, home_Home MORTGAGE, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.047156,0.7598453109893653,1.1679003501176828
+"grade_Grade A, revol_util_Util Moderate(30-60)",dti_DTI Healthy(<20),0.05176,0.6868000636908869,1.167050807302201
+"grade_Grade A, int_rate_IntRate Low, revol_util_Util Moderate(30-60)",dti_DTI Healthy(<20),0.051728,0.6867399500823111,1.1669486587452524
+"emp_length_Emp Long(8+), home_Home MORTGAGE, purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.078112,0.5652425610744471,1.166921065498004
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), int_rate_IntRate Very High",purpose_debt_consolidation,0.046144,0.6603319977103606,1.1668044883667306
+"emp_length_Emp Long(8+), home_Home MORTGAGE, revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.053452,0.5651033957795915,1.1666337642129687
+"fico_range_low_FICO Good(670-739), grade_Grade A, revol_util_Util Moderate(30-60)",dti_DTI Healthy(<20),0.040024,0.6863296522395226,1.166251456671497
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739)",home_Home MORTGAGE,0.07292,0.5727301288092994,1.1661429693225027
+"int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",dti_DTI Healthy(<20),0.076808,0.6862268601243656,1.1660767863018795
+"emp_length_Emp Long(8+), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.058976,0.6862142790654379,1.1660554078312668
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.071716,0.5647818554103008,1.165969956750169
+"int_rate_IntRate Low, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.077208,0.7585773236392219,1.1659514233443518
+"emp_length_Emp Mid(4-7), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.04622,0.6856346051148163,1.1650703919761294
+"fico_range_low_FICO Fair(<670), loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.061804,0.564213985758627,1.1647976121593169
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Mid(4-7), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Medium(10-25k),0.04326,0.5451933256036698,1.1646145224075044
+"dti_DTI Healthy(<20), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.088608,0.5639798360405316,1.1643142192633418
+"loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.067976,0.563629730357202,1.163591439831709
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+)",annual_inc_Inc Mid(50-100k),0.089432,0.5635144671841918,1.1633534835383863
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.053148,0.6583589337033,1.163318090695172
+"grade_Grade B, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.053824,0.7568053993250843,1.1632279334485347
+"fico_range_low_FICO Good(670-739), int_rate_IntRate Low, loan_amnt_Loan Small(<10k)",dti_DTI Healthy(<20),0.046292,0.684185634052616,1.1626082156641313
+"fico_range_low_FICO Good(670-739), purpose_debt_consolidation, revol_util_Util High(60-90)",loan_amnt_Loan Medium(10-25k),0.063368,0.5440620921766604,1.16219803853755
+"annual_inc_Inc Mid(50-100k), home_Home MORTGAGE",loan_amnt_Loan Medium(10-25k),0.140244,0.5439355859629527,1.1619278023355648
+"dti_DTI Manageable(20-35), home_Home MORTGAGE",annual_inc_Inc Mid(50-100k),0.104572,0.562759659885911,1.161795213518731
+"fico_range_low_FICO Good(670-739), revol_util_Util Excellent(<30)",dti_DTI Healthy(<20),0.087024,0.6836994437635524,1.1617820527102365
+"home_Home MORTGAGE, int_rate_IntRate Low, loan_amnt_Loan Medium(10-25k)",dti_DTI Healthy(<20),0.044748,0.6836348081153752,1.1616722200393128
+"dti_DTI Manageable(20-35), fico_range_low_FICO Good(670-739), home_Home MORTGAGE",annual_inc_Inc Mid(50-100k),0.07292,0.5625327861264542,1.1613268415535771
+"grade_Grade B, int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.069256,0.755509010778025,1.161235353358743
+"grade_Grade C, home_Home MORTGAGE, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.044252,0.5434761249754373,1.1609463249157017
+"grade_Grade A, int_rate_IntRate Low, revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.042936,0.5700175242950454,1.160619801387499
+"grade_Grade A, revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.042952,0.5699272862374608,1.160436066551275
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), loan_amnt_Loan Small(<10k)",home_Home MORTGAGE,0.041096,0.5697964616493817,1.1601696929733385
+"int_rate_IntRate Low, purpose_credit_card",dti_DTI Healthy(<20),0.05358,0.6824086810331652,1.159588713241922
+"dti_DTI Manageable(20-35), emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",annual_inc_Inc Mid(50-100k),0.061616,0.5616158669972291,1.1594338980264356
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",dti_DTI Healthy(<20),0.08436,0.6822593167701864,1.1593349047568808
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739), grade_Grade A",dti_DTI Healthy(<20),0.040728,0.6817542684968195,1.158476697213929
+"loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation, revol_util_Util High(60-90)",annual_inc_Inc Mid(50-100k),0.055116,0.5611255904870499,1.158421741428462
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), home_Home MORTGAGE",loan_amnt_Loan Medium(10-25k),0.071908,0.5422271822404536,1.1582783963507166
+"int_rate_IntRate Medium, purpose_debt_consolidation, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.045924,0.7535442373326332,1.1582154497525905
+"emp_length_Emp Long(8+), home_Home MORTGAGE, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.074924,0.5421732082899154,1.1581630999160824
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Medium(10-25k),0.170952,0.5420714847416351,1.157945803195755
+"emp_length_Emp Long(8+), int_rate_IntRate Low",dti_DTI Healthy(<20),0.071548,0.6813835663403299,1.1578467784444475
+"dti_DTI Manageable(20-35), home_Home MORTGAGE, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.056664,0.7531901318587836,1.1576711812009437
+"dti_DTI Healthy(<20), grade_Grade C, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.041236,0.5605459191996085,1.1572250328241174
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate Low",home_Home MORTGAGE,0.070248,0.5681288819875777,1.1567743131939636
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Short(0-3), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Medium(10-25k),0.050124,0.5413894409401193,1.1564888555794506
+"grade_Grade C, int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.059064,0.5599969660194175,1.156091740545632
+"int_rate_IntRate Low, purpose_debt_consolidation",dti_DTI Healthy(<20),0.083188,0.6802407352893075,1.1559048131313725
+"loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.16136,0.5598190371778682,1.1557244134410187
+"dti_DTI Healthy(<20), loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",annual_inc_Inc Mid(50-100k),0.061196,0.5598082622854843,1.155702169098913
+"emp_length_Emp Long(8+), purpose_debt_consolidation, revol_util_Util Moderate(30-60)",loan_amnt_Loan Medium(10-25k),0.051864,0.5409261576971214,1.155499213249941
+"int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.067908,0.559687469093067,1.1554527962977346
+"annual_inc_Inc Mid(50-100k), emp_length_Emp Long(8+), fico_range_low_FICO Good(670-739)",loan_amnt_Loan Medium(10-25k),0.077568,0.5407847402325775,1.1551971243849544
+"dti_DTI Healthy(<20), int_rate_IntRate Low, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.051736,0.7514524750174296,1.1550003612273898
+"dti_DTI Manageable(20-35), loan_amnt_Loan Medium(10-25k), revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.05768,0.7513938825491115,1.1549103032073254
+"dti_DTI Manageable(20-35), grade_Grade D",purpose_debt_consolidation,0.042032,0.6534825870646765,1.1547016020735292
+"emp_length_Emp Long(8+), home_Home MORTGAGE, loan_amnt_Loan Small(<10k)",annual_inc_Inc Mid(50-100k),0.041096,0.5592205530154584,1.1544888663952415
+"dti_DTI Manageable(20-35), int_rate_IntRate Very High",loan_amnt_Loan Medium(10-25k),0.059912,0.5402734191826282,1.1541048661117552
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), revol_util_Util Moderate(30-60)",home_Home MORTGAGE,0.042768,0.566583646865561,1.1536280406602724
+"emp_length_Emp Long(8+), home_Home MORTGAGE, int_rate_IntRate Low",dti_DTI Healthy(<20),0.045624,0.6788477562194976,1.1535377816852184
+"home_Home MORTGAGE, int_rate_IntRate Low, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.042556,0.7504408549058333,1.1534454770089415
+"annual_inc_Inc Mid(50-100k), int_rate_IntRate High, loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.044328,0.6527655062731932,1.1534345226514726
+"dti_DTI Healthy(<20), grade_Grade B, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.044316,0.5585581043609781,1.1531212671680102
+"fico_range_low_FICO Good(670-739), home_Home MORTGAGE, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.101288,0.5395350819252978,1.1525276672504716
+"grade_Grade D, purpose_debt_consolidation",loan_amnt_Loan Medium(10-25k),0.04808,0.5394973070017953,1.152446974361495
+"annual_inc_Inc Upper(100-150k), purpose_debt_consolidation",dti_DTI Healthy(<20),0.05216,0.6781071242849713,1.1522792566168636
+"grade_Grade C, loan_amnt_Loan Medium(10-25k)",annual_inc_Inc Mid(50-100k),0.075992,0.5580097515126594,1.151989214251095
+"fico_range_low_FICO Good(670-739), loan_amnt_Loan Medium(10-25k), purpose_debt_consolidation",annual_inc_Inc Mid(50-100k),0.10678,0.5577843247873964,1.1515238296311974
+"annual_inc_Inc Mid(50-100k), fico_range_low_FICO Fair(<670), loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.040268,0.6515435894116886,1.151275399538617
+"annual_inc_Inc Mid(50-100k), dti_DTI Manageable(20-35), loan_amnt_Loan Medium(10-25k)",purpose_debt_consolidation,0.068076,0.6514200413381306,1.151057090495202
+"grade_Grade B, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.093848,0.7485801799502265,1.1505855752622571
+"int_rate_IntRate Medium, revol_util_Util Moderate(30-60)",fico_range_low_FICO Good(670-739),0.079632,0.7485617597292723,1.1505572629436962

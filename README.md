@@ -17,8 +17,9 @@ Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,2
 │   └── data-mining-phase4-v2.ipynb   IQR, Z-score, Mahalanobis, Isolation Forest
 ├── phase5/    Visualization & Knowledge Presentation
 │   ├── Knowledge_Discovery_Report.docx / .pdf
-│   ├── dashboard.html                Dashboard interaktif (buka langsung di browser)
-│   └── build_dashboard.py            Kode pembuat dashboard (dari output fase)
+│   ├── app.py, data_layer.py, assets/   Dashboard interaktif (Plotly Dash)
+│   ├── csv/                             Subset data untuk dashboard (real, bukan sampel ilustratif)
+│   └── requirements.txt
 ├── data/
 │   ├── raw/         Data mentah (accepted_2007_to_2018Q4.csv — unduh dari Kaggle)
 │   └── processed/   Output antar-fase; hasil mining utama ikut di-commit
@@ -35,8 +36,6 @@ Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urut
 
 - **Pipeline Phase 1**: `python -m phase1_pipeline` (dari dalam `phase1/`). Path ditambatkan ke lokasi file, jadi bisa dijalankan dari direktori mana pun.
 - **Notebook**: tiap notebook memuat sel bootstrap yang otomatis berpindah ke root proyek, jalankan sel berurutan (Run All).
-- **Phase 5**: `python phase5/build_dashboard.py` meregenerasi dashboard dari `data/processed/`.
+- **Phase 5**: `python phase5/app.py` menjalankan dashboard di `http://127.0.0.1:8050`. `data_layer.py` membaca CSV asli di `phase5/csv/` (hasil mining Phase 2-4); tanpa folder itu, dashboard otomatis jatuh ke sampel ilustratif berlabel jelas.
 
-Dashboard (`phase5/dashboard.html`) bersifat mandiri: buka langsung di browser, tanpa server.
-
-Data mentah tidak di-commit (unduh dari kaggle.com/datasets/wordsforthewise/lending-club, letakkan di `data/raw/`). Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) ikut di-commit agar dapat diperiksa tanpa menjalankan ulang pipeline.
+Data mentah tidak di-commit (unduh dari kaggle.com/datasets/wordsforthewise/lending-club, letakkan di `data/raw/`). Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) ikut di-commit di `data/processed/` maupun `phase5/csv/` agar dapat diperiksa tanpa menjalankan ulang pipeline.
