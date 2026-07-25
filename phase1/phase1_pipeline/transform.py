@@ -21,17 +21,17 @@ def transform(df: pd.DataFrame, verbose: bool = True):
 
     if "term" in df.columns:
         df["term"] = df["term"].astype("float32")
-    if "grade" in df.columns and df["grade"].dtype == "object":
+    if "grade" in df.columns and not pd.api.types.is_numeric_dtype(df["grade"]):
         df["grade"] = df["grade"].map(cfg.GRADE_MAP).astype("float32")
-    if "sub_grade" in df.columns and df["sub_grade"].dtype == "object":
+    if "sub_grade" in df.columns and not pd.api.types.is_numeric_dtype(df["sub_grade"]):
         sg = sorted(df["sub_grade"].dropna().unique())
         df["sub_grade"] = df["sub_grade"].map({s: i + 1 for i, s in enumerate(sg)}).astype("float32")
-    if "initial_list_status" in df.columns and df["initial_list_status"].dtype == "object":
+    if "initial_list_status" in df.columns and not pd.api.types.is_numeric_dtype(df["initial_list_status"]):
         df["initial_list_status"] = (df["initial_list_status"] == "w").astype("int8")
 
     drop_nominal = [c for c in cfg.DROP_NOMINAL if c in df.columns]
     df.drop(columns=drop_nominal, inplace=True, errors="ignore")
-    leftover_obj = df.select_dtypes(include="object").columns.tolist()  # catch-all nominal
+    leftover_obj = df.select_dtypes(include=["object","string"]).columns.tolist()  # catch-all nominal
     if leftover_obj:
         df.drop(columns=leftover_obj, inplace=True)
     log(f"[transform] encoding selesai; nominal di-drop: {len(drop_nominal) + len(leftover_obj)}")

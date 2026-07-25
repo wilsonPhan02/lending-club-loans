@@ -82,23 +82,23 @@ CLUSTER_ALGO_COMPARISON = pd.DataFrame([
     {"Algorithm": "DBSCAN (UMAP densMAP)", "N_Clusters": 5, "Silhouette": np.nan, "Noise_Points": 501, "Noise_Pct": 0.50},
 ])
 HIERARCHICAL_COPHENETIC = 0.360   # linkage Ward, sample 12.000
-HIERARCHICAL_ARI = 0.357          # Adjusted Rand Index K-Means vs Hierarchical
+HIERARCHICAL_ARI = 0.365          # Adjusted Rand Index K-Means vs Hierarchical
 
 KMEANS_CLUSTER_PROFILE = pd.DataFrame([
     {
         "cluster": 0, "label": "Higher-Risk Borrowers",
-        "size": 1_404_836, "pct_total": 62.1,
-        "loan_amnt": 12003.3, "grade": 3.0, "annual_inc": 63231.3,
-        "dti": 19.6, "fico_range_low": 684.2, "revol_util": 58.3,
+        "size": 1_407_028, "pct_total": 62.2,
+        "loan_amnt": 12086.5, "grade": 3.0, "annual_inc": 63474.5,
+        "dti": 19.6, "fico_range_low": 684.1, "revol_util": 58.4,
         "emp_length": 5.7, "default_rate_pct": 14.4,
         "color": "#E4572E",
     },
     {
         "cluster": 1, "label": "Prime Borrowers",
-        "size": 855_832, "pct_total": 37.9,
-        "loan_amnt": 20043.1, "grade": 2.1, "annual_inc": 102222.5,
-        "dti": 17.6, "fico_range_low": 722.2, "revol_util": 37.3,
-        "emp_length": 6.4, "default_rate_pct": 7.8,
+        "size": 853_640, "pct_total": 37.8,
+        "loan_amnt": 19926.6, "grade": 2.1, "annual_inc": 101921.8,
+        "dti": 17.5, "fico_range_low": 722.5, "revol_util": 37.0,
+        "emp_length": 6.4, "default_rate_pct": 7.7,
         "color": "#1B998B",
     },
 ])
@@ -184,7 +184,7 @@ TOP_RULES_RAW = pd.DataFrame([
     {"antecedents": "annual_inc=Inc Low(<50k), int_rate=IntRate Medium", "consequents": "grade=Grade B, loan_amnt=Loan Small(<10k)", "support": 0.047, "confidence": 0.585, "lift": 4.42},
 ])
 
-# 12 rule bisnis terkurasi (non-sirkular; tanpa grade & int_rate kecuali
+# 12 rule bisnis terkurasi (non-circular; tanpa grade & int_rate kecuali
 # dicatat khusus) -- angka & interpretasi identik dengan Section 9.3 notebook
 # Phase 3 dan Finding 2 pada Knowledge Discovery Report.
 BUSINESS_RULES = [
@@ -228,7 +228,7 @@ def load_rules():
 # PHASE 4 -- Anomaly detection (angka aktual dari notebook Phase 4)
 # ---------------------------------------------------------------------------
 # Jumlah baris ter-flag TIAP metode (dihitung independen, boleh tumpang tindih
-# antar metode -- lihat korroborasi di bawah). Basis: 2.260.668 baris.
+# antar metode -- lihat corroboration di bawah). Basis: 2.260.668 baris.
 ANOMALY_METHOD_COUNTS = pd.DataFrame([
     {"method": "IQR (3x, univariat)", "count": 236_492, "pct": 10.46},
     {"method": "Z-score (|z|>3)", "count": 143_542, "pct": 6.35},
@@ -245,7 +245,7 @@ ANOMALY_CONFIDENCE = pd.DataFrame([
 ])
 
 # Klasifikasi anomali terkonfirmasi (>=2 metode, n=116.225): data_error / risk_signal
-# / rare_case -- lihat notebook Phase 4 Section 6-6c untuk metodologi anti-sirkularitas
+# / rare_case -- lihat notebook Phase 4 Section 6-6c untuk metodologi anti-circularity
 # (risk_signal dinilai dari atribut pra-pinjaman, DIVALIDASI ke outcome, bukan
 # didefinisikan dari outcome).
 ANOMALY_TYPOLOGY = pd.DataFrame([
@@ -258,7 +258,7 @@ ANOMALY_TYPOLOGY = pd.DataFrame([
 ])
 
 ANOMALY_STRONG_TOTAL = 116_225   # terkonfirmasi >=2 metode
-ANOMALY_CANDIDATES_TOTAL = 271_143   # >=1 metode, sebelum korroborasi
+ANOMALY_CANDIDATES_TOTAL = 271_143   # >=1 metode, sebelum corroboration
 ANOMALY_TOTAL_ROWS = 2_260_668
 ANOMALY_BADRATE_POPULATION = 13.1
 ANOMALY_BADRATE_ALL_CONFIRMED = 8.7

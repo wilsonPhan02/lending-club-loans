@@ -412,7 +412,7 @@ def tab_overview():
             html.Div([html.Span("2", className="phase-num"), "Phase 2: Segmentasi Peminjam"], className="phase-title"),
             insight_box(
                 "K-Means (K=2, Silhouette 0,161, stabil lintas 5 sample) memberi dua segmen dengan profil risiko "
-                "kontras, dikonfirmasi Hierarchical Ward (ARI 0,357). Pemisah paling tajam bukan penghasilan "
+                "kontras, dikonfirmasi Hierarchical Ward (ARI 0,365). Pemisah paling tajam bukan penghasilan "
                 "nominal, melainkan FICO, utilisasi revolving, dan ukuran pinjaman (dalam satuan simpangan baku).",
                 "#0B2545",
             ),
@@ -459,8 +459,8 @@ def tab_segmentation():
     return html.Div([
         section_header(
             "Temuan #1: Dua Segmen Peminjam dengan Risiko Sangat Berbeda",
-            "K-Means menemukan bahwa 62,1% peminjam berada di segmen Higher-Risk dengan tingkat charged-off "
-            "14,4%, sementara 37,9% sisanya (Prime) charged-off hanya 7,8%. Pemisah paling tajam adalah "
+            "K-Means menemukan bahwa 62,2% peminjam berada di segmen Higher-Risk dengan tingkat charged-off "
+            "14,4%, sementara 37,8% sisanya (Prime) charged-off hanya 7,7%. Pemisah paling tajam adalah "
             "FICO, ukuran pinjaman, dan utilisasi revolving -- bukan penghasilan nominal.",
         ),
 
@@ -707,7 +707,7 @@ def tab_expo():
                 "10+ tahun -> Grade A) sama sekali tidak terkonfirmasi (0 dari 1.023 rule). Temuan mengejutkan "
                 "kedua: grade internal Lending Club nyaris sepenuhnya cerminan suku bunga -- hanya 1 rule yang "
                 "memprediksi Grade A dari atribut peminjam tanpa suku bunga (FICO Very Good, lift 2,99). "
-                "Pola non-sirkular terkuat: {FICO Very Good, DTI Healthy} -> {Utilisasi Excellent} lift 3,18."
+                "Pola non-circular terkuat: {FICO Very Good, DTI Healthy} -> {Utilisasi Excellent} lift 3,18."
             ),
             "color": "#1B998B", "icon": "🔗",
         },
@@ -715,9 +715,9 @@ def tab_expo():
             "q": "Q2. Metode clustering mana yang paling mudah dipahami untuk dataset ini?",
             "a": (
                 "K-Means (K=2) jelas pemenangnya dari sisi interpretabilitas bisnis: menghasilkan dua segmen "
-                "(62,1% vs 37,9%) dengan perbedaan charged-off hampir dua kali lipat (14,4% vs 7,8%) yang bisa "
+                "(62,2% vs 37,8%) dengan perbedaan charged-off hampir dua kali lipat (14,4% vs 7,7%) yang bisa "
                 "langsung diterjemahkan ke keputusan pricing dan retensi. Hierarchical Ward mengonfirmasi "
-                "pembagian yang sama (ARI 0,357). DBSCAN tidak menghasilkan segmentasi yang actionable "
+                "pembagian yang sama (ARI 0,365). DBSCAN tidak menghasilkan segmentasi yang actionable "
                 "(hanya 0,5% noise) -- tapi berguna sebagai konfirmasi bahwa data bersifat kontinu, bukan "
                 "gugus terpisah tegas."
             ),
@@ -779,8 +779,8 @@ def tab_expo():
                     html.Div("Temuan 1", className="finding-label"),
                     insight_box(
                         "Meski data finansial peminjam bersifat kontinu dan gradual, populasi mereka "
-                        "terorganisir menjadi dua segmen risiko kontras: Higher-Risk (62,1%, charged-off "
-                        "14,4%) dan Prime (37,9%, charged-off 7,8%). Pemisah paling tajam adalah FICO, "
+                        "terorganisir menjadi dua segmen risiko kontras: Higher-Risk (62,2%, charged-off "
+                        "14,4%) dan Prime (37,8%, charged-off 7,7%). Pemisah paling tajam adalah FICO, "
                         "ukuran pinjaman, dan utilisasi revolving -- bukan penghasilan nominal, dan hanya "
                         "terlihat saat variabel dievaluasi bersama melalui clustering.",
                         "#1B998B",

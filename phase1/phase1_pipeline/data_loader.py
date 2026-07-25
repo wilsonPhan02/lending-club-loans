@@ -33,7 +33,7 @@ def load_data(nrows: int | None = None, verbose: bool = True) -> pd.DataFrame:
 
     # Konversi kolom persen (tersimpan sebagai string '13.56%') -> numerik
     for c in ["int_rate", "revol_util"]:
-        if c in df.columns and df[c].dtype == "object":
+        if c in df.columns and not pd.api.types.is_numeric_dtype(df[c]):
             df[c] = pd.to_numeric(df[c].astype(str).str.replace("%", "", regex=False),
                                   errors="coerce")
     if verbose:

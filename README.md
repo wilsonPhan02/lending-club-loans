@@ -7,14 +7,14 @@ Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,2
 ```
 .
 ├── phase1/    Data Understanding & Preprocessing
-│   ├── data-mining-phase1-v2.ipynb   EDA + justifikasi keputusan preprocessing
+│   ├── data-mining-phase1.ipynb   EDA + justifikasi keputusan preprocessing
 │   └── phase1_pipeline/              Pipeline preprocessing modular (.py)
 ├── phase2/    Clustering
-│   └── data-mining-phase2-v2.ipynb   K-Means, Hierarchical, DBSCAN + profiling
+│   └── data-mining-phase2.ipynb   K-Means, Hierarchical, DBSCAN + profiling
 ├── phase3/    Association Rule Mining
-│   └── data-mining-phase3-v2.ipynb   Diskretisasi domain, Apriori, interpretasi rule
+│   └── data-mining-phase3.ipynb   Diskretisasi domain, Apriori, interpretasi rule
 ├── phase4/    Anomaly & Outlier Detection
-│   └── data-mining-phase4-v2.ipynb   IQR, Z-score, Mahalanobis, Isolation Forest
+│   └── data-mining-phase4.ipynb   IQR, Z-score, Mahalanobis, Isolation Forest
 ├── phase5/    Visualization & Knowledge Presentation
 │   ├── Knowledge_Discovery_Report.docx / .pdf
 │   ├── app.py, data_layer.py, assets/   Dashboard interaktif (Plotly Dash)

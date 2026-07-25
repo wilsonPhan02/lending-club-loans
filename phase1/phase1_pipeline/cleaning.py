@@ -12,14 +12,14 @@ def clean(df: pd.DataFrame, verbose: bool = True):
     log = print if verbose else (lambda *a, **k: None)
 
     # --- 1. Perbaiki inkonsistensi tipe/format ---
-    if "term" in df.columns and df["term"].dtype == "object":
+    if "term" in df.columns and not pd.api.types.is_numeric_dtype(df["term"]):
         df["term"] = pd.to_numeric(
             df["term"].astype(str).str.replace("months", "", regex=False).str.strip(),
             errors="coerce").astype("Int64")
-    if "emp_length" in df.columns and df["emp_length"].dtype == "object":
+    if "emp_length" in df.columns and not pd.api.types.is_numeric_dtype(df["emp_length"]):
         df["emp_length"] = df["emp_length"].map(cfg.EMP_LENGTH_MAP)
     for c in ["int_rate", "revol_util"]:
-        if c in df.columns and df[c].dtype == "object":
+        if c in df.columns and not pd.api.types.is_numeric_dtype(df[c]):
             df[c] = pd.to_numeric(df[c].astype(str).str.replace("%", "", regex=False),
                                   errors="coerce")
 
