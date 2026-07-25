@@ -1,35 +1,43 @@
 # Lending Club — Data Mining (KDD) · Kelompok 2
 
-Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,26 juta pinjaman, 151 fitur mentah).
+Penerapan proses Knowledge Discovery in Databases pada dataset Lending Club (2,26 juta pinjaman, 151 fitur mentah): preprocessing, clustering, association rule mining, anomaly detection, dan knowledge presentation.
 
 ## Struktur folder
 
 ```
 .
-├── notebooks/     Notebook tiap fase (Phase 1–4), deliverable utama
-│   ├── data-mining-phase1-v2.ipynb   Preprocessing
-│   ├── data-mining-phase2-v2.ipynb   Clustering
-│   ├── data-mining-phase3-v2.ipynb   Association Rule Mining
-│   └── data-mining-phase4-v2.ipynb   Anomaly Detection
-├── pipeline/      Pipeline preprocessing (khusus Phase 1)
-│   └── phase1_pipeline/   Modul preprocessing (config, cleaning, transform, dst.)
+├── phase1/    Data Understanding & Preprocessing
+│   ├── data-mining-phase1-v2.ipynb   EDA + justifikasi keputusan preprocessing
+│   └── phase1_pipeline/              Pipeline preprocessing modular (.py)
+├── phase2/    Clustering
+│   └── data-mining-phase2-v2.ipynb   K-Means, Hierarchical, DBSCAN + profiling
+├── phase3/    Association Rule Mining
+│   └── data-mining-phase3-v2.ipynb   Diskretisasi domain, Apriori, interpretasi rule
+├── phase4/    Anomaly & Outlier Detection
+│   └── data-mining-phase4-v2.ipynb   IQR, Z-score, Mahalanobis, Isolation Forest
+├── phase5/    Visualization & Knowledge Presentation
+│   ├── Knowledge_Discovery_Report.docx / .pdf
+│   ├── dashboard.html                Dashboard interaktif (buka langsung di browser)
+│   ├── build_dashboard.py            Generator dashboard dari output fase
+│   └── build_report.py               Generator report dari output fase
 ├── data/
-│   ├── raw/        Data mentah (accepted_2007_to_2018Q4.csv, datasets/)
-│   └── processed/  Output antar-fase (cleaned, scaled, PCA, UMAP, label, rules, anomalies)
-├── report/        Report (.docx & .pdf) + dashboard.html + generator (build_report.py, build_dashboard.py)
-└── docs/          PROJECT_BRIEF.md, PHASE1_NOTES.md, question/ (soal)
+│   ├── raw/         Data mentah (accepted_2007_to_2018Q4.csv — unduh dari Kaggle)
+│   └── processed/   Output antar-fase; hasil mining utama ikut di-commit
+└── docs/question/   Dokumen penugasan
 ```
 
 ## Cara menjalankan
 
-Notebook memuat sel bootstrap di awal yang otomatis berpindah ke root proyek, sehingga path `data/...` konsisten baik dijalankan dari `notebooks/` (Jupyter) maupun dari root (VS Code). Jalankan sel berurutan (Run All).
-
-Pipeline menambatkan path lewat lokasi file-nya sendiri, jadi bisa dijalankan dari direktori mana pun:
-
 ```
-python -m phase1_pipeline        # dari dalam pipeline/
+pip install -r requirements.txt
 ```
 
-Dashboard (`report/dashboard.html`) bersifat mandiri: buka langsung di browser, tanpa server. Dashboard dihasilkan `python report/build_dashboard.py`; report docx dihasilkan `python report/build_report.py`.
+Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urutan.
 
-Dependensi: `pip install -r requirements.txt`. Data mentah (`data/raw/`) dan output (`data/processed/`) tidak masuk git — unduh dari Kaggle lalu jalankan pipeline Phase 1 untuk meregenerasi.
+- **Pipeline Phase 1**: `python -m phase1_pipeline` (dari dalam `phase1/`). Path ditambatkan ke lokasi file, jadi bisa dijalankan dari direktori mana pun.
+- **Notebook**: tiap notebook memuat sel bootstrap yang otomatis berpindah ke root proyek, jalankan sel berurutan (Run All).
+- **Phase 5**: `python phase5/build_dashboard.py` dan `python phase5/build_report.py` meregenerasi dashboard dan report dari `data/processed/`.
+
+Dashboard (`phase5/dashboard.html`) bersifat mandiri: buka langsung di browser, tanpa server.
+
+Data mentah tidak di-commit (unduh dari kaggle.com/datasets/wordsforthewise/lending-club, letakkan di `data/raw/`). Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) ikut di-commit agar dapat diperiksa tanpa menjalankan ulang pipeline.

@@ -6,7 +6,7 @@ di dalam modul, agar setiap keputusan dapat ditinjau & dijustifikasi di satu tem
 import os
 
 # Anchor path ke root proyek via __file__ (robust, tak bergantung working directory).
-# config.py ada di <root>/pipeline/phase1_pipeline/ -> naik dua level = root.
+# config.py ada di <root>/phase1/phase1_pipeline/ -> naik dua level = root.
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 def _raw(f):  return os.path.join(_ROOT, "data", "raw", f)
 def _proc(f): return os.path.join(_ROOT, "data", "processed", f)
@@ -47,7 +47,7 @@ MISS_THRESHOLD  = 40    # % missing; di atas ini kolom di-drop (lazim 30-50%)
 # ---------------------------------------------------------------- Transform
 NOMINAL_FOR_ARM = ["purpose", "home_ownership", "verification_status", "addr_state"]
 GRADE_MAP       = {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7}
-# Nominal murni -> di-drop dari matriks clustering (brief: bukan one-hot)
+# Nominal murni -> di-drop dari matriks clustering (bukan one-hot: mendistorsi jarak Euclidean)
 DROP_NOMINAL    = ["home_ownership", "purpose", "addr_state",
                    "verification_status", "pymnt_plan", "disbursement_method"]
 

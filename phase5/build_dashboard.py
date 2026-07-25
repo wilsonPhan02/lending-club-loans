@@ -1,12 +1,12 @@
 """
-Generator dashboard Phase 5 (report/dashboard.html).
+Generator dashboard Phase 5 (phase5/dashboard.html).
 Membaca seluruh output fase dari data/processed/ dan merakit dashboard Plotly
 mandiri (self-contained, tanpa server): cluster map (dropdown pewarnaan), radar
 profil, risiko per segmen, rule network, rule scatter (slider min-lift), outlier
 plot, validasi bad-rate, dan distribusi populasi. Tidak ada angka yang ditulis
 manual — dashboard otomatis konsisten dengan output fase.
 
-Jalankan:  python report/build_dashboard.py
+Jalankan:  python phase5/build_dashboard.py
 """
 import os
 import numpy as np
@@ -243,9 +243,9 @@ for title, sub, chart_ids in sections:
     for cid in chart_ids:
         html.append(f'<div class="card">{frag(cid)}</div>')
     html.append("</div></section>")
-html.append("<footer>Kelompok 2 · Data Mining · dihasilkan otomatis oleh report/build_dashboard.py</footer></body></html>")
+html.append("<footer>Kelompok 2 · Data Mining · dihasilkan otomatis oleh phase5/build_dashboard.py</footer></body></html>")
 
-out = os.path.join(ROOT, "report", "dashboard.html")
+out = os.path.join(ROOT, "phase5", "dashboard.html")
 with open(out, "w", encoding="utf-8") as f:
     f.write("\n".join(html))
 print(f"Tersimpan: {out} ({os.path.getsize(out)/1e6:.1f} MB)")

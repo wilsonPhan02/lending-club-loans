@@ -1,10 +1,10 @@
 """
-Generator Knowledge Discovery Report (report/Knowledge_Discovery_Report.docx).
+Generator Knowledge Discovery Report (phase5/Knowledge_Discovery_Report.docx).
 Struktur mengikuti ketat `docs/question/Data Mining Report Template.docx`:
 Executive Summary -> Dataset and Methodology -> Findings (3) -> Limitations -> Appendix.
 
 Angka appendix dibaca langsung dari data/processed/ agar konsisten dengan notebook.
-Jalankan:  python report/build_report.py
+Jalankan:  python phase5/build_report.py
 """
 import os
 import pandas as pd
@@ -128,7 +128,8 @@ p("Pembersihan tidak menghapus kolom hanya karena proporsi kosongnya tinggi. Set
   "mencakup ordinal encoding grade dan sub_grade, binning kuantil lima fitur kontinu untuk "
   "persiapan ARM, winsorisasi data-driven pada fitur kontinu ber-|skew| di atas 1 (dengan "
   "penjaga anti-kolaps untuk fitur zero-inflated), log1p kondisional, dan standardisasi. "
-  "Fitur nominal murni dibuang dari matriks clustering sesuai arahan brief, bukan di-one-hot. "
+  "Fitur nominal murni dibuang dari matriks clustering, bukan di-one-hot, karena one-hot "
+  "mendistorsi jarak Euclidean pada clustering. "
   "Feature selection memakai dua metode: pemangkasan multikolinearitas (|r| di atas 0,85) "
   "lalu mutual information terhadap grade; hasilnya 12 fitur final. PCA sembilan komponen "
   "(90 persen varians) menjadi masukan K-Means dan hierarchical; UMAP varian densMAP menjadi "
@@ -344,6 +345,6 @@ table(["Metrik", "Nilai"], [
     ["Precision/Recall vs label", "Tidak berlaku (unsupervised; label outcome hanya untuk validasi)"],
 ], widths=[4.0, 2.6], font=9)
 
-out = os.path.join(ROOT, "report", "Knowledge_Discovery_Report.docx")
+out = os.path.join(ROOT, "phase5", "Knowledge_Discovery_Report.docx")
 doc.save(out)
 print("Tersimpan:", out)

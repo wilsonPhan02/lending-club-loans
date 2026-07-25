@@ -1,6 +1,6 @@
 # Phase 1 Preprocessing Pipeline — Lending Club
 
-Pipeline preprocessing modular (`.py`) untuk Phase 1 proyek Data Mining, sesuai ketentuan brief: preprocessing dibangun sebagai skrip Python, sedangkan EDA & justifikasi keputusan didokumentasikan di notebook (`data-mining-phase1-v2.ipynb`).
+Pipeline preprocessing modular (`.py`) untuk Phase 1 proyek Data Mining. Desain: preprocessing dibangun sebagai skrip Python yang reproducible, sedangkan EDA & justifikasi keputusan didokumentasikan di notebook (`data-mining-phase1-v2.ipynb`).
 
 Logika di sini **identik** dengan notebook yang telah divalidasi — hanya direfaktor menjadi modul yang dapat dipanggil ulang, reproducible, dan bebas duplikasi.
 
