@@ -554,10 +554,10 @@ def tab_segmentation():
         ], className="card"),
 
         html.Div([
-            html.H3("📌 Apa Arti 5 Wilayah Padat & 501 Noise dari DBSCAN?", style={"marginTop": 0}),
+            html.H3("📌 Apa Arti 3 Wilayah Padat & 426 Noise dari DBSCAN?", style={"marginTop": 0}),
             insight_box(
-                "DBSCAN dijalankan pada embedding UMAP densMAP (sample 100.000, eps=0,471 dari knee k-distance, "
-                "min_samples=12 dari pembulatan ln(n)). Hasilnya 5 wilayah padat dan 501 noise point (0,50%) "
+                "DBSCAN dijalankan pada embedding UMAP densMAP (sample 100.000, eps=0,503 dari knee k-distance, "
+                "min_samples=12 dari pembulatan ln(n)). Hasilnya 3 wilayah padat dan 426 noise point (0,43%) "
                 "-- proporsi noise yang kecil menunjukkan sebagian besar peminjam berada pada gradasi risiko "
                 "kontinu, bukan kelompok terpisah tajam. K-Means \"memotong\" spektrum ini pada satu titik "
                 "untuk menghasilkan dua segmen yang informatif secara bisnis.",
@@ -715,7 +715,7 @@ def tab_expo():
                 "(62,2% vs 37,8%) dengan perbedaan charged-off hampir dua kali lipat (14,4% vs 7,7%) yang bisa "
                 "langsung diterjemahkan ke keputusan pricing dan retensi. Hierarchical Ward mengonfirmasi "
                 "pembagian yang sama (ARI 0,365). DBSCAN tidak menghasilkan segmentasi yang actionable "
-                "(hanya 0,5% noise) -- tapi berguna sebagai konfirmasi bahwa data bersifat kontinu, bukan "
+                "(hanya 0,43% noise) -- tapi berguna sebagai konfirmasi bahwa data bersifat kontinu, bukan "
                 "gugus terpisah tegas."
             ),
             "color": "#0B2545", "icon": "👥",

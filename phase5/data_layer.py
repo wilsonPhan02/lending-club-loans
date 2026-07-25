@@ -78,7 +78,7 @@ PHASE1_SUMMARY = {
 CLUSTER_ALGO_COMPARISON = pd.DataFrame([
     {"Algorithm": "K-Means", "N_Clusters": 2, "Silhouette": 0.161, "Noise_Points": 0, "Noise_Pct": 0.0},
     {"Algorithm": "Hierarchical (Ward)", "N_Clusters": 2, "Silhouette": np.nan, "Noise_Points": 0, "Noise_Pct": 0.0},
-    {"Algorithm": "DBSCAN (UMAP densMAP)", "N_Clusters": 5, "Silhouette": np.nan, "Noise_Points": 501, "Noise_Pct": 0.50},
+    {"Algorithm": "DBSCAN (UMAP densMAP)", "N_Clusters": 3, "Silhouette": np.nan, "Noise_Points": 426, "Noise_Pct": 0.43},
 ])
 HIERARCHICAL_COPHENETIC = 0.360   # linkage Ward, sample 12.000
 HIERARCHICAL_ARI = 0.365          # Adjusted Rand Index K-Means vs Hierarchical
