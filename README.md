@@ -41,3 +41,13 @@ Urutan: Phase 1 dulu (menghasilkan `data/processed/`), lalu fase lain bebas urut
 Data mentah tidak di-commit (unduh dari kaggle.com/datasets/wordsforthewise/lending-club, letakkan di `data/raw/`). Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) ikut di-commit di `data/processed/` maupun `phase5/csv/` agar dapat diperiksa tanpa menjalankan ulang pipeline.
 
 Catatan versi: `umap-learn` bergantung pada `numba` yang mensyaratkan NumPy ≤2.4, karena itu `requirements.txt` mengunci `numpy<2.5`. Pasang dependensi lewat `pip install -r requirements.txt` sebelum menjalankan Phase 1 agar sel UMAP dapat dihitung.
+
+## Reproduktibilitas
+
+Seluruh langkah memakai seed tetap (42), sehingga menjalankan ulang di mesin yang sama dengan versi library yang sama menghasilkan angka identik. Yang perlu diketahui saat dijalankan di environment berbeda:
+
+| Bergantung versi library | Deterministik lintas environment |
+|---|---|
+| K-Means (MiniBatch), UMAP/densMAP, Isolation Forest, Mutual Information | Cleaning, transformasi, scaling, PCA, korelasi, binning, Apriori, IQR, Z-score, Mahalanobis |
+
+Perbedaan versi umumnya menggeser angka pada desimal terakhir (mis. proporsi cluster 62,1 vs 62,2 persen) dan tidak mengubah struktur temuan. Agar hasil dapat direproduksi persis, versi paket yang dipakai dicatat di `requirements-lock.txt` (`pip install -r requirements-lock.txt`). Hasil mining utama juga ikut di-commit di `data/processed/`, sehingga angka pada laporan dapat diperiksa tanpa menjalankan ulang pipeline.

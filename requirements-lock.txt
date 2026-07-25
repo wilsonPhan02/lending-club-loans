@@ -1,0 +1,5 @@
+# Lock file: isi dengan versi paket dari environment yang dipakai menjalankan Phase 1-5.
+# Cara membuat (jalankan di environment/venv yang aktif):
+#     pip freeze > requirements-lock.txt
+#
+# File ini menjamin rekan tim & penilai mereproduksi angka yang sama persis.
