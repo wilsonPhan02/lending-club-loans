@@ -1,3 +1,7 @@
+# Snapshot environment yang dipakai menjalankan Phase 1-5 (hasil `pip freeze`).
+# Interpreter: Python 3.13 (Windows). Pasang dengan:  pip install -r requirements-lock.txt
+# requirements.txt memuat dependensi langsung dengan rentang versi; file ini mengunci
+# seluruh paket (termasuk transitif) ke versi persis agar angka hasil run dapat direproduksi.
 annotated-types==0.8.0
 anyio==4.14.2
 argon2-cffi==25.1.0

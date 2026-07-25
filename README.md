@@ -50,4 +50,11 @@ Seluruh langkah memakai seed tetap (42), sehingga menjalankan ulang di mesin yan
 |---|---|
 | K-Means (MiniBatch), UMAP/densMAP, Isolation Forest, Mutual Information | Cleaning, transformasi, scaling, PCA, korelasi, binning, Apriori, IQR, Z-score, Mahalanobis |
 
-Perbedaan versi umumnya menggeser angka pada desimal terakhir (mis. proporsi cluster 62,1 vs 62,2 persen) dan tidak mengubah struktur temuan. Agar hasil dapat direproduksi persis, versi paket yang dipakai dicatat di `requirements-lock.txt` (`pip install -r requirements-lock.txt`). Hasil mining utama juga ikut di-commit di `data/processed/`, sehingga angka pada laporan dapat diperiksa tanpa menjalankan ulang pipeline.
+Perbedaan versi umumnya menggeser angka pada desimal terakhir (mis. proporsi cluster 62,1 vs 62,2 persen) dan tidak mengubah struktur temuan.
+
+Dua file dependensi dengan peran berbeda:
+
+- `requirements.txt` — 12 dependensi langsung dengan rentang versi. Dipakai untuk pemasangan biasa; toleran terhadap versi baru.
+- `requirements-lock.txt` — snapshot `pip freeze` dari environment yang menghasilkan angka pada laporan: 135 paket (termasuk dependensi transitif seperti `numba` dan `llvmlite`) terkunci ke versi persis, plus catatan versi interpreter. Pakai file ini bila ingin angka yang identik: `pip install -r requirements-lock.txt`.
+
+Untuk menjalankan dari nol, satu-satunya berkas yang perlu diunduh manual adalah dataset mentah dari Kaggle ke `data/raw/` (tidak di-commit karena ukurannya). Sisanya diregenerasi oleh Phase 1. Hasil mining utama (`phase2_cluster_profiles.csv`, `phase3_association_rules.csv`, `phase4_anomalies.csv`) dan data dashboard (`phase5/csv/`) ikut di-commit, sehingga laporan dapat diperiksa dan dashboard dapat dijalankan tanpa mengunduh data mentah maupun menjalankan ulang pipeline.
