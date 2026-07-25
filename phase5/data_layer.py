@@ -302,6 +302,6 @@ def _synthetic_anomaly_sample(seed=7):
 KDD_FUNNEL = pd.DataFrame([
     {"stage": "Raw data (2007-2018)", "rows": PHASE1_SUMMARY["raw_rows"]},
     {"stage": "Setelah cleaning & feature selection (Phase 1)", "rows": PHASE1_SUMMARY["final_rows"]},
-    {"stage": "Sampel utk DBSCAN/Hierarchical (UMAP, Phase 2)", "rows": 100_000},
+    {"stage": "Sampel untuk DBSCAN/Hierarchical (UMAP, Phase 2)", "rows": 100_000},
     {"stage": "Anomali kuat terkonfirmasi >=2 metode (Phase 4)", "rows": ANOMALY_STRONG_TOTAL},
 ])
