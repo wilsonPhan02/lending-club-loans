@@ -202,7 +202,14 @@ for _, _rr in _top_net.iterrows():
                 line=dict(width=_w, color="rgba(27,153,139,0.45)"), hoverinfo="text",
                 showlegend=False,
                 text=f"{_rr['antecedents']} \u2192 {_rr['consequents']}<br>lift={_rr['lift']:.2f} conf={_rr['confidence']:.2f}")
-_short = [i.split("_", 1)[-1].replace("_", " ") for i in _items]
+_PREF = ("fico_range_low", "annual_inc", "loan_amnt", "revol_util", "emp_length",
+         "int_rate", "dti", "grade", "purpose", "home")
+def _short_label(item):
+    for p in _PREF:
+        if item.startswith(p + "_"):
+            return item[len(p) + 1:]
+    return item.replace("_", " ")
+_short = [_short_label(i) for i in _items]
 FIG_RULENET.add_scatter(
     x=[_pos[i][0] for i in _items], y=[_pos[i][1] for i in _items],
     mode="markers+text", text=_short, textposition="top center",
