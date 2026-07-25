@@ -25,7 +25,7 @@ def run_pca(df_final_scaled: pd.DataFrame, verbose: bool = True):
 
 def run_umap(df_final_scaled: pd.DataFrame, verbose: bool = True):
     log = print if verbose else (lambda *a, **k: None)
-    import umap  # diimpor di sini agar dependensi berat hanya dimuat saat dibutuhkan
+    import umap
     s = min(cfg.UMAP_SAMPLE, len(df_final_scaled))
     idx = np.random.RandomState(cfg.RANDOM_SEED).choice(len(df_final_scaled), s, replace=False)
     reducer = umap.UMAP(n_components=2, n_neighbors=cfg.UMAP_NEIGHBORS,
@@ -40,9 +40,5 @@ def run_umap(df_final_scaled: pd.DataFrame, verbose: bool = True):
 
 def reduce(df_final_scaled: pd.DataFrame, verbose: bool = True):
     df_pca, pca = run_pca(df_final_scaled, verbose)
-    try:
-        df_umap = run_umap(df_final_scaled, verbose)
-    except ImportError:
-        print("[reduce] umap-learn belum terpasang; UMAP dilewati (jalankan: pip install umap-learn)")
-        df_umap = pd.DataFrame()
+    df_umap = run_umap(df_final_scaled, verbose)
     return df_pca, df_umap, pca

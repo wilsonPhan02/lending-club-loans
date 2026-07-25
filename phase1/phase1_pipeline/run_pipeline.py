@@ -29,9 +29,8 @@ def save_outputs(art: dict, verbose: bool = True) -> None:
         o["pca"]:         art["df_pca"],
         o["arm"]:         art["arm_df"],
         o["loan_status"]: art["loan_status_ref"].to_frame("loan_status"),
+        o["umap"]:        art["df_umap"],
     }
-    if len(art["df_umap"]):
-        to_write[o["umap"]] = art["df_umap"]
     for name, obj in to_write.items():
         obj.to_csv(name, index=False)
         if verbose:
