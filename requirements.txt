@@ -1,0 +1,20 @@
+# Dependensi langsung. Versi dikunci pada minor (~=) untuk library yang
+# implementasinya mempengaruhi angka hasil analisis (K-Means, UMAP, Isolation
+# Forest, Mutual Information), dan dibiarkan longgar untuk keperluan visualisasi.
+# numba & llvmlite bersifat transitif (dependensi umap-learn) tetapi ikut dikunci
+# karena menentukan hasil embedding UMAP.
+pandas~=3.0.5
+numpy~=2.4.6
+scikit-learn~=1.9.0
+scipy~=1.18.0
+mlxtend~=0.25.0
+umap-learn~=0.5.12
+numba~=0.66.0
+llvmlite~=0.48.0
+
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.18
+dash>=2.17
+jupyter
+ipykernel
