@@ -217,28 +217,16 @@ Metrik wajib di Appendix D:
 
 ---
 
-## 7. Status Implementasi Saat Ini (repo `lending-club-loans`)
+## 7. Status Implementasi Saat Ini (per 25 Juli 2026)
 
-Berdasarkan pemeriksaan folder `code/`:
+Seluruh fase selesai dan konsisten satu sama lain:
 
-- **Phase 1** (`code/Phase1/`): sudah ada pipeline modular — `01_data_cleaning.py`, `02_feature_selection.py`, `03_feature_engineering.py`, `04_dimensionality_reduction.py`, `05_discretization.py`, dikoordinasikan oleh `run_pipeline.py`. Notebook `data-mining-phase1.ipynb` dan `build_notebook.py` (generator notebook) juga sudah ada, beserta `run_eda_plots.py`, `trace_features.py`, dan `feature_fate_table.md` (dokumentasi nasib tiap fitur — drop/keep beserta alasannya).
-  - Cleaning sudah menghapus kolom leakage (variabel pasca-origination pinjaman) dan kolom ID/deskripsi berkardinalitas tinggi.
-  - Kolom nominal (`object` dtype, kecuali `loan_status` yang dipakai sementara sebagai surrogate target) **sudah di-drop**, bukan di-one-hot — sejalan dengan ketentuan tambahan Shane.
-  - Feature selection sudah menggunakan filter korelasi (>0.85) dan mutual information terhadap `loan_status` sebagai surrogate.
-  - Transformasi sudah menerapkan log1p pada fitur skewed (|skew| > 2.0), lalu StandardScaler, baru PCA (5 komponen) untuk input K-Means/Hierarchical dan UMAP (2 komponen) untuk input DBSCAN — urutan ini sudah konsisten dengan instruksi transformasi → scaling → PCA.
-  - Output tervalidasi: `cleaned_lending_club_no_winsorization.csv`, `lending_club_pca.csv`, `lending_club_umap.csv` (saat ini kosong — kemungkinan modul `umap-learn` tidak terpasang di environment saat run terakhir, perlu diperiksa ulang), `lending_club_apriori_binned.csv`.
-  - **Perlu ditinjau ulang**: apakah kolom ordinal (`grade`, `sub_grade`, `emp_length`, dsb.) ikut terhapus oleh filter `object_cols` di `01_data_cleaning.py`, atau sudah ditangani terpisah dengan ordinal encoding sebelum drop. Berdasarkan kode saat ini, seluruh kolom `object` (termasuk yang berpotensi ordinal) dihapus tanpa pembedaan — ini perlu diperbaiki agar variabel ordinal yang informatif tidak hilang percuma.
-- **Phase 2** (`code/Phase2/`): sudah ada `data-mining-phase2.ipynb` dan `build_phase2_notebook.py`. Perlu ditinjau apakah visualisasi profil cluster dan narasi interpretasi bisnis sudah memenuhi ketentuan tambahan (radar/bar chart + penjelasan bisnis eksplisit).
-- **Phase 3 & 4**: hanya ada draft awal di `code/data-mining-phase3.ipynb` dan `code/data-mining-phase4.ipynb` di root `code/` (bukan di subfolder terstruktur seperti Phase1/Phase2) — perlu direlokasi/dirapikan mengikuti pola folder yang sama.
-- **Phase 5**: belum ada berkas sama sekali (dashboard maupun notebook visualisasi/report generation).
+- **Phase 1**: pipeline modular `pipeline/phase1_pipeline/` (config terpusat, cleaning, transform, feature selection, dim. reduction) + notebook `notebooks/data-mining-phase1-v2.ipynb` (EDA + justifikasi). Feature selection memakai korelasi (|r|>0,85) dan **mutual information terhadap `grade`** (bukan `loan_status`; `grade` adalah acuan mining angle, justifikasi lengkap di notebook 4.2). Subset final 12 fitur; PCA 9 komponen; UMAP densMAP 100k (`regen_umap.py` bila perlu regenerate).
+- **Phase 2**: `data-mining-phase2-v2.ipynb` — K-Means (K=2, uji stabilitas 5 sample, Silhouette 0,161), Hierarchical Ward (cophenetic 0,360; bukti chaining average/single), DBSCAN data-driven (eps 0,471, min_samples 12, 501 noise), ARI 0,357, profil bernama (Prime / Higher-risk) + radar + interpretasi bisnis.
+- **Phase 3**: `data-mining-phase3-v2.ipynb` — diskretisasi ambang domain, Apriori pada **sample acak seeded 250k**, 14.764 rule pre-filter → 1.023 retained (lift 1,15–5,35), ≥10 rule non-trivial dengan interpretasi, treatment sirkularitas grade↔int_rate.
+- **Phase 4**: `data-mining-phase4-v2.ipynb` (+ `pipeline/phase4_anomaly.py`) — IQR 3×, Z-score 3, Mahalanobis χ² 99,9%, Isolation Forest 1%; 271.143 kandidat → 116.225 terkonfirmasi (≥2 metode); klasifikasi data_error/risk_signal/rare_case; cross-ref DBSCAN.
+- **Phase 5**: `data-mining-phase5-v2.ipynb` menghasilkan `report/dashboard.html` (self-contained, dropdown + slider); `report/build_report.py` menghasilkan `Knowledge_Discovery_Report.docx` sesuai struktur template.
 
----
+Catatan penamaan output: `cleaned_lending_club.csv` berisi nilai **ter-transform** (winsor+log, subset final); untuk profiling/anomali yang terbaca bisnis gunakan `cleaned_lending_club_no_winsorization.csv` (nilai asli).
 
-## 8. Rencana Kerja Bertahap (Ringkas)
-
-1. **Audit ulang Phase 1**: pastikan pembedaan nominal vs ordinal ditangani eksplisit (ordinal encoding untuk `grade`/`sub_grade`/`emp_length`, drop murni untuk nominal murni seperti `purpose`, `home_ownership`, `addr_state` jika memang dipertahankan sebagai nominal). Perbaiki `lending_club_umap.csv` yang kosong. Selesaikan EDA + justifikasi lengkap di notebook.
-2. **Rapikan Phase 2**: lengkapi tiga algoritma clustering, validitas (Elbow, Silhouette, Cophenetic Correlation, Adjusted Rand Index), profiling dengan visualisasi dan interpretasi bisnis per cluster.
-3. **Bangun Phase 3**: pindahkan/rapikan notebook Apriori ke struktur folder konsisten, pastikan ≥10 rule dengan interpretasi bisnis dan tabel Support/Confidence/Lift lengkap.
-4. **Bangun Phase 4**: terapkan IQR, Z-score, Isolation Forest; cross-reference dengan outlier cluster Fase 2; klasifikasikan tiap anomali.
-5. **Bangun Phase 5**: dashboard interaktif, visualisasi cluster map/rule network/outlier plot, serta penyusunan Knowledge Discovery Report mengikuti template docx secara ketat (tepat 3 findings, maksimal +1 tambahan bila benar-benar diperlukan; bahasa humanizer; format Appendix lengkap).
-6. **Finalisasi laporan**: isi seluruh section template docx, verifikasi setiap finding lolos 4 uji translasi, isi Appendix D dengan metrik lengkap dari seluruh fase.
+Sisa pekerjaan manual: isi nama anggota, tanggal submit, dan URL GitHub di cover report; siapkan presentasi 10 menit.

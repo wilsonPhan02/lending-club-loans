@@ -23,6 +23,9 @@ TOTAL_ROWS  = 2_260_701       # untuk mode sampling (skiprows)
 ID_TEXT_COLS = ["id", "member_id", "url", "emp_title", "title", "desc", "zip_code"]
 
 # Kolom outcome pasca-origination (data leakage) -> tidak boleh jadi fitur profil peminjam
+# Catatan: collections_12_mths_ex_med sebenarnya atribut riwayat kredit pra-origination;
+# ikut di-drop secara konservatif karena zero-inflated (>98% bernilai 0) dan ambigu
+# terhadap momen pencatatan, bukan karena leakage murni.
 POST_LOAN_COLS = [
     "funded_amnt", "funded_amnt_inv", "out_prncp", "out_prncp_inv",
     "total_pymnt", "total_pymnt_inv", "total_rec_prncp", "total_rec_int",
@@ -96,7 +99,7 @@ UMAP_DENSMAP   = True
 
 # ---------------------------------------------------------------- Output (di data/processed/)
 OUTPUTS = {
-    "cleaned":        _proc("cleaned_lending_club.csv"),                 # subset final, unscaled
+    "cleaned":        _proc("cleaned_lending_club.csv"),                 # subset final, TER-TRANSFORM (winsor+log); utk profiling bisnis pakai no_winsor
     "no_winsor":      _proc("cleaned_lending_club_no_winsorization.csv"),# nilai asli -> Phase 4 anomaly
     "scaled":         _proc("scaled_lending_club.csv"),                  # subset final, scaled
     "pca":            _proc("lending_club_pca.csv"),                     # -> K-Means / Hierarchical
