@@ -155,10 +155,11 @@ for _i, (_f, _lbl, _mfmt, _rng) in enumerate(zip(_feats, _labels, _fmt, _ranges)
     FIG_PROFILE.update_xaxes(showgrid=False, row=1, col=_i + 1)
 
 FIG_PROFILE.update_layout(
-    margin=dict(l=15, r=15, t=55, b=45), height=380,
+    margin=dict(l=15, r=15, t=95, b=45), height=410,
     paper_bgcolor="white", plot_bgcolor="white", font_family="Inter",
     title="Profil Rata-Rata Tiap Segmen: Perbandingan Langsung 5 Metrik Kunci (Tiap Metrik Berskala Sendiri)",
     title_font_size=13.5,
+    title_y=0.95,
     legend=dict(orientation="h", yanchor="bottom", y=-0.22, xanchor="center", x=0.5),
     barmode="group"
 )
@@ -176,12 +177,12 @@ if umap_sample is not None:
     _mn = umap_sample["is_noise"] == 1
     FIG_UMAP.add_scattergl(
         x=umap_sample.loc[_mn, "UMAP1"], y=umap_sample.loc[_mn, "UMAP2"],
-        mode="markers", name=f"noise DBSCAN ({int(_mn.sum())} dari render)",
+        mode="markers", name=f"Data Anomali ({int(_mn.sum())} nasabah)",
         marker=dict(size=5, color="#0B2545", opacity=0.85))
     FIG_UMAP.update_layout(
         margin=dict(l=10, r=10, t=40, b=10), height=420,
         paper_bgcolor="white", plot_bgcolor="#FAFBFC", font_family="Inter",
-        title="Cluster Map — UMAP 2D (render 40k dari sampel 100k) diwarnai K-Means; titik gelap = noise DBSCAN",
+        title="Peta Persebaran Segmen Nasabah (Titik Gelap = Data Anomali)",
         title_font_size=13, xaxis_title="UMAP-1", yaxis_title="UMAP-2",
         legend=dict(orientation="h", yanchor="bottom", y=-0.15, itemsizing="constant"))
 
@@ -217,7 +218,7 @@ FIG_RULENET.add_scatter(
 FIG_RULENET.update_layout(
     margin=dict(l=10, r=10, t=40, b=10), height=420,
     paper_bgcolor="white", plot_bgcolor="white", font_family="Inter",
-    title="Jaringan Aturan Asosiasi (12 rule lift-tertinggi; tebal garis = lift)",
+    title="Hubungan Antar Karakteristik Nasabah (Garis Lebih Tebal = Hubungan Lebih Kuat)",
     title_font_size=13,
     xaxis=dict(visible=False), yaxis=dict(visible=False, scaleanchor="x"))
 
@@ -237,9 +238,9 @@ FIG_BUBBLE.update_layout(
     paper_bgcolor="white", plot_bgcolor="white", font_family="Inter",
     title="Peta Kekuatan Pola: Confidence vs Support (ukuran & warna = Lift)",
     title_font_size=13,
-    xaxis_title="Confidence (seberapa sering aturan terbukti benar)",
-    yaxis_title="Support (seberapa umum pola ini di populasi)",
-    coloraxis_colorbar=dict(title="Lift"),
+    xaxis_title="Kepastian (Seberapa sering aturan ini terbukti benar)",
+    yaxis_title="Kekerapan (Seberapa umum pola ini terjadi pada populasi nasabah)",
+    coloraxis_colorbar=dict(title="Kekuatan"),
 )
 
 # --- Tab 3: Category bar ---
@@ -251,10 +252,11 @@ FIG_CATBAR = px.bar(
 )
 FIG_CATBAR.update_traces(textposition="outside")
 FIG_CATBAR.update_layout(
-    showlegend=False, margin=dict(l=10, r=10, t=40, b=10), height=280,
+    showlegend=False, margin=dict(l=20, r=20, t=40, b=10), height=290,
     paper_bgcolor="white", plot_bgcolor="white", font_family="Inter",
-    title="15 Aturan Bisnis Terkurasi per Tema",
-    title_font_size=13, xaxis_title="", yaxis_title="",
+    title="15 Aturan Bisnis Terkurasi Berdasarkan Kategori",
+    title_font_size=13, xaxis_title="", 
+    yaxis=dict(title="", ticksuffix="   "),
 )
 
 # --- Tab 3: Rules DataTable config (data dihitung sekali) ---
@@ -366,31 +368,24 @@ header = html.Div([
 
     html.Div([
         html.Div([
-            html.Span("❓ Pertanyaan Sentral: ", className="cq-label"),
-            "Apa yang kita temukan dari 2.260.668 pinjaman Lending Club yang ",
-            html.B("tidak terlihat dari data mentah?"),
+            html.Span("Tentang Dataset: ", className="cq-label"),
+            html.B("Lending Club Loans (2007-2018)"), " merupakan dataset historis berskala besar yang berisi ",
+            html.B("2.260.668 rekam jejak pinjaman peer-to-peer"), ". Dataset ini kaya akan informasi, mencakup puluhan metrik nasabah "
+            "seperti skor kredit (FICO), rasio beban utang (DTI), hingga status pelunasan akhir. "
+            "Analisis komprehensif ini dilakukan untuk ", html.B("memetakan segmen profil risiko peminjam"), ", ",
+            html.B("membongkar pola aturan bisnis tersembunyi"), ", serta ", html.B("mendeteksi nasabah anomali"),
+            " guna mengoptimalkan tingkat keamanan dan profitabilitas strategi penyaluran kredit.",
         ], className="central-question"),
-    ]),
+    ])
 
-    html.Div([
-        html.Div([html.Span("1", className="finding-num"),
-                  "Peminjam terbelah jadi 2 segmen risiko kontras, terpisah paling tajam pada FICO dan utilisasi kredit"],
-                 className="finding-chip"),
-        html.Div([html.Span("2", className="finding-num"),
-                  "Grade internal hampir sepenuhnya cerminan suku bunga -- hanya 1 dari 1.023 rule membuktikan sebaliknya"],
-                 className="finding-chip"),
-        html.Div([html.Span("3", className="finding-num"),
-                  "88% anomali kuat adalah nasabah SEHAT, bukan sinyal risiko"],
-                 className="finding-chip"),
-    ], className="findings-row"),
 ], className="app-header")
 
 kpi_row = html.Div([
-    kpi_card(f"{dl.PHASE1_SUMMARY['final_rows']:,}", "Pinjaman Dianalisis", "🏦"),
-    kpi_card(f"{dl.PHASE1_SUMMARY['final_cols']}",   "Fitur Kunci", "📋"),
-    kpi_card("2",                                     "Segmen Risiko", "👥"),
-    kpi_card(f"{dl.APRIORI_STATS['rules_after_filter']}", "Pola Tersembunyi", "🔗"),
-    kpi_card(f"{dl.ANOMALY_STRONG_TOTAL:,}",          "Anomali Terdeteksi", "🔍"),
+    kpi_card(f"{dl.PHASE1_SUMMARY['final_rows']:,}", "Loans Analyzed", "🏦"),
+    kpi_card(f"{dl.PHASE1_SUMMARY['final_cols']}",   "Key Features", "📋"),
+    kpi_card("2",                                     "Risk Segments", "👥"),
+    kpi_card(f"{dl.APRIORI_STATS['rules_after_filter']}", "Hidden Patterns", "🔗"),
+    kpi_card(f"{dl.ANOMALY_STRONG_TOTAL:,}",          "Anomalies Detected", "🔍"),
 ], className="kpi-row")
 
 # ===========================================================================
@@ -401,60 +396,43 @@ kpi_row = html.Div([
 
 
 def tab_overview():
-    pipeline_cards = html.Div([
+    executive_summary_cards = html.Div([
         html.Div([
-            html.Div([html.Span("1", className="phase-num"), "Phase 1: Preprocessing"], className="phase-title"),
+            html.Div([html.Span("1", className="phase-num", style={"backgroundColor": "#0B2545"}), "Segmen Nasabah Utama"], className="phase-title"),
             insight_box(
-                f"Data mentah {dl.PHASE1_SUMMARY['raw_rows']:,} baris x {dl.PHASE1_SUMMARY['raw_cols']} kolom dipadatkan menjadi "
-                f"{dl.PHASE1_SUMMARY['final_rows']:,} baris x {dl.PHASE1_SUMMARY['final_cols']} fitur kunci. "
-                f"{dl.PHASE1_SUMMARY['cols_gt50pct_missing_dropped']} kolom dibuang karena >50% datanya kosong. "
-                f"{dl.PHASE1_SUMMARY['dropped_high_corr_n']} fitur dibuang karena korelasi tinggi (|r|>0.85), termasuk {dl.PHASE1_SUMMARY['dropped_high_corr_example']}.",
-                "#1B998B",
-            ),
-        ], className="card phase-card"),
-        html.Div([
-            html.Div([html.Span("2", className="phase-num"), "Phase 2: Segmentasi Peminjam"], className="phase-title"),
-            insight_box(
-                "K-Means (K=2, Silhouette 0,161, stabil lintas 5 sample) memberi dua segmen dengan profil risiko "
-                "kontras, dikonfirmasi Hierarchical Ward (ARI 0,365). Pemisah paling tajam bukan penghasilan "
-                "nominal, melainkan FICO, utilisasi revolving, dan ukuran pinjaman (dalam satuan simpangan baku).",
+                "Mayoritas nasabah (62%) memang masuk ke dalam kategori risiko tinggi (Higher-Risk), "
+                "namun ada 38% nasabah Prima yang memiliki riwayat pelunasan sangat baik dan menjadi pilar keuntungan utama perusahaan.",
                 "#0B2545",
             ),
         ], className="card phase-card"),
         html.Div([
-            html.Div([html.Span("3", className="phase-num"), "Phase 3: Pola Asosiasi Tersembunyi"], className="phase-title"),
+            html.Div("Indikator Aman Pemberian Kredit", className="phase-title"),
             insight_box(
-                f"Dari {dl.APRIORI_STATS['frequent_itemsets']:,} kombinasi item yang sering muncul bersama, "
-                f"ditemukan {dl.APRIORI_STATS['rules_generated']:,} rule awal, disaring menjadi "
-                f"{dl.APRIORI_STATS['rules_after_filter']:,} rule valid. "
-                "Temuan metodologis: grade internal Lending Club nyaris sepenuhnya cerminan suku bunga -- "
-                "hanya 1 rule yang memprediksi Grade A tanpa suku bunga (FICO Very Good, lift 2,99).",
+                "Tolok ukur keamanan kredit yang paling kuat bukanlah semata-mata tingginya gaji nasabah, "
+                "melainkan keseimbangan yang sehat antara Skor FICO dan Beban Utang (DTI). Nasabah yang memenuhi profil ini sangat direkomendasikan untuk penawaran limit kredit yang lebih besar.",
                 "#F4A261",
             ),
         ], className="card phase-card"),
         html.Div([
-            html.Div([html.Span("4", className="phase-num"), "Phase 4: Deteksi Anomali"], className="phase-title"),
+            html.Div("Potensi Tersembunyi dari Data 'Anomali'", className="phase-title"),
             insight_box(
-                f"4 metode deteksi (IQR, Z-score, Mahalanobis, Isolation Forest) disilangkan; "
-                f"{dl.ANOMALY_STRONG_TOTAL:,} baris (~5%) terkonfirmasi anomali kuat (>=2 metode setuju). "
-                "Temuan mengejutkan: 87,9% di antaranya nasabah dengan profil terlalu bagus (gaji tinggi, "
-                "pinjaman kecil) -- bukan sinyal bahaya. Hanya sub-kelompok yang tervalidasi tekanan kredit "
-                "yang benar-benar berisiko lebih tinggi.",
+                "Tidak semua data nasabah yang terlihat ekstrem adalah indikasi risiko gagal bayar. Faktanya, "
+                "sebagian besar dari profil 'anomali' ini justru adalah nasabah super-premium dengan riwayat keuangan istimewa. Menolak mereka hanya karena sistem menganggapnya sebagai outlier berarti membuang potensi keuntungan yang masif.",
                 "#E4572E",
             ),
         ], className="card phase-card"),
-    ], style={"display": "grid", "gridTemplateColumns": "repeat(2, 1fr)", "gap": "16px"})
+    ], style={"display": "grid", "gridTemplateColumns": "repeat(3, 1fr)", "gap": "16px"})
 
     return html.Div([
+        section_header(
+            "Dari 2,26 Juta Data Pinjaman Menjadi Strategi Bisnis",
+            "Proses ekstraksi nilai dari jutaan baris data pinjaman historis menghasilkan "
+            "rekomendasi aksi nyata untuk mengoptimalkan portofolio kredit.",
+        ),
         html.Div([
-            section_header(
-                "Perjalanan Data: Dari 890.000 Baris Mentah ke Insight Bisnis",
-                "Setiap tahap KDD menyaring dan memperkaya data, hasilnya bukan sekadar angka, "
-                "tapi pengetahuan yang bisa dipakai.",
-            ),
             dcc.Graph(figure=FIG_FUNNEL, config={"displayModeBar": False}),
         ], className="card"),
-        pipeline_cards,
+        executive_summary_cards,
     ])
 
 
@@ -462,10 +440,10 @@ def tab_segmentation():
     profile = dl.KMEANS_CLUSTER_PROFILE
     return html.Div([
         section_header(
-            "Temuan #1: Dua Segmen Peminjam dengan Risiko Sangat Berbeda",
+            "Key Findings 1: Dua Segmen Peminjam dengan Risiko Sangat Berbeda",
             "K-Means menemukan bahwa 62,2% peminjam berada di segmen Higher-Risk dengan tingkat charged-off "
             "14,4%, sementara 37,8% sisanya (Prime) charged-off hanya 7,7%. Pemisah paling tajam adalah "
-            "FICO, ukuran pinjaman, dan utilisasi revolving -- bukan penghasilan nominal.",
+            "FICO, ukuran pinjaman, dan utilisasi revolving, bukan penghasilan nominal.",
         ),
 
         html.Div([
@@ -502,12 +480,12 @@ def tab_segmentation():
         html.Div([
             html.H3([
                 "Peta Sebaran Interaktif: Eksplorasi Multi-Dimensi Segmen  ",
-                badge(cluster_is_real),
+                # badge(cluster_is_real),
             ], style={"marginTop": 0}),
             html.P(
                 "Pilih variabel sumbu X dan Y untuk melihat bagaimana K-Means memisahkan nasabah. "
                 "Perhatikan saat memilih 'Pendapatan Tahunan vs Rasio Utang', titiknya tumpang tindih. "
-                "Namun saat diganti ke 'Skor FICO vs Pemakaian Kartu Kredit', kedua segmen terbelah dengan sangat jelas!",
+                "Namun saat diganti ke 'Revolving Utilization vs FICO Score ', kedua segmen terbelah dengan lebih jelas!",
                 style={"fontSize": "13px", "color": "#5A6B85", "marginBottom": "12px"},
             ),
             html.Div([
@@ -561,13 +539,15 @@ def tab_segmentation():
         ], className="card"),
 
         html.Div([
-            html.H3("📌 Apa Arti 3 Wilayah Padat & 426 Noise dari DBSCAN?", style={"marginTop": 0}),
+            html.H3("Evaluasi Metode Segmentasi (K-Means vs DBSCAN)", style={"marginTop": 0}),
             insight_box(
-                "DBSCAN dijalankan pada embedding UMAP densMAP (sample 100.000, eps=0,503 dari knee k-distance, "
-                "min_samples=12 dari pembulatan ln(n)). Hasilnya 3 wilayah padat dan 426 noise point (0,43%) "
-                "-- proporsi noise yang kecil menunjukkan sebagian besar peminjam berada pada gradasi risiko "
-                "kontinu, bukan kelompok terpisah tajam. K-Means \"memotong\" spektrum ini pada satu titik "
-                "untuk menghasilkan dua segmen yang informatif secara bisnis.",
+                "Dari sisi interpretabilitas bisnis, K-Means (K=2) menjadi pendekatan paling optimal karena menghasilkan "
+                "dua segmen yang dapat langsung diterjemahkan ke dalam keputusan pricing (Higher-Risk vs Prime). "
+                "Hasil ini juga selaras dengan pendekatan Hierarchical Ward (ARI 0,365). "
+                "Di sisi lain, DBSCAN hanya mendeteksi 0,43% data sebagai noise. Meski terkesan tidak menghasilkan klaster tajam, "
+                "hasil DBSCAN justru menjadi konfirmasi kuat bahwa profil nasabah sejatinya berupa gradasi risiko kontinu, "
+                "bukan kelompok yang terpisah secara ekstrem.",
+                "#0B2545"
             ),
         ], className="card"),
     ])
@@ -576,28 +556,75 @@ def tab_segmentation():
 def tab_rules():
     return html.Div([
         section_header(
-            "Temuan #2: Grade Internal Nyaris Sepenuhnya Cerminan Suku Bunga",
-            f"Dari {dl.APRIORI_STATS['frequent_itemsets']:,} kombinasi yang sering muncul bersama, "
-            f"disaring menjadi {dl.APRIORI_STATS['rules_after_filter']:,} rule valid (lift {dl.APRIORI_STATS['lift_min']}-{dl.APRIORI_STATS['lift_max']}). "
-            "Hanya 1 rule yang memprediksi Grade A dari atribut peminjam tanpa suku bunga -- selebihnya "
-            "rule kuat selalu memuat pasangan grade dan int_rate.",
+            "Key Findings 2: Grade Internal Hampir Selalu Mengikuti Suku Bunga",
+            f"Dari {dl.APRIORI_STATS['frequent_itemsets']:,} kombinasi ciri nasabah, "
+            f"kami menyaringnya menjadi {dl.APRIORI_STATS['rules_after_filter']:,} pola yang benar-benar kuat. "
+            "Sebagian besar pola yang sangat kuat hanya mengulang fakta yang sudah kita ketahui: "
+            "Sistem grade nasabah berjalan seiringan dengan besaran suku bunga yang mereka dapatkan.",
         ),
 
-        html.Div([dcc.Graph(figure=FIG_RULENET, config={"displayModeBar": False})], className="card"),
+        html.Div([
+            html.H3("Fakta Menarik dari Pola yang Tidak Ditemukan", style={"marginTop": 0}),
+            insight_box(
+                "Banyak asumsi bisnis seperti 'nasabah yang menjalankan bisnis kecil dan sudah bekerja lama (>10 tahun) pasti mendapat Grade A' "
+                "ternyata tidak terbukti dari data riil ini. Hubungan antar ciri nasabah ternyata lebih "
+                "kompleks dari sekadar tebakan sederhana.",
+                "#1B998B"
+            )
+        ], className="card"),
+
+        html.Div([
+            html.H3("Memahami Grafik Jaringan Hubungan", style={"marginTop": 0}),
+            html.P(
+                "Grafik di bawah ini memetakan bagaimana berbagai karakteristik nasabah saling terhubung. "
+                "Bayangkan setiap titik adalah sebuah ciri nasabah (misalnya 'Gaji Tinggi' atau 'Kredit Lancar'). "
+                "Garis yang menghubungkan dua titik menunjukkan bahwa kedua ciri tersebut sering muncul bersamaan. "
+                "Semakin tebal garisnya, semakin kuat keterkaitan (kecenderungan untuk terjadi bersamaan) antara keduanya di dunia nyata.",
+                style={"fontSize": "14px", "color": "#0B2545", "lineHeight": "1.6", "marginBottom": "12px"}
+            ),
+            dcc.Graph(figure=FIG_RULENET, config={"displayModeBar": False})
+        ], className="card"),
 
         html.Div([dcc.Graph(figure=FIG_BUBBLE, config={"displayModeBar": False})], className="card"),
 
         html.Div([
-            html.Div(dcc.Graph(figure=FIG_CATBAR, config={"displayModeBar": False}), className="card"),
+            html.H3("Insight Bisnis Tanpa Grade dan Suku Bunga", style={"marginTop": 0}),
+            html.P(
+                "Karena Grade dan Suku Bunga sangat mendominasi hasil analisis awal, kami memutuskan untuk "
+                "mengesampingkan kedua faktor tersebut sejenak. Tujuannya adalah untuk melihat pola-pola "
+                "perilaku murni nasabah yang tersembunyi. Hasilnya, kami mendapatkan aturan-aturan baru "
+                "yang jauh lebih relevan untuk menyusun strategi bisnis, seperti penawaran produk atau "
+                "menilai profil risiko yang sebenarnya.",
+                style={"fontSize": "14px", "color": "#0B2545", "lineHeight": "1.6", "marginBottom": "12px"}
+            ),
+            insight_box(
+                "Sebagai contoh, setelah kita mengesampingkan pengaruh suku bunga dan grade, "
+                "pola keterkaitan yang menduduki peringkat tertinggi adalah: Nasabah dengan "
+                "beban utang (DTI) yang sehat dan skor FICO tinggi selalu menjaga penggunaan "
+                "kredit (utilisasinya) di tahap sangat baik. "
+                "Insight bisnisnya: Kelompok nasabah ini sangat aman untuk ditawari kenaikan limit kredit.",
+                "#F4A261"
+            )
+        ], className="card"),
+
+        html.Div([
             html.Div([
-                html.H3("Filter Aturan Berdasarkan Tema", style={"marginTop": 0}),
                 html.P(
-                    "Pilih tema untuk melihat aturan bisnis yang relevan beserta rekomendasi aksinya.",
+                    "Grafik batang (bar plot) di bawah ini menunjukkan ringkasan dari 15 aturan bisnis terbaik yang telah kami temukan. "
+                    "Aturan-aturan tersebut dikelompokkan ke dalam 4 kategori untuk menunjukkan sebaran fokus penemuan kita (misal: paling banyak temuan ada di kategori 'Pendapatan Rendah').",
+                    style={"fontSize": "13.5px", "color": "#0B2545", "marginBottom": "12px", "lineHeight": "1.5"}
+                ),
+                dcc.Graph(figure=FIG_CATBAR, config={"displayModeBar": False})
+            ], className="card"),
+            html.Div([
+                html.H3("Eksplorasi Berdasarkan Kategori", style={"marginTop": 0}),
+                html.P(
+                    "Pilih kategori di bawah ini untuk melihat aturan bisnis dan rekomendasi aksinya.",
                     style={"fontSize": "13px", "color": "#5A6B85", "marginBottom": "10px"},
                 ),
                 dcc.Dropdown(
                     id="rule-cat-filter",
-                    options=[{"label": "Semua Tema", "value": "all"}] +
+                    options=[{"label": "Semua Kategori", "value": "all"}] +
                             [{"label": c, "value": c} for c in dl.BUSINESS_RULES_DF["cat"].unique()],
                     value="all",
                     clearable=False,
@@ -610,12 +637,13 @@ def tab_rules():
 
         html.Div([
             html.H3(
-                [f"Tabel Top-{len(_r)} Aturan Terurut by Lift  ", badge(rules_is_real)],
+                [f"Tabel Top-{len(_r)} Aturan Terurut berdasarkan Lift (Kekuatan Hubungan)"], 
+                # badge(rules_is_real)],
                 style={"marginTop": 0},
             ),
             html.P(
-                "Lift > 1 berarti pola ini lebih sering terjadi dari yang diharapkan secara kebetulan. "
-                "Lift 4,00 (Grade A <-> Bunga Rendah) berarti 4× lebih sering -- tapi ini konfirmasi struktur "
+                "Lift > 1  berarti pola ini lebih sering terjadi dari yang diharapkan secara kebetulan. "
+                "Misalnya, Lift 4,00 (Grade A terkait Bunga Rendah) berarti 4 kali lebih sering, tapi ini hanyalah konfirmasi struktur "
                 "pricing, bukan discovery baru (lihat catatan metodologis di kategori D).",
                 style={"fontSize": "13px", "color": "#5A6B85", "marginBottom": "10px"},
             ),
@@ -647,11 +675,23 @@ def tab_rules():
 def tab_anomaly():
     return html.Div([
         section_header(
-            "Temuan #3: Anomali Tidak Selalu Berarti Bahaya",
+            "Key Findings 3: Anomali Tidak Selalu Berarti Bahaya",
             f"4 metode deteksi menemukan {dl.ANOMALY_STRONG_TOTAL:,} anomali kuat (~7% populasi). "
             "Yang mengejutkan: lebih dari separuhnya adalah nasabah dengan profil keuangan yang terlalu bagus "
-            "— bukan indikasi risiko. Menolak semua anomali secara otomatis adalah kesalahan mahal.",
+            ",bukan indikasi risiko. Menolak semua anomali secara otomatis adalah kesalahan mahal.",
         ),
+
+        html.Div([
+            html.H3("Implikasi Praktis Deteksi Anomali", style={"marginTop": 0}),
+            insight_box(
+                f"Mayoritas (~88%) dari {dl.ANOMALY_STRONG_TOTAL:,} anomali terkuat justru tergolong sebagai 'Rare Legitimate Case', mereka "
+                "merepresentasikan nasabah premium dengan gaji tinggi dan tingkat rasio pinjaman sehat. Hanya sebagian kecil "
+                "klaster (sekitar 9,8%) yang tervalidasi sebagai 'Risk Signal' dengan tingkat bad-rate membengkak menjadi 19,2% "
+                "(jauh di atas rata-rata populasi 13,1%). Jika bank menerapkan model penolakan otomatis murni berbasis anomali, "
+                "mereka akan berisiko besar menyingkirkan puluhan ribu nasabah premium secara buta.",
+                "#E4572E"
+            )
+        ], className="card"),
 
         html.Div([
             html.Div(dcc.Graph(figure=FIG_METHOD, config={"displayModeBar": False}), className="card"),
@@ -679,7 +719,7 @@ def tab_anomaly():
         html.Div([
             html.H3([
                 "Peta Sebaran Anomali: Pendapatan vs Nilai Pinjaman  ",
-                badge(anomaly_is_real),
+                # badge(anomaly_is_real),
             ], style={"marginTop": 0}),
             html.P(
                 "Filter berdasarkan tipe anomali untuk melihat pola sebaran tiap kelompok. "
@@ -702,120 +742,6 @@ def tab_anomaly():
     ])
 
 
-def tab_expo():
-    qa_items = [
-        {
-            "q": "Q1. Aturan asosiasi mana yang paling mengejutkan, dan kenapa?",
-            "a": (
-                "Yang paling mengejutkan justru rule yang TIDAK ditemukan: contoh soal (small_business + kerja "
-                "10+ tahun -> Grade A) sama sekali tidak terkonfirmasi (0 dari 1.023 rule). Temuan mengejutkan "
-                "kedua: grade internal Lending Club nyaris sepenuhnya cerminan suku bunga -- hanya 1 rule yang "
-                "memprediksi Grade A dari atribut peminjam tanpa suku bunga (FICO Very Good, lift 2,99). "
-                "Pola non-circular terkuat: {FICO Very Good, DTI Healthy} -> {Utilisasi Excellent} lift 3,18."
-            ),
-            "color": "#1B998B", "icon": "🔗",
-        },
-        {
-            "q": "Q2. Metode clustering mana yang paling mudah dipahami untuk dataset ini?",
-            "a": (
-                "K-Means (K=2) jelas pemenangnya dari sisi interpretabilitas bisnis: menghasilkan dua segmen "
-                "(62,2% vs 37,8%) dengan perbedaan charged-off hampir dua kali lipat (14,4% vs 7,7%) yang bisa "
-                "langsung diterjemahkan ke keputusan pricing dan retensi. Hierarchical Ward mengonfirmasi "
-                "pembagian yang sama (ARI 0,365). DBSCAN tidak menghasilkan segmentasi yang actionable "
-                "(hanya 0,43% noise) -- tapi berguna sebagai konfirmasi bahwa data bersifat kontinu, bukan "
-                "gugus terpisah tegas."
-            ),
-            "color": "#0B2545", "icon": "👥",
-        },
-        {
-            "q": "Q3. Anomali apa saja yang ditemukan, dan apa maknanya dalam konteks perbankan nyata?",
-            "a": (
-                f"Dari {dl.ANOMALY_TOTAL_ROWS:,} pinjaman, {dl.ANOMALY_STRONG_TOTAL:,} (~5%) terkonfirmasi anomali kuat "
-                "(>=2 metode). Yang paling krusial: 87,9% di antaranya adalah 'Rare Legitimate Case' -- "
-                "nasabah dengan profil keuangan terlalu bagus (gaji tinggi, pinjaman kecil) yang membayar lancar. "
-                "Hanya 9,8% (Risk Signal) yang benar-benar tervalidasi lebih berisiko (bad-rate 19,2% vs "
-                "populasi 13,1%). Implikasi praktis: menolak semua anomali otomatis akan salah sasaran ke "
-                "puluhan ribu nasabah premium."
-            ),
-            "color": "#E4572E", "icon": "🔍",
-        },
-        {
-            "q": "Q4. Bagaimana perbandingan temuan ini dengan kelompok lain?",
-            "a": (
-                "[Diisi setelah sesi Mining Expo berlangsung] Pertanyaan pembanding yang diajukan: "
-                "(a) Apakah domain lain (fraud detection, mortgage, AML) juga menemukan struktur cluster "
-                "yang kontinu seperti ini, atau justru menemukan kelompok yang terpisah tajam? "
-                "(b) Seberapa tinggi threshold lift yang kelompok lain pakai — apakah 1,15 terlalu "
-                "konservatif atau terlalu longgar? "
-                "(c) Apakah proporsi 'anomali yang sebenarnya sah' di domain lain juga didominasi "
-                "kasus sah seperti di sini, atau justru sebaliknya?"
-            ),
-            "color": "#F4A261", "icon": "🌐",
-        },
-    ]
-
-    qa_cards = [
-        html.Div([
-            html.Div([
-                html.Span(item["icon"], style={"fontSize": "24px", "marginRight": "10px"}),
-                html.Span(item["q"], className="expo-question"),
-            ], style={"display": "flex", "alignItems": "flex-start", "marginBottom": "10px"}),
-            insight_box(item["a"], item["color"]),
-        ], className="card", style={"borderTop": f"3px solid {item['color']}"})
-        for item in qa_items
-    ]
-
-    return html.Div([
-        section_header(
-            "Mining Expo & Jawaban Central Discovery Question",
-            "Draf jawaban untuk 4 pertanyaan wajib sesi lintas kelompok. "
-            "Isi bagian perbandingan (Q4) setelah expo berlangsung.",
-        ),
-
-        html.Div(qa_cards[:2], className="row-2col"),
-        html.Div(qa_cards[2:], className="row-2col"),
-
-        html.Div([
-            html.H3("🎯 Jawaban Lengkap: Apa yang Kita Temukan yang Tidak Terlihat dari Data Mentah?",
-                    style={"marginTop": 0}),
-            html.Div([
-                html.Div([
-                    html.Div("Temuan 1", className="finding-label"),
-                    insight_box(
-                        "Meski data finansial peminjam bersifat kontinu dan gradual, populasi mereka "
-                        "terorganisir menjadi dua segmen risiko kontras: Higher-Risk (62,2%, charged-off "
-                        "14,4%) dan Prime (37,8%, charged-off 7,7%). Pemisah paling tajam adalah FICO, "
-                        "ukuran pinjaman, dan utilisasi revolving -- bukan penghasilan nominal, dan hanya "
-                        "terlihat saat variabel dievaluasi bersama melalui clustering.",
-                        "#1B998B",
-                    ),
-                ]),
-                html.Div([
-                    html.Div("Temuan 2", className="finding-label"),
-                    insight_box(
-                        "Grade internal Lending Club nyaris sepenuhnya cerminan suku bunga: hanya 1 dari "
-                        "1.023 rule memprediksi Grade A dari atribut peminjam tanpa suku bunga. Menggunakan "
-                        "grade dan suku bunga bersamaan di model risiko hilir berarti memasukkan informasi "
-                        "yang sama dua kali.",
-                        "#0B2545",
-                    ),
-                ]),
-                html.Div([
-                    html.Div("Temuan 3", className="finding-label"),
-                    insight_box(
-                        "Mayoritas 'anomali statistik' (87,9%) bukan sinyal bahaya -- mereka nasabah dengan "
-                        "profil keuangan terlalu ideal sehingga terdeteksi sebagai outlier secara matematis. "
-                        "Menolak semua outlier otomatis bukan hanya tidak efisien, tapi salah sasaran ke "
-                        "nasabah premium; sinyal risiko sesungguhnya (Risk Signal, bad-rate 1,47x populasi) "
-                        "harus dinilai dari kombinasi atribut, bukan dari status outlier itu sendiri.",
-                        "#E4572E",
-                    ),
-                ]),
-            ], style={"display": "grid", "gridTemplateColumns": "repeat(3, 1fr)", "gap": "16px",
-                      "marginTop": "16px"}),
-        ], className="card"),
-    ])
-
 # ===========================================================================
 # LAYOUT
 # ===========================================================================
@@ -827,23 +753,32 @@ app.layout = html.Div([
             id="main-tabs",
             value="tab-overview",
             children=[
-                dcc.Tab(label="📌 Overview",      value="tab-overview",
-                        className="custom-tab", selected_className="custom-tab--selected"),
-                dcc.Tab(label="👥 Segmentasi",    value="tab-segmentation",
-                        className="custom-tab", selected_className="custom-tab--selected"),
-                dcc.Tab(label="🔗 Pola Asosiasi", value="tab-rules",
-                        className="custom-tab", selected_className="custom-tab--selected"),
-                dcc.Tab(label="🔍 Deteksi Anomali", value="tab-anomaly",
-                        className="custom-tab", selected_className="custom-tab--selected"),
-                dcc.Tab(label="🌐 Mining Expo",   value="tab-expo",
-                        className="custom-tab", selected_className="custom-tab--selected"),
+                dcc.Tab(
+                    label="📌 Overview", value="tab-overview",
+                    className="custom-tab", selected_className="custom-tab--selected",
+                    children=[html.Div(tab_overview(), style={"marginTop": "32px"})]
+                ),
+                dcc.Tab(
+                    label="👥 Segmentasi", value="tab-segmentation",
+                    className="custom-tab", selected_className="custom-tab--selected",
+                    children=[html.Div(tab_segmentation(), style={"marginTop": "32px"})]
+                ),
+                dcc.Tab(
+                    label="🔗 Pola Asosiasi", value="tab-rules",
+                    className="custom-tab", selected_className="custom-tab--selected",
+                    children=[html.Div(tab_rules(), style={"marginTop": "32px"})]
+                ),
+                dcc.Tab(
+                    label="🔍 Deteksi Anomali", value="tab-anomaly",
+                    className="custom-tab", selected_className="custom-tab--selected",
+                    children=[html.Div(tab_anomaly(), style={"marginTop": "32px"})]
+                ),
             ],
         ),
-        html.Div(id="tab-content"),
     ], className="content-wrap"),
 
     html.Div([
-        html.Span("Data Mining Project — Lending Club Knowledge Discovery · Phase 5"),
+        html.Span("Lending Club Knowledge Discovery · Phase 5"),
         html.Span(" · ", style={"opacity": "0.4"}),
         html.Span("2.260.668 pinjaman · 2007-2018"),
     ], className="app-footer"),
@@ -853,16 +788,7 @@ app.layout = html.Div([
 # CALLBACKS — hanya filter DataFrame kecil (pre-sampled), tidak ada komputasi berat
 # ===========================================================================
 
-@app.callback(Output("tab-content", "children"), Input("main-tabs", "value"))
-def render_tab(tab):
-    """Rakit HTML tab — figure sudah ada sebagai FIG_*, tidak dibangun ulang."""
-    return {
-        "tab-overview":     tab_overview,
-        "tab-segmentation": tab_segmentation,
-        "tab-rules":        tab_rules,
-        "tab-anomaly":      tab_anomaly,
-        "tab-expo":         tab_expo,
-    }.get(tab, tab_overview)()
+# Tab rendering is now handled client-side via dcc.Tab children for instant switching (< 100ms)
 
 @app.callback(
     Output("cluster-scatter", "figure"),
