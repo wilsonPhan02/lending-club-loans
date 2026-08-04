@@ -3,3 +3,4 @@
 data-mining-patched.ipynb
 *.pkl
 *.txt
+*.pyc
